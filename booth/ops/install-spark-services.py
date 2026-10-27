@@ -45,7 +45,8 @@ WantedBy=default.target
 
 UNIT_FILES = [
     service('booth-mc', 'Booth Paper 1.21.4 server (loopback 25571, RCON 25581)', BOOTH / 'mc-data',
-            f'{JAVA} -Xms2G -Xmx2G -jar paper-1.21.4-232.jar --nogui', extra='StandardInput=null'),
+            # Java exits with 143 after a clean SIGTERM shutdown (worlds are saved first).
+            f'{JAVA} -Xms2G -Xmx2G -jar paper-1.21.4-232.jar --nogui', extra='StandardInput=null\nSuccessExitStatus=143'),
     service('booth-vllm-30b', 'Booth LLM (vLLM, Qwen3-30B-A3B FP8, 127.0.0.1:8011)', ROOT,
             f'{ROOT}/vllm-env/bin/vllm serve Qwen/Qwen3-30B-A3B-Instruct-2507-FP8 --host 127.0.0.1 --port 8011 '
             '--gpu-memory-utilization 0.42 --max-model-len 8192 --enable-prefix-caching',

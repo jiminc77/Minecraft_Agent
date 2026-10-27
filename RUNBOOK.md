@@ -49,7 +49,18 @@ journalctl --user -u booth-stability-gateway -n 100 --no-pager
 journalctl --user -u booth-vllm-30b -f
 ```
 
-## 3. 재시작
+## 3. 시작·종료·재시작
+
+```bash
+bash ~/Workspace/Minecraft_Agent/booth/ops/stop.sh     # 종료
+bash ~/Workspace/Minecraft_Agent/booth/ops/start.sh    # 시작
+```
+
+- **종료:** watchdog을 먼저 멈춘 뒤 모든 구성 요소를 끕니다. 월드는 저장된 뒤 꺼집니다. 끝나면 유닛 목록이 모두 `inactive`로 나옵니다. GPU 메모리도 반환됩니다.
+- **시작:** 약 4분 뒤 `status.sh`가 모두 `OK`가 됩니다(시험 결과 220초).
+- **재부팅과의 관계:** `stop.sh`로 꺼 두어도 서버를 재부팅하면 부스가 자동으로 다시 켜집니다. 재부팅 후에도 꺼 두려면 종료 후 `systemctl --user disable booth-stability-watchdog.timer booth-mc booth-vllm-30b booth-stability-xvfb booth-stability-client booth-stability-mindcraft booth-stability-gateway`를 실행합니다. 같은 목록으로 `enable`하면 자동 시작이 다시 켜집니다.
+
+### 재시작
 
 전체를 껐다 켭니다. 약 4분 뒤 모두 `OK`가 됩니다(시험 결과 220초). 그동안은 명령을 받을 수 없습니다.
 
