@@ -27,11 +27,20 @@ ssh -N -L 8772:127.0.0.1:8772 AILAB-spark-remote
 ## 2. 상태 확인
 
 ```bash
-curl -s http://127.0.0.1:8772/health; echo
-systemctl --user list-units 'booth-*'
+bash ~/Workspace/Minecraft_Agent/booth/ops/status.sh
 ```
 
-정상일 때는 `"phase":"ready"`이고 `llm_ready`, `agent_in_game`, `viewer_in_game`이 모두 `true`입니다. `frame_age_ms`는 수백 ms 이하입니다.
+정상이면 위쪽 다섯 줄이 모두 `OK`이고, 아래 유닛 목록이 모두 `active`입니다.
+
+```text
+OK   gateway       phase=ready
+OK   llm           booth-vllm-30b (시작 직후 3~5분은 false가 정상)
+OK   agent         booth-stability-mindcraft
+OK   viewer        booth-stability-client
+OK   frame         frame_age_ms=35
+```
+
+`FAIL`인 줄 옆에 그 항목을 담당하는 유닛 이름이 적혀 있습니다.
 
 로그는 다음과 같이 봅니다.
 
@@ -40,21 +49,19 @@ journalctl --user -u booth-stability-gateway -n 100 --no-pager
 journalctl --user -u booth-vllm-30b -f
 ```
 
-## 3. 시작·정지·재시작
+## 3. 재시작
+
+전체를 껐다 켭니다. 약 4분 뒤 모두 `OK`가 됩니다(시험 결과 220초). 그동안은 명령을 받을 수 없습니다.
 
 ```bash
-# 한 구성 요소만 재시작
-systemctl --user restart booth-stability-mindcraft
-
-# 전체 정지: 타이머를 먼저 멈춰야 watchdog이 다시 살리지 않습니다
-systemctl --user stop booth-stability-watchdog.timer
-systemctl --user stop booth-stability-gateway booth-stability-mindcraft booth-stability-client booth-stability-xvfb booth-vllm-30b booth-mc
-
-# 전체 시작
-systemctl --user start booth-mc booth-vllm-30b booth-stability-xvfb booth-stability-client booth-stability-mindcraft booth-stability-gateway booth-stability-watchdog.timer
+bash ~/Workspace/Minecraft_Agent/booth/ops/restart.sh
 ```
 
-LLM을 재시작하면 3~5분 동안 명령을 받을 수 없습니다. 행사 중에는 꼭 필요할 때만 재시작합니다.
+LLM까지 기다리기 싫으면 문제가 있는 구성 요소만 재시작합니다. 이때는 수십 초면 됩니다.
+
+```bash
+systemctl --user restart booth-stability-mindcraft
+```
 
 ## 4. 문제별 대처
 
@@ -62,13 +69,13 @@ LLM을 재시작하면 3~5분 동안 명령을 받을 수 없습니다. 행사 �
 
 | 증상 | 확인 | 대처 |
 |---|---|---|
-| 페이지가 안 열림 | 노트북에서 `curl -s 127.0.0.1:8772/health` | 응답이 없으면 터널 문제입니다. `launchctl kickstart -k gui/$(id -u)/com.jimin.minecraft-booth-tunnel`을 실행하고 `/tmp/minecraft-booth-tunnel.log`를 확인합니다. 서버에서는 응답이 오는데 노트북에서 안 오는 경우도 터널 문제입니다. |
+| 페이지가 안 열림 | 서버에서 `status.sh` | 서버가 모두 `OK`이면 노트북 터널 문제입니다. 노트북에서 `launchctl kickstart -k gui/$(id -u)/com.jimin.minecraft-booth-tunnel`을 실행하고 `/tmp/minecraft-booth-tunnel.log`를 확인합니다. |
 | "언어 모델을 준비하고 있어요" / `llm_ready:false` | `journalctl --user -u booth-vllm-30b -n 50` | 부팅·재시작 직후 5분까지는 정상입니다. 그 뒤에도 false이면 `nvidia-smi`를 확인합니다. 실패하면 5절을 봅니다. |
 | 봇이 없음 / `agent_in_game:false` | `systemctl --user is-active booth-mc` | `booth-mc`가 떠 있는지 확인한 뒤 `systemctl --user restart booth-stability-mindcraft`를 실행합니다. |
 | 화면이 멈춤·검음 / `viewer_in_game:false` | `frame_age_ms` 값 | `systemctl --user restart booth-stability-xvfb booth-stability-client`를 실행합니다. 클라이언트가 붙기까지 30초 정도 걸립니다. |
 | 봇이 이상하게 계속 움직임 | UI 상태 | **행동 중지** → **월드 초기화** 순서로 누르고, 그래도 계속되면 mindcraft를 재시작합니다. |
 | 명령에 엉뚱하게 반응 | `booth/gateway/conversation.jsonl` 마지막 줄 | 모델이 해석한 계획이 기록되어 있습니다. 재현 문장을 남겨 두고 나중에 수정합니다. |
-| 전체가 이상함 | — | 3절의 전체 정지 → 전체 시작 순서로 실행합니다. 마지막 수단은 서버 재부팅(`sudo reboot`)이며, 약 4분 뒤 자동으로 복구됩니다. |
+| 전체가 이상함 | — | `restart.sh`로 전체 재시작합니다. 마지막 수단은 서버 재부팅(`sudo reboot`)이며, 약 4분 뒤 자동으로 복구됩니다. |
 
 watchdog은 1분 안팎의 장애를 자동으로 복구합니다. 복구된 뒤 이전 명령을 다시 실행하지는 않습니다.
 

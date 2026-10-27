@@ -77,7 +77,7 @@ WATCHDOG = {
         f'[Unit]\nDescription=Minecraft booth recovery check\n[Service]\nType=oneshot\n'
         f'ExecStart=/usr/bin/python3 {BOOTH}/ops/watchdog.py\n',
     'booth-stability-watchdog.timer':
-        '[Unit]\nDescription=Minecraft booth recovery timer\n[Timer]\nOnBootSec=120\nOnUnitActiveSec=20\n'
+        '[Unit]\nDescription=Minecraft booth recovery timer\n[Timer]\nOnBootSec=120\nOnUnitActiveSec=20\nAccuracySec=1s\n'
         '[Install]\nWantedBy=timers.target\n',
 }
 
