@@ -1,0 +1,285 @@
+[
+  {
+    "name": "attack request verifies actual death, not arrival",
+    "ok": true,
+    "details": {
+      "state": {
+        "phase": "done",
+        "korean": "가장 가까운 돼지 한 마리 잡아줘",
+        "english": "",
+        "message": "지정한 동물을 잡았어요.",
+        "active_since": 1791002855.067,
+        "run_seconds": 120,
+        "mode": "mindcraft",
+        "translation_model": "Qwen3-30B + verified actions",
+        "chat": [
+          {
+            "id": "57203a19-f8ec-4584-a157-853fb525f4ff",
+            "role": "user",
+            "text": "가장 가까운 돼지 한 마리 잡아줘"
+          },
+          {
+            "id": "9fa48149-5e79-458a-bef8-9efbcb4e5058",
+            "role": "assistant",
+            "text": "1/1 단계 실행 중",
+            "status": "completed"
+          },
+          {
+            "id": "6f859fb1-f99c-4cbc-a995-17fcd91484f8",
+            "role": "assistant",
+            "text": "지정한 동물을 잡았어요.",
+            "status": "done"
+          }
+        ],
+        "agent_in_game": true
+      },
+      "before": {
+        "swing": 0,
+        "attack": 0,
+        "dig": 0
+      },
+      "after": {
+        "swing": 22,
+        "attack": 22,
+        "dig": 0
+      }
+    }
+  },
+  {
+    "name": "attack negation approaches without attacking",
+    "ok": true,
+    "details": {
+      "state": {
+        "phase": "done",
+        "korean": "소를 죽이지 말고 가까이만 가",
+        "english": "",
+        "message": "대상 가까이 이동했어요.",
+        "active_since": 1791002863.162,
+        "run_seconds": 120,
+        "mode": "mindcraft",
+        "translation_model": "Qwen3-30B + verified actions",
+        "chat": [
+          {
+            "id": "57203a19-f8ec-4584-a157-853fb525f4ff",
+            "role": "user",
+            "text": "가장 가까운 돼지 한 마리 잡아줘"
+          },
+          {
+            "id": "9fa48149-5e79-458a-bef8-9efbcb4e5058",
+            "role": "assistant",
+            "text": "1/1 단계 실행 중",
+            "status": "completed"
+          },
+          {
+            "id": "6f859fb1-f99c-4cbc-a995-17fcd91484f8",
+            "role": "assistant",
+            "text": "지정한 동물을 잡았어요.",
+            "status": "done"
+          },
+          {
+            "id": "15daa460-4280-4439-9f25-96d45db17310",
+            "role": "user",
+            "text": "소를 죽이지 말고 가까이만 가"
+          },
+          {
+            "id": "6202430d-8819-4890-864a-654fef924f44",
+            "role": "assistant",
+            "text": "1/1 단계 실행 중",
+            "status": "completed"
+          },
+          {
+            "id": "4c65cc83-b11e-40d8-bbb0-c053ea2ccdd4",
+            "role": "assistant",
+            "text": "대상 가까이 이동했어요.",
+            "status": "done"
+          }
+        ],
+        "agent_in_game": true
+      },
+      "counters": {
+        "swing": 22,
+        "attack": 22,
+        "dig": 0
+      }
+    }
+  },
+  {
+    "name": "sequential jump then signed rotation",
+    "ok": true,
+    "details": {
+      "state": {
+        "phase": "done",
+        "korean": "점프 한 번 하고 오른쪽으로 45도 돌아",
+        "english": "",
+        "message": "1번 점프했어요. 시점을 바꿨어요.",
+        "active_since": 1791002868.219,
+        "run_seconds": 120,
+        "mode": "mindcraft",
+        "translation_model": "Qwen3-30B + verified actions",
+        "chat": [
+          {
+            "id": "57203a19-f8ec-4584-a157-853fb525f4ff",
+            "role": "user",
+            "text": "가장 가까운 돼지 한 마리 잡아줘"
+          },
+          {
+            "id": "9fa48149-5e79-458a-bef8-9efbcb4e5058",
+            "role": "assistant",
+            "text": "1/1 단계 실행 중",
+            "status": "completed"
+          },
+          {
+            "id": "6f859fb1-f99c-4cbc-a995-17fcd91484f8",
+            "role": "assistant",
+            "text": "지정한 동물을 잡았어요.",
+            "status": "done"
+          },
+          {
+            "id": "15daa460-4280-4439-9f25-96d45db17310",
+            "role": "user",
+            "text": "소를 죽이지 말고 가까이만 가"
+          },
+          {
+            "id": "6202430d-8819-4890-864a-654fef924f44",
+            "role": "assistant",
+            "text": "1/1 단계 실행 중",
+            "status": "completed"
+          },
+          {
+            "id": "4c65cc83-b11e-40d8-bbb0-c053ea2ccdd4",
+            "role": "assistant",
+            "text": "대상 가까이 이동했어요.",
+            "status": "done"
+          },
+          {
+            "id": "69b3154c-9fc0-4ed1-9b28-9269053859d8",
+            "role": "user",
+            "text": "점프 한 번 하고 오른쪽으로 45도 돌아"
+          },
+          {
+            "id": "74192564-2f54-477d-bb6f-538857d39a52",
+            "role": "assistant",
+            "text": "1/1 단계 실행 중",
+            "status": "completed"
+          },
+          {
+            "id": "fafd8168-3ffe-433a-a18f-f61080a0e523",
+            "role": "assistant",
+            "text": "1번 점프했어요. 시점을 바꿨어요.",
+            "status": "done"
+          }
+        ],
+        "agent_in_game": true
+      },
+      "yaw": [
+        90,
+        45
+      ],
+      "jumps": [
+        4,
+        5
+      ]
+    }
+  },
+  {
+    "name": "clarification accepts an independent replacement",
+    "ok": true,
+    "details": {
+      "question": "어떤 것을 해드릴까요? 구체적인 명령을 알려주세요.",
+      "answer": "시점을 바꿨어요."
+    }
+  },
+  {
+    "name": "named answer resolves missing pointer and removes one block",
+    "ok": true,
+    "details": {
+      "question": "어떤 대상을 말씀하시나요? 이름이나 위치를 알려주세요.",
+      "answer": "블록 1개를 캤어요.",
+      "counters": [
+        {
+          "swing": 0,
+          "attack": 0,
+          "dig": 0
+        },
+        {
+          "swing": 3,
+          "attack": 0,
+          "dig": 1
+        }
+      ]
+    }
+  },
+  {
+    "name": "continuous movement is interrupted by stop button",
+    "ok": true,
+    "details": {
+      "pos": {
+        "x": 330.5,
+        "y": 87,
+        "z": -350.79
+      },
+      "controls": {
+        "forward": false,
+        "back": false,
+        "left": false,
+        "right": false,
+        "jump": false,
+        "sprint": false
+      }
+    }
+  },
+  {
+    "name": "unsupported request does not act",
+    "ok": true,
+    "details": {
+      "state": {
+        "phase": "unavailable",
+        "korean": "집을 지어줘",
+        "english": "",
+        "message": "현재 할 수 있는 동작 범위를 벗어나 실행하지 않았어요.",
+        "active_since": 1791002889.932,
+        "run_seconds": 120,
+        "mode": "mindcraft",
+        "translation_model": "Qwen3-30B + verified actions",
+        "chat": [
+          {
+            "id": "ba5518f7-bd7b-4a07-b223-9ff19e32da4b",
+            "role": "user",
+            "text": "앞으로 계속 걸어"
+          },
+          {
+            "id": "5a22e71a-4a3f-4481-9762-0e3a9673ba85",
+            "role": "assistant",
+            "text": "이전 행동을 중단했어요.",
+            "status": "cancelled"
+          },
+          {
+            "id": "7a344e53-6730-4732-870c-0b3d93a7433b",
+            "role": "assistant",
+            "text": "행동을 멈췄어요.",
+            "status": "stopped"
+          },
+          {
+            "id": "e1cfac50-c6b2-4f62-b741-bf96fee08756",
+            "role": "user",
+            "text": "집을 지어줘"
+          },
+          {
+            "id": "cc09d44c-ee2b-4e43-be3b-224d53d70ace",
+            "role": "assistant",
+            "text": "현재 할 수 있는 동작 범위를 벗어나 실행하지 않았어요.",
+            "status": "unavailable"
+          }
+        ],
+        "agent_in_game": true
+      }
+    }
+  },
+  {
+    "name": "manual takeover and reset remain available",
+    "ok": true,
+    "details": {
+      "phase": "ready"
+    }
+  }
+]

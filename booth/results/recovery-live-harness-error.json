@@ -1,0 +1,20 @@
+[
+  {
+    "name": "gateway connection loss expires manual controls",
+    "ok": false,
+    "ms": 7,
+    "error": "Error: Command failed: systemctl --user kill --kill-whom=main --signal=SIGKILL booth-stability-gateway\nsystemctl: unrecognized option '--kill-whom=main'\n"
+  },
+  {
+    "name": "mindcraft process automatically recovers",
+    "ok": false,
+    "ms": 5,
+    "error": "Error: Command failed: systemctl --user kill --kill-whom=main --signal=SIGKILL booth-stability-mindcraft\nsystemctl: unrecognized option '--kill-whom=main'\n"
+  },
+  {
+    "name": "client process automatically recovers",
+    "ok": false,
+    "ms": 4,
+    "error": "Error: Command failed: systemctl --user kill --kill-whom=main --signal=SIGKILL booth-stability-client\nsystemctl: unrecognized option '--kill-whom=main'\n"
+  }
+]

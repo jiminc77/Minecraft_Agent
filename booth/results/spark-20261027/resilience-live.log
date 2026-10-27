@@ -1,0 +1,7 @@
+{"name":"a second tab cannot release another tab manual keys","ok":false,"error":"Error: timeout"}
+{"name":"latest request cancels in-flight interpretation","ok":true,"details":{"phase":"done","counters":{"swing":0,"attack":0,"dig":0}}}
+{"name":"stop during interpretation prevents delayed action","ok":true,"details":{"phase":"stopped"}}
+{"name":"reset during interpretation clears stale plan","ok":true,"details":{"phase":"ready"}}
+{"name":"past report produces no attack","ok":true,"details":{"phase":"done","message":"말씀을 들었어요."}}
+{"name":"repeated simple requests remain responsive","ok":true,"details":{"completed":8}}
+{"name":"manual takeover cancels in-flight interpretation","ok":false,"error":"Error: timeout"}

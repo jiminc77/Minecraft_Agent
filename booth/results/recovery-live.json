@@ -1,0 +1,51 @@
+[
+  {
+    "name": "frozen gateway expires manual controls without socket close",
+    "ok": true,
+    "ms": 4392,
+    "details": {
+      "stopMs": 1297,
+      "controls": {
+        "forward": false,
+        "back": false,
+        "left": false,
+        "right": false,
+        "jump": false,
+        "sprint": false
+      }
+    }
+  },
+  {
+    "name": "gateway process automatically recovers",
+    "ok": true,
+    "ms": 15539,
+    "details": {
+      "before": "504761",
+      "after": "506156",
+      "phase": "ready",
+      "viewer": true
+    }
+  },
+  {
+    "name": "mindcraft process automatically recovers",
+    "ok": true,
+    "ms": 20048,
+    "details": {
+      "before": "502050",
+      "after": "506528",
+      "phase": "ready",
+      "viewer": true
+    }
+  },
+  {
+    "name": "client process automatically recovers",
+    "ok": true,
+    "ms": 20042,
+    "details": {
+      "before": "502336",
+      "after": "506884",
+      "phase": "ready",
+      "viewer": true
+    }
+  }
+]

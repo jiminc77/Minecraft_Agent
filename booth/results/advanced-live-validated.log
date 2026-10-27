@@ -1,0 +1,6 @@
+{"name":"one whole tree preserves a neighboring tree","ok":true,"details":{"message":"이 나무의 원목 4/4개를 캤어요. 원목 채굴을 완료했어요. 잎은 남겼어요."},"ms":16815}
+{"name":"carve three high earth wall and ascend","ok":true,"details":{"message":"흙 3개를 깎고 3/3단 올라갔어요. 계단 길을 완성했어요.","pos":{"x":330.5,"y":90,"z":-345.45}},"ms":8973}
+{"name":"unsafe earth geometry remains unchanged","ok":true,"details":{"message":"계단 발판이 이어지지 않는 지형이라 멈췄어요."},"ms":4516}
+{"name":"stop prevents remaining sequence actions","ok":true,"details":{"message":"행동을 멈췄어요."},"ms":4964}
+{"name":"reachable obstruction uses an alternate path","ok":true,"details":{"message":"목표 위치에 도착했어요. 시점을 바꿨어요."},"ms":7463}
+{"name":"unreachable endpoint prevents following action","ok":true,"details":{"message":"경로를 바꿔도 목표 위치에 도착하지 못했어요."},"ms":15246}

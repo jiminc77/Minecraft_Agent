@@ -1,0 +1,25 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';import {createRequire} from 'node:module';
+const require=createRequire(new URL('../gateway/package.json',import.meta.url));const{io}=require('socket.io-client');const WebSocket=require('ws');const{Rcon}=await import('../gateway/rcon.js');
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const health=async()=>await(await fetch('http://127.0.0.1:8772/health')).json();
+async function until(fn,timeout=95000){let end=Date.now()+timeout;while(Date.now()<end){const v=await fn();if(v)return v;await sleep(80);}throw Error('timeout');}
+await until(async()=>{try{return (await health()).phase==='ready';}catch{return false;}});
+const mind=io('http://127.0.0.1:8086'),ws=new WebSocket('ws://127.0.0.1:8772/ws');await Promise.all([new Promise(r=>mind.on('connect',r)),new Promise(r=>ws.on('open',r))]);
+const emit=(event,...args)=>new Promise((resolve,reject)=>mind.timeout(35000).emit(event,'Steve',...args,(err,v)=>err?reject(err):resolve(v)));
+const state=()=>emit('booth-state');const send=d=>ws.send(JSON.stringify(d));
+const rcon=new Rcon({port:25581,password:fs.readFileSync(new URL('../rcon.secret',import.meta.url),'utf8').trim()});const cmd=s=>rcon.command(s);
+const results=[];const output=new URL('../results/advanced-live.json',import.meta.url);
+async function reset(){send({type:'reset'});await sleep(200);await until(async()=>{const h=await health();return h.phase==='ready';});await cmd('tp Steve 330.5 87 -349.5 0 0');await sleep(400);}
+async function ask(text){send({type:'prompt',text});return until(async()=>{const h=await health();return h.korean===text && ['done','clarify','unavailable','error'].includes(h.phase)?h:false;});}
+async function run(name,fn){if(process.env.FILTER&&!name.includes(process.env.FILTER))return;await reset();const before=await state(),start=Date.now();let result;try{result={name,ok:true,details:await fn(before)};}catch(e){result={name,ok:false,error:String(e)};}result.ms=Date.now()-start;result.before=before;result.after=await state();results.push(result);fs.writeFileSync(output,JSON.stringify(results,null,2));console.log(JSON.stringify({name,ok:result.ok,error:result.error,details:result.details,ms:result.ms}));}
+
+await run('one whole tree preserves a neighboring tree',async b=>{await cmd('fill 330 87 -342 330 90 -342 oak_log');await cmd('fill 329 91 -343 331 92 -341 oak_leaves[persistent=true]');await cmd('fill 333 87 -342 333 90 -342 oak_log');const h=await ask('눈앞의 나무 한 그루 원목을 다 캐줘');assert.equal(h.phase,'done');const s=await state();assert.equal(s.counters.dig-b.counters.dig,4);assert.match(await cmd('execute if block 333 87 -342 minecraft:oak_log'),/Test passed/);return{message:h.message};});
+await run('carve three high earth wall and ascend',async b=>{await cmd('fill 329 87 -348 331 89 -343 dirt');await sleep(1100);const h=await ask('앞의 흙 벽을 깎아서 계단처럼 만들고 올라가줘');assert.equal(h.phase,'done');const s=await state();assert.ok(s.pos.y>=90);assert.equal(s.counters.dig-b.counters.dig,3);assert.match(await cmd('execute if block 330 87 -348 minecraft:dirt'),/Test passed/);return{message:h.message,pos:s.pos};});
+await run('unsafe earth geometry remains unchanged',async b=>{await cmd('fill 329 87 -348 331 89 -343 dirt');await cmd('setblock 330 88 -347 air');await sleep(1100);const h=await ask('앞의 흙 벽을 깎아서 계단처럼 만들고 올라가줘');assert.ok(['unavailable','clarify'].includes(h.phase));assert.equal((await state()).counters.dig,b.counters.dig);return{message:h.message};});
+await run('stop prevents remaining sequence actions',async b=>{send({type:'prompt',text:'앞으로 20칸 간 다음 점프 세 번 해'});await until(async()=>(await state()).controls.forward);send({type:'stop'});await sleep(2000);const s=await state();assert.equal(s.jumps,b.jumps);assert.ok(!s.acting);return{message:(await health()).message};});
+await run('reachable obstruction uses an alternate path',async b=>{await cmd('fill 329 87 -348 331 89 -348 stone');const h=await ask('앞으로 세 칸 간 다음 하늘을 봐');assert.equal(h.phase,'done');assert.ok(Math.abs((await state()).pitch-90)<3);return{message:h.message};});
+await run('unreachable endpoint prevents following action',async b=>{
+ await cmd('fill 329 87 -347 331 90 -345 stone');
+ const h=await ask('앞으로 세 칸 간 다음 하늘을 봐');assert.equal(h.phase,'unavailable');assert.ok(Math.abs((await state()).pitch-b.pitch)<3);return{message:h.message};
+});
+await reset();mind.close();ws.close();process.exit(results.every(r=>r.ok)?0:1);

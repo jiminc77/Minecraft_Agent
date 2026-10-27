@@ -1,0 +1,16 @@
+{
+  "original_files_checked": 112,
+  "changed": [],
+  "services": {
+    "booth-vllm-30b": "active",
+    "booth-mindcraft": "active",
+    "booth-gateway": "active",
+    "booth-xvfb": "active",
+    "booth-client": "active",
+    "steve-booth": "active"
+  },
+  "health": {
+    "8765": "ready",
+    "8767": "ready"
+  }
+}

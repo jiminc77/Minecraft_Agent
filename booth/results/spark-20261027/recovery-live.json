@@ -1,0 +1,41 @@
+[
+  {
+    "name": "frozen gateway expires manual controls without socket close",
+    "ok": false,
+    "ms": 100270,
+    "error": "Error: recovery_timeout"
+  },
+  {
+    "name": "gateway process automatically recovers",
+    "ok": true,
+    "ms": 15550,
+    "details": {
+      "before": "10642",
+      "after": "51646",
+      "phase": "ready",
+      "viewer": true
+    }
+  },
+  {
+    "name": "mindcraft process automatically recovers",
+    "ok": true,
+    "ms": 20060,
+    "details": {
+      "before": "13248",
+      "after": "52191",
+      "phase": "ready",
+      "viewer": true
+    }
+  },
+  {
+    "name": "client process automatically recovers",
+    "ok": true,
+    "ms": 20061,
+    "details": {
+      "before": "10644",
+      "after": "52854",
+      "phase": "ready",
+      "viewer": true
+    }
+  }
+]

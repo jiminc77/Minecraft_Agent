@@ -1,0 +1,184 @@
+
+> test
+> node --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: schema rejects invalid direction, out of range, and invented target
+ok 1 - schema rejects invalid direction, out of range, and invented target
+  ---
+  duration_ms: 11.462602
+  ...
+# Subtest: clarification never executes; next answer receives pending context
+ok 2 - clarification never executes; next answer receives pending context
+  ---
+  duration_ms: 10.873396
+  ...
+# Subtest: old model response cannot execute after a newer request
+ok 3 - old model response cannot execute after a newer request
+  ---
+  duration_ms: 2.656824
+  ...
+# Subtest: manual takeover invalidates pending inference and context
+ok 4 - manual takeover invalidates pending inference and context
+  ---
+  duration_ms: 15.651221
+  ...
+# Subtest: failure to confirm stop prevents planning and execution
+ok 5 - failure to confirm stop prevents planning and execution
+  ---
+  duration_ms: 0.314513
+  ...
+# Subtest: timeout after dispatch requests a stop and never marks completion
+ok 6 - timeout after dispatch requests a stop and never marks completion
+  ---
+  duration_ms: 30.466407
+  ...
+# Subtest: unconfirmed stop is not reported as a successful stop
+ok 7 - unconfirmed stop is not reported as a successful stop
+  ---
+  duration_ms: 0.385476
+  ...
+# Subtest: late progress observation cannot overwrite a completed result
+ok 8 - late progress observation cannot overwrite a completed result
+  ---
+  duration_ms: 11.326435
+  ...
+# Subtest: tree fixes a connected component and excludes neighboring separate trees
+ok 9 - tree fixes a connected component and excludes neighboring separate trees
+  ---
+  duration_ms: 12.118789
+  ...
+# Subtest: oversized connected tree fails before execution
+ok 10 - oversized connected tree fails before execution
+  ---
+  duration_ms: 0.372056
+  ...
+# Subtest: three high wall creates three ascending footholds with exact removal budget
+ok 11 - three high wall creates three ascending footholds with exact removal budget
+  ---
+  duration_ms: 0.597165
+  ...
+# Subtest: foreign blocks and missing supports reject whole carve before digging
+ok 12 - foreign blocks and missing supports reject whole carve before digging
+  ---
+  duration_ms: 0.150976
+  ...
+# Subtest: sequence schema rejects nested or excessive plans
+ok 13 - sequence schema rejects nested or excessive plans
+  ---
+  duration_ms: 15.085177
+  ...
+# Subtest: whole-tree goal stays whole and needs an independent semantic review
+ok 14 - whole-tree goal stays whole and needs an independent semantic review
+  ---
+  duration_ms: 9.161063
+  ...
+# Subtest: semantic mismatch rejects a valid geometric target
+ok 15 - semantic mismatch rejects a valid geometric target
+  ---
+  duration_ms: 0.376816
+  ...
+# Subtest: invented goal target never reaches execution
+ok 16 - invented goal target never reaches execution
+  ---
+  duration_ms: 0.25283
+  ...
+# Subtest: greeting response does not create an executable command
+ok 17 - greeting response does not create an executable command
+  ---
+  duration_ms: 0.185038
+  ...
+# Subtest: long sequence cannot silently discard steps
+ok 18 - long sequence cannot silently discard steps
+  ---
+  duration_ms: 4.508603
+  ...
+# Subtest: internal semantic error gets one bounded repair before asking the user
+ok 19 - internal semantic error gets one bounded repair before asking the user
+  ---
+  duration_ms: 0.531233
+  ...
+# Subtest: conflicting step interpretation remains gated by the whole-goal review
+ok 20 - conflicting step interpretation remains gated by the whole-goal review
+  ---
+  duration_ms: 9.622193
+  ...
+# Subtest: command-form rotation disagrees with a walking proposal
+ok 21 - command-form rotation disagrees with a walking proposal
+  ---
+  duration_ms: 1.810578
+  ...
+# Subtest: directions and amounts must both agree
+ok 22 - directions and amounts must both agree
+  ---
+  duration_ms: 0.146796
+  ...
+# Subtest: command-form text is parsed as data, never evaluated
+ok 23 - command-form text is parsed as data, never evaluated
+  ---
+  duration_ms: 0.084033
+  ...
+# Subtest: 100 remains 100 and is rejected rather than clamped by decoding
+ok 24 - 100 remains 100 and is rejected rather than clamped by decoding
+  ---
+  duration_ms: 5.080968
+  ...
+# Subtest: unresolved pronoun cannot select even an existing pig
+ok 25 - unresolved pronoun cannot select even an existing pig
+  ---
+  duration_ms: 0.100604
+  ...
+# Subtest: compound requests do not run only the first action
+ok 26 - compound requests do not run only the first action
+  ---
+  duration_ms: 0.058923
+  ...
+# Subtest: explicit named type cannot resolve to different animal
+ok 27 - explicit named type cannot resolve to different animal
+  ---
+  duration_ms: 0.069013
+  ...
+# Subtest: clear quantities and directions are preserved
+ok 28 - clear quantities and directions are preserved
+  ---
+  duration_ms: 0.365535
+  ...
+# Subtest: ambiguous verb never executes
+ok 29 - ambiguous verb never executes
+  ---
+  duration_ms: 0.063463
+  ...
+# Subtest: a real cursor may resolve unnamed reference
+ok 30 - a real cursor may resolve unnamed reference
+  ---
+  duration_ms: 0.091994
+  ...
+# Subtest: spaceless native numeral independently verifies model quantity
+ok 31 - spaceless native numeral independently verifies model quantity
+  ---
+  duration_ms: 0.93483
+  ...
+# Subtest: unknown numeral is not converted to one
+ok 32 - unknown numeral is not converted to one
+  ---
+  duration_ms: 0.097924
+  ...
+# Subtest: Sino and digit numerals remain unbounded for comparison
+ok 33 - Sino and digit numerals remain unbounded for comparison
+  ---
+  duration_ms: 0.156767
+  ...
+# Subtest: native tens and repeated actions are understood by public parser
+ok 34 - native tens and repeated actions are understood by public parser
+  ---
+  duration_ms: 0.123475
+  ...
+1..34
+# tests 34
+# suites 0
+# pass 34
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 471.26084

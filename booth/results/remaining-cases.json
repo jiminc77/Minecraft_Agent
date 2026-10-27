@@ -1,0 +1,4066 @@
+{
+  "wrong_action": [
+    {
+      "id": "C256",
+      "text": "양 옆으로 가줘",
+      "group": "paraphrase",
+      "expect": {
+        "kind": "approach",
+        "entity": "sheep"
+      },
+      "plan": {
+        "kind": "execute",
+        "message": "요청한 행동을 시작할게요.",
+        "action": {
+          "type": "move",
+          "amount": 2,
+          "direction": "left"
+        }
+      },
+      "grade": "wrong_action",
+      "ms": 794,
+      "audit": [
+        {
+          "stage": "motion_review",
+          "text": "양 옆으로 가줘",
+          "context": {},
+          "raw": "양 옆으로 갈게요! !move(\"left\", 2)",
+          "action": {
+            "type": "move",
+            "amount": 2,
+            "direction": "left"
+          },
+          "agrees": true
+        },
+        {
+          "stage": "interpret",
+          "text": "양 옆으로 가줘",
+          "context": {},
+          "observation": {
+            "pos": {
+              "x": 330.5,
+              "y": 87,
+              "z": -349.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": null,
+            "targets": [
+              {
+                "key": "entity:1",
+                "kind": "entity",
+                "name": "pig",
+                "id": 1,
+                "dist": 7,
+                "pos": {
+                  "x": 337.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": -7,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:2",
+                "kind": "entity",
+                "name": "cow",
+                "id": 2,
+                "dist": 8,
+                "pos": {
+                  "x": 322.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": 8,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:3",
+                "kind": "entity",
+                "name": "sheep",
+                "id": 3,
+                "dist": 11,
+                "pos": {
+                  "x": 330.5,
+                  "y": 87,
+                  "z": -360.5
+                },
+                "relative": {
+                  "forward": -11,
+                  "right": 0,
+                  "up": 0
+                }
+              },
+              {
+                "key": "block:330:87:-342",
+                "kind": "block",
+                "name": "oak_log",
+                "dist": 7,
+                "pos": {
+                  "x": 330,
+                  "y": 87,
+                  "z": -342
+                }
+              },
+              {
+                "key": "block:334:87:-349",
+                "kind": "block",
+                "name": "dirt",
+                "dist": 4,
+                "pos": {
+                  "x": 334,
+                  "y": 87,
+                  "z": -349
+                }
+              },
+              {
+                "key": "block:330:86:-350",
+                "kind": "block",
+                "name": "grass_block",
+                "dist": 1,
+                "pos": {
+                  "x": 330,
+                  "y": 86,
+                  "z": -350
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "양 옆으로 가줘라는 요청은 현재 시점에서 양 옆 방향으로 이동하라는 의미입니다. 현재 시점에서 양 옆은 왼쪽과 오른쪽을 의미하며, 이동 거리는 명시되지 않았으므로 짧은 이동(2칸)으로 해석합니다.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "move",
+            "direction": "left",
+            "amount": 2,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "move",
+              "amount": 2,
+              "direction": "left"
+            }
+          },
+          "usage": {
+            "prompt_tokens": 1608,
+            "total_tokens": 1720,
+            "completion_tokens": 112,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        }
+      ]
+    }
+  ],
+  "nonaction_instead_of_task": [
+    {
+      "id": "C015",
+      "text": "고개를 아래로 내려",
+      "group": "paraphrase",
+      "expect": {
+        "kind": "look",
+        "pitch": [
+          -90,
+          -45
+        ]
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "동작의 방향이나 뜻을 확실히 이해하지 못했어요. 걷기인지 시점 바꾸기인지, 방향과 수량을 구체적으로 알려주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 516,
+      "audit": [
+        {
+          "stage": "motion_review",
+          "text": "고개를 아래로 내려",
+          "context": {},
+          "raw": "고개를 아래로 내릴게요. !lookVertical(-45)",
+          "action": {
+            "type": "look",
+            "amount": -90
+          },
+          "agrees": false
+        }
+      ]
+    },
+    {
+      "id": "C017",
+      "text": "땅을 바",
+      "group": "typo_spacing",
+      "expect": {
+        "kind": "look",
+        "pitch": [
+          -90,
+          -45
+        ]
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "동작의 방향이나 뜻을 확실히 이해하지 못했어요. 걷기인지 시점 바꾸기인지, 방향과 수량을 구체적으로 알려주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 444,
+      "audit": [
+        {
+          "stage": "motion_review",
+          "text": "땅을 바",
+          "context": {},
+          "raw": "땅을 깨는 중이에요! !break(\"dirt\", 2)",
+          "action": {
+            "type": "look",
+            "amount": -90
+          },
+          "agrees": false
+        }
+      ]
+    },
+    {
+      "id": "C026",
+      "text": "고개를 정면으로 해",
+      "group": "paraphrase",
+      "expect": {
+        "kind": "look",
+        "pitch": [
+          -10,
+          10
+        ]
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "동작의 방향이나 뜻을 확실히 이해하지 못했어요. 걷기인지 시점 바꾸기인지, 방향과 수량을 구체적으로 알려주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 472,
+      "audit": [
+        {
+          "stage": "motion_review",
+          "text": "고개를 정면으로 해",
+          "context": {},
+          "raw": "고개를 정면으로 할게요. !turn(0)",
+          "action": {
+            "type": "look",
+            "amount": 0
+          },
+          "agrees": false
+        }
+      ]
+    },
+    {
+      "id": "C030",
+      "text": "정며늘 봐",
+      "group": "typo_spacing",
+      "expect": {
+        "kind": "look",
+        "pitch": [
+          -10,
+          10
+        ]
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "동작의 방향이나 뜻을 확실히 이해하지 못했어요. 걷기인지 시점 바꾸기인지, 방향과 수량을 구체적으로 알려주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 384,
+      "audit": [
+        {
+          "stage": "motion_review",
+          "text": "정며늘 봐",
+          "context": {},
+          "raw": "정면을 볼게요. !turn(0)",
+          "action": {
+            "type": "look",
+            "amount": 0
+          },
+          "agrees": false
+        }
+      ]
+    },
+    {
+      "id": "C042",
+      "text": "오른쪽으로 도라",
+      "group": "typo_spacing",
+      "expect": {
+        "kind": "turn",
+        "angle": 90
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "수량을 확실히 읽지 못했어요. 원하는 수량을 숫자로 적어 주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 389,
+      "audit": [
+        {
+          "stage": "quantity_rejected",
+          "text": "오른쪽으로 도라",
+          "intent": {
+            "interpretation": "오른쪽으로 시선을 돌려",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "view",
+            "direction": "right",
+            "amount": 90,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "turn",
+              "amount": 90
+            }
+          },
+          "quantityError": "수량을 확실히 읽지 못했어요. 원하는 수량을 숫자로 적어 주세요."
+        }
+      ]
+    },
+    {
+      "id": "C054",
+      "text": "왼쪽으로 도라",
+      "group": "typo_spacing",
+      "expect": {
+        "kind": "turn",
+        "angle": -90
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "수량을 확실히 읽지 못했어요. 원하는 수량을 숫자로 적어 주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 324,
+      "audit": [
+        {
+          "stage": "quantity_rejected",
+          "text": "왼쪽으로 도라",
+          "intent": {
+            "interpretation": "왼쪽으로 시선을 돌립니다.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "view",
+            "direction": "left",
+            "amount": 90,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "turn",
+              "amount": -90
+            }
+          },
+          "quantityError": "수량을 확실히 읽지 못했어요. 원하는 수량을 숫자로 적어 주세요."
+        }
+      ]
+    },
+    {
+      "id": "C053",
+      "text": "왼쪼그로 돌아",
+      "group": "typo_spacing",
+      "expect": {
+        "kind": "turn",
+        "angle": -90
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "동작의 방향이나 뜻을 확실히 이해하지 못했어요. 걷기인지 시점 바꾸기인지, 방향과 수량을 구체적으로 알려주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 441,
+      "audit": [
+        {
+          "stage": "motion_review",
+          "text": "왼쪼그로 돌아",
+          "context": {},
+          "raw": "왼쪽으로 180도 돌아갈게요! !turn(-180)",
+          "action": {
+            "type": "turn",
+            "amount": -90
+          },
+          "agrees": false
+        }
+      ]
+    },
+    {
+      "id": "C058",
+      "text": "빨리 왼쪽으로 돌아",
+      "group": "casual_polite",
+      "expect": {
+        "kind": "turn",
+        "angle": -90
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "동작의 방향이나 뜻을 확실히 이해하지 못했어요. 걷기인지 시점 바꾸기인지, 방향과 수량을 구체적으로 알려주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 459,
+      "audit": [
+        {
+          "stage": "motion_review",
+          "text": "빨리 왼쪽으로 돌아",
+          "context": {},
+          "raw": "빨리 왼쪽으로 돌아갈게요! !turn(-180)",
+          "action": {
+            "type": "turn",
+            "amount": -90
+          },
+          "agrees": false
+        }
+      ]
+    },
+    {
+      "id": "C061",
+      "text": "뒤로 돌아",
+      "group": "paraphrase",
+      "expect": {
+        "kind": "turn",
+        "angle": 180
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "동작의 방향이나 뜻을 확실히 이해하지 못했어요. 걷기인지 시점 바꾸기인지, 방향과 수량을 구체적으로 알려주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 430,
+      "audit": [
+        {
+          "stage": "motion_review",
+          "text": "뒤로 돌아",
+          "context": {},
+          "raw": "뒤로 돌아갈게요. !turn(180)",
+          "action": {
+            "type": "move",
+            "amount": 2,
+            "direction": "back"
+          },
+          "agrees": false
+        }
+      ]
+    },
+    {
+      "id": "C063",
+      "text": "제자리에서 반 바퀴 돌아",
+      "group": "paraphrase",
+      "expect": {
+        "kind": "turn",
+        "angle": 180
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "수량을 확실히 읽지 못했어요. 원하는 수량을 숫자로 적어 주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 365,
+      "audit": [
+        {
+          "stage": "quantity_rejected",
+          "text": "제자리에서 반 바퀴 돌아",
+          "intent": {
+            "interpretation": "제자리에서 반 바퀴(180도) 회전한다.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "view",
+            "direction": "back",
+            "amount": 180,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "turn",
+              "amount": 180
+            }
+          },
+          "quantityError": "수량을 확실히 읽지 못했어요. 원하는 수량을 숫자로 적어 주세요."
+        }
+      ]
+    },
+    {
+      "id": "C065",
+      "text": "뒤로 도라",
+      "group": "typo_spacing",
+      "expect": {
+        "kind": "turn",
+        "angle": 180
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "수량을 확실히 읽지 못했어요. 원하는 수량을 숫자로 적어 주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 380,
+      "audit": [
+        {
+          "stage": "quantity_rejected",
+          "text": "뒤로 도라",
+          "intent": {
+            "interpretation": "현재 시점에서 뒤로 180도 회전합니다.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "view",
+            "direction": "back",
+            "amount": 180,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "turn",
+              "amount": 180
+            }
+          },
+          "quantityError": "수량을 확실히 읽지 못했어요. 원하는 수량을 숫자로 적어 주세요."
+        }
+      ]
+    },
+    {
+      "id": "C068",
+      "text": "뒤로  \n돌아",
+      "group": "typo_spacing",
+      "expect": {
+        "kind": "turn",
+        "angle": 180
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "동작의 방향이나 뜻을 확실히 이해하지 못했어요. 걷기인지 시점 바꾸기인지, 방향과 수량을 구체적으로 알려주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 434,
+      "audit": [
+        {
+          "stage": "motion_review",
+          "text": "뒤로 돌아",
+          "context": {},
+          "raw": "뒤로 돌아갈게요. !turn(180)",
+          "action": {
+            "type": "move",
+            "amount": 2,
+            "direction": "back"
+          },
+          "agrees": false
+        }
+      ]
+    },
+    {
+      "id": "C071",
+      "text": "뒤로 돌아 ㅋㅋ",
+      "group": "casual_polite",
+      "expect": {
+        "kind": "turn",
+        "angle": 180
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "동작의 방향이나 뜻을 확실히 이해하지 못했어요. 걷기인지 시점 바꾸기인지, 방향과 수량을 구체적으로 알려주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 383,
+      "audit": [
+        {
+          "stage": "motion_review",
+          "text": "뒤로 돌아 ㅋㅋ",
+          "context": {},
+          "raw": "뒤로 돌아볼게요! !turn(180)",
+          "action": {
+            "type": "move",
+            "amount": 2,
+            "direction": "back"
+          },
+          "agrees": false
+        }
+      ]
+    },
+    {
+      "id": "C072",
+      "text": "뒤로 돌아 부탁드립니다",
+      "group": "casual_polite",
+      "expect": {
+        "kind": "turn",
+        "angle": 180
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "동작의 방향이나 뜻을 확실히 이해하지 못했어요. 걷기인지 시점 바꾸기인지, 방향과 수량을 구체적으로 알려주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 480,
+      "audit": [
+        {
+          "stage": "motion_review",
+          "text": "뒤로 돌아 부탁드립니다",
+          "context": {},
+          "raw": "뒤로 돌아갈게요. !turn(180)",
+          "action": {
+            "type": "move",
+            "amount": 2,
+            "direction": "back"
+          },
+          "agrees": false
+        }
+      ]
+    },
+    {
+      "id": "C078",
+      "text": "오른쪽으로 45도 도라",
+      "group": "typo_spacing",
+      "expect": {
+        "kind": "turn",
+        "angle": 45
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "수량을 확실히 읽지 못했어요. 원하는 수량을 숫자로 적어 주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 350,
+      "audit": [
+        {
+          "stage": "quantity_rejected",
+          "text": "오른쪽으로 45도 도라",
+          "intent": {
+            "interpretation": "오른쪽으로 45도 시선을 돌립니다.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "view",
+            "direction": "right",
+            "amount": 45,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "turn",
+              "amount": 45
+            }
+          },
+          "quantityError": "수량을 확실히 읽지 못했어요. 원하는 수량을 숫자로 적어 주세요."
+        }
+      ]
+    },
+    {
+      "id": "C090",
+      "text": "왼쪽으로 45도 도라",
+      "group": "typo_spacing",
+      "expect": {
+        "kind": "turn",
+        "angle": -45
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "수량을 확실히 읽지 못했어요. 원하는 수량을 숫자로 적어 주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 348,
+      "audit": [
+        {
+          "stage": "quantity_rejected",
+          "text": "왼쪽으로 45도 도라",
+          "intent": {
+            "interpretation": "왼쪽으로 45도 시선을 돌립니다.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "view",
+            "direction": "left",
+            "amount": 45,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "turn",
+              "amount": -45
+            }
+          },
+          "quantityError": "수량을 확실히 읽지 못했어요. 원하는 수량을 숫자로 적어 주세요."
+        }
+      ]
+    },
+    {
+      "id": "C101",
+      "text": "아프로 두 칸 가",
+      "group": "typo_spacing",
+      "expect": {
+        "kind": "move",
+        "direction": "forward",
+        "distance": 2
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "'아프로'라는 말이 무엇을 의미하는지 명확하지 않습니다. 동물이나 블록을 가리키는 것인가요?",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 587,
+      "audit": [
+        {
+          "stage": "interpret",
+          "text": "아프로 두 칸 가",
+          "context": {},
+          "observation": {
+            "pos": {
+              "x": 330.5,
+              "y": 87,
+              "z": -349.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": null,
+            "targets": [
+              {
+                "key": "entity:1",
+                "kind": "entity",
+                "name": "pig",
+                "id": 1,
+                "dist": 7,
+                "pos": {
+                  "x": 337.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": -7,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:2",
+                "kind": "entity",
+                "name": "cow",
+                "id": 2,
+                "dist": 8,
+                "pos": {
+                  "x": 322.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": 8,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:3",
+                "kind": "entity",
+                "name": "sheep",
+                "id": 3,
+                "dist": 11,
+                "pos": {
+                  "x": 330.5,
+                  "y": 87,
+                  "z": -360.5
+                },
+                "relative": {
+                  "forward": -11,
+                  "right": 0,
+                  "up": 0
+                }
+              },
+              {
+                "key": "block:330:87:-342",
+                "kind": "block",
+                "name": "oak_log",
+                "dist": 7,
+                "pos": {
+                  "x": 330,
+                  "y": 87,
+                  "z": -342
+                }
+              },
+              {
+                "key": "block:334:87:-349",
+                "kind": "block",
+                "name": "dirt",
+                "dist": 4,
+                "pos": {
+                  "x": 334,
+                  "y": 87,
+                  "z": -349
+                }
+              },
+              {
+                "key": "block:330:86:-350",
+                "kind": "block",
+                "name": "grass_block",
+                "dist": 1,
+                "pos": {
+                  "x": 330,
+                  "y": 86,
+                  "z": -350
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "아프로 두 칸 가기",
+            "multiple_actions": false,
+            "ambiguous": true,
+            "action_type": "move",
+            "direction": "",
+            "amount": 2,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": "'아프로'라는 말이 무엇을 의미하는지 명확하지 않습니다. 동물이나 블록을 가리키는 것인가요?"
+          },
+          "plan": {
+            "kind": "clarify",
+            "message": "'아프로'라는 말이 무엇을 의미하는지 명확하지 않습니다. 동물이나 블록을 가리키는 것인가요?",
+            "action": null
+          },
+          "usage": {
+            "prompt_tokens": 1609,
+            "total_tokens": 1704,
+            "completion_tokens": 95,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "C126",
+      "text": "왼쪽으로 새 칸 가",
+      "group": "typo_spacing",
+      "expect": {
+        "kind": "move",
+        "direction": "left",
+        "distance": 3
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "수량을 확실히 읽지 못했어요. 원하는 수량을 숫자로 적어 주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 329,
+      "audit": [
+        {
+          "stage": "quantity_rejected",
+          "text": "왼쪽으로 새 칸 가",
+          "intent": {
+            "interpretation": "왼쪽으로 한 칸 이동하라.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "move",
+            "direction": "left",
+            "amount": 1,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "move",
+              "amount": 1,
+              "direction": "left"
+            }
+          },
+          "quantityError": "수량을 확실히 읽지 못했어요. 원하는 수량을 숫자로 적어 주세요."
+        }
+      ]
+    },
+    {
+      "id": "C137",
+      "text": "오른쪼그로 세 칸 가",
+      "group": "typo_spacing",
+      "expect": {
+        "kind": "move",
+        "direction": "right",
+        "distance": 3
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "동작의 방향이나 뜻을 확실히 이해하지 못했어요. 걷기인지 시점 바꾸기인지, 방향과 수량을 구체적으로 알려주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 552,
+      "audit": [
+        {
+          "stage": "motion_review",
+          "text": "오른쪼그로 세 칸 가",
+          "context": {},
+          "raw": "오른쪽 아래로 세 칸 갈게요! !move(\"right_down\", 3)",
+          "action": {
+            "type": "move",
+            "amount": 3,
+            "direction": "right"
+          },
+          "agrees": false
+        }
+      ]
+    },
+    {
+      "id": "C138",
+      "text": "오른쪽으로 새 칸 가",
+      "group": "typo_spacing",
+      "expect": {
+        "kind": "move",
+        "direction": "right",
+        "distance": 3
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "수량을 확실히 읽지 못했어요. 원하는 수량을 숫자로 적어 주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 399,
+      "audit": [
+        {
+          "stage": "quantity_rejected",
+          "text": "오른쪽으로 새 칸 가",
+          "intent": {
+            "interpretation": "오른쪽으로 한 칸 이동하라.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "move",
+            "direction": "right",
+            "amount": 1,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "move",
+              "amount": 1,
+              "direction": "right"
+            }
+          },
+          "quantityError": "수량을 확실히 읽지 못했어요. 원하는 수량을 숫자로 적어 주세요."
+        }
+      ]
+    },
+    {
+      "id": "C149",
+      "text": "왼쪽 압 대각선으로 세 칸 가",
+      "group": "typo_spacing",
+      "expect": {
+        "kind": "move",
+        "direction": "forward_left",
+        "distance": 3
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "동작의 방향이나 뜻을 확실히 이해하지 못했어요. 걷기인지 시점 바꾸기인지, 방향과 수량을 구체적으로 알려주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 530,
+      "audit": [
+        {
+          "stage": "motion_review",
+          "text": "왼쪽 압 대각선으로 세 칸 가",
+          "context": {},
+          "raw": "왼쪽 대각선으로 세 칸 갈게요! !move(\"back_left\", 3)",
+          "action": {
+            "type": "move",
+            "amount": 3,
+            "direction": "forward_left"
+          },
+          "agrees": false
+        }
+      ]
+    },
+    {
+      "id": "C150",
+      "text": "왼쪼그로 대각선 앞에 세 칸 가",
+      "group": "typo_spacing",
+      "expect": {
+        "kind": "move",
+        "direction": "forward_left",
+        "distance": 3
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "동작의 방향이나 뜻을 확실히 이해하지 못했어요. 걷기인지 시점 바꾸기인지, 방향과 수량을 구체적으로 알려주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 534,
+      "audit": [
+        {
+          "stage": "motion_review",
+          "text": "왼쪼그로 대각선 앞에 세 칸 가",
+          "context": {},
+          "raw": "왼쪼그로 대각선 앞에 세 칸 갈게요! !move(\"back_left\", 3)",
+          "action": {
+            "type": "move",
+            "amount": 3,
+            "direction": "forward_left"
+          },
+          "agrees": false
+        }
+      ]
+    },
+    {
+      "id": "C154",
+      "text": "빨리 왼쪽 앞 대각선으로 세 칸 가",
+      "group": "casual_polite",
+      "expect": {
+        "kind": "move",
+        "direction": "forward_left",
+        "distance": 3
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "동작의 방향이나 뜻을 확실히 이해하지 못했어요. 걷기인지 시점 바꾸기인지, 방향과 수량을 구체적으로 알려주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 557,
+      "audit": [
+        {
+          "stage": "motion_review",
+          "text": "빨리 왼쪽 앞 대각선으로 세 칸 가",
+          "context": {},
+          "raw": "빨리 왼쪽 앞 대각선으로 세 칸 갈게요! !move(\"back_left\", 3)",
+          "action": {
+            "type": "move",
+            "amount": 3,
+            "direction": "forward_left"
+          },
+          "agrees": false
+        }
+      ]
+    },
+    {
+      "id": "C208",
+      "text": "앞으로 가지 말고 두 번 점프해",
+      "group": "paraphrase",
+      "expect": {
+        "kind": "jump",
+        "count": 2
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "한 번에 한 행동씩 할 수 있어요. 어떤 행동을 먼저 할까요?",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 433,
+      "audit": [
+        {
+          "stage": "interpret",
+          "text": "앞으로 가지 말고 두 번 점프해",
+          "context": {},
+          "observation": {
+            "pos": {
+              "x": 330.5,
+              "y": 87,
+              "z": -349.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": null,
+            "targets": [
+              {
+                "key": "entity:1",
+                "kind": "entity",
+                "name": "pig",
+                "id": 1,
+                "dist": 7,
+                "pos": {
+                  "x": 337.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": -7,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:2",
+                "kind": "entity",
+                "name": "cow",
+                "id": 2,
+                "dist": 8,
+                "pos": {
+                  "x": 322.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": 8,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:3",
+                "kind": "entity",
+                "name": "sheep",
+                "id": 3,
+                "dist": 11,
+                "pos": {
+                  "x": 330.5,
+                  "y": 87,
+                  "z": -360.5
+                },
+                "relative": {
+                  "forward": -11,
+                  "right": 0,
+                  "up": 0
+                }
+              },
+              {
+                "key": "block:330:87:-342",
+                "kind": "block",
+                "name": "oak_log",
+                "dist": 7,
+                "pos": {
+                  "x": 330,
+                  "y": 87,
+                  "z": -342
+                }
+              },
+              {
+                "key": "block:334:87:-349",
+                "kind": "block",
+                "name": "dirt",
+                "dist": 4,
+                "pos": {
+                  "x": 334,
+                  "y": 87,
+                  "z": -349
+                }
+              },
+              {
+                "key": "block:330:86:-350",
+                "kind": "block",
+                "name": "grass_block",
+                "dist": 1,
+                "pos": {
+                  "x": 330,
+                  "y": 86,
+                  "z": -350
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "앞으로 가지 말고 두 번 점프해.",
+            "multiple_actions": true,
+            "ambiguous": false,
+            "action_type": "jump",
+            "direction": "",
+            "amount": 2,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "clarify",
+            "message": "한 번에 한 행동씩 할 수 있어요. 어떤 행동을 먼저 할까요?",
+            "action": null
+          },
+          "usage": {
+            "prompt_tokens": 1613,
+            "total_tokens": 1670,
+            "completion_tokens": 57,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "C220",
+      "text": "앞으로 가지 말고 세 번 점프해",
+      "group": "paraphrase",
+      "expect": {
+        "kind": "jump",
+        "count": 3
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "한 번에 한 행동씩 할 수 있어요. 어떤 행동을 먼저 할까요?",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 515,
+      "audit": [
+        {
+          "stage": "interpret",
+          "text": "앞으로 가지 말고 세 번 점프해",
+          "context": {},
+          "observation": {
+            "pos": {
+              "x": 330.5,
+              "y": 87,
+              "z": -349.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": null,
+            "targets": [
+              {
+                "key": "entity:1",
+                "kind": "entity",
+                "name": "pig",
+                "id": 1,
+                "dist": 7,
+                "pos": {
+                  "x": 337.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": -7,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:2",
+                "kind": "entity",
+                "name": "cow",
+                "id": 2,
+                "dist": 8,
+                "pos": {
+                  "x": 322.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": 8,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:3",
+                "kind": "entity",
+                "name": "sheep",
+                "id": 3,
+                "dist": 11,
+                "pos": {
+                  "x": 330.5,
+                  "y": 87,
+                  "z": -360.5
+                },
+                "relative": {
+                  "forward": -11,
+                  "right": 0,
+                  "up": 0
+                }
+              },
+              {
+                "key": "block:330:87:-342",
+                "kind": "block",
+                "name": "oak_log",
+                "dist": 7,
+                "pos": {
+                  "x": 330,
+                  "y": 87,
+                  "z": -342
+                }
+              },
+              {
+                "key": "block:334:87:-349",
+                "kind": "block",
+                "name": "dirt",
+                "dist": 4,
+                "pos": {
+                  "x": 334,
+                  "y": 87,
+                  "z": -349
+                }
+              },
+              {
+                "key": "block:330:86:-350",
+                "kind": "block",
+                "name": "grass_block",
+                "dist": 1,
+                "pos": {
+                  "x": 330,
+                  "y": 86,
+                  "z": -350
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "앞으로 가지 말고 세 번 점프해",
+            "multiple_actions": true,
+            "ambiguous": false,
+            "action_type": "jump",
+            "direction": "",
+            "amount": 3,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "clarify",
+            "message": "한 번에 한 행동씩 할 수 있어요. 어떤 행동을 먼저 할까요?",
+            "action": null
+          },
+          "usage": {
+            "prompt_tokens": 1613,
+            "total_tokens": 1680,
+            "completion_tokens": 67,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "C229",
+      "text": "돼지 한 마리 잡아 줘",
+      "group": "paraphrase",
+      "expect": {
+        "kind": "kill",
+        "entity": "pig",
+        "count": 1
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "정말로 돼지를 잡는 행동(예: 공격, 사냥)을 수행할 것인가요, 아니면 단순히 근처에 가는 것만 할 것인가요?",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 2368,
+      "audit": [
+        {
+          "stage": "semantic_review",
+          "text": "돼지 한 마리 잡아 줘",
+          "intent": {
+            "interpretation": "가장 가까운 돼지에게 접근하여 잡기",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "approach",
+            "direction": "",
+            "amount": null,
+            "target_reference": "named",
+            "target_name": "pig",
+            "target_key": "entity:1",
+            "question": ""
+          },
+          "proposal": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "approach",
+              "target": "entity:1"
+            }
+          },
+          "review": {
+            "reason": "원문 '돼지 한 마리 잡아 줘'는 돼지를 사냥하거나 제거하는 행위를 요청하고 있으며, 이는 돼지(entity:1)를 공격하거나 제거하는 효과를 요구합니다. 그러나 제안된 행동은 'approach'로 동물을 잡거나 공격하지 않고 근처까지 걷는 것만 수행하며, 실제 요청된 효과(잡기)를 달성하지 못합니다. 따라서 제안된 행동은 원문의 요청과 일치하지 않습니다. 또한, '잡아 줘'는 명확한 목적(사냥/제거)을 지닌 동사로, 단순 접근만으로는 충족되지 않습니다. 이에 따라 제안된 행동은 요청을 완전히 수행하지 못하므로 'execute'가 아니라 'clarify'가 필요합니다. 추가로, '돼지 한 마리'라는 수량과 대상이 명확하므로 오타나 모호함은 없으나, 행동의 성격이 요청과 다릅니다.",
+            "verdict": "clarify",
+            "question": "정말로 돼지를 잡는 행동(예: 공격, 사냥)을 수행할 것인가요, 아니면 단순히 근처에 가는 것만 할 것인가요?"
+          }
+        }
+      ]
+    },
+    {
+      "id": "C233",
+      "text": "돼지 자바줘",
+      "group": "typo_spacing",
+      "expect": {
+        "kind": "kill",
+        "entity": "pig",
+        "count": 1
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "'돼지 자바줘'에서 '자바'는 실제로 어떤 의미인가요? (예: 아이템 이름, 말장난, 오류 등)",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 2094,
+      "audit": [
+        {
+          "stage": "semantic_review",
+          "text": "돼지 자바줘",
+          "intent": {
+            "interpretation": "돼지에게 자바를 줘.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "approach",
+            "direction": "",
+            "amount": null,
+            "target_reference": "named",
+            "target_name": "pig",
+            "target_key": "entity:1",
+            "question": ""
+          },
+          "proposal": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "approach",
+              "target": "entity:1"
+            }
+          },
+          "review": {
+            "reason": "원문 '돼지 자바줘'는 돼지(피그)에게 자바(Java)를 달라고 요청하는 것으로 해석할 수 있으나, 게임 내에서 '자바'는 일반적으로 존재하지 않는 아이템이며, 문맥상 돼지에게 무언가를 요구하는 의도로 보입니다. 제안된 행동은 'entity:1'인 돼지에게 접근하는 것으로, 돼지에게 무언가를 요구하는 행위(예: 대화, 아이템 요청)를 수행하지 않으며, 단순히 근처까지 걷는 것만 수행합니다. 따라서 원문에서 요청한 효과(돼지에게 자바를 달라고 요청)를 달성하지 못합니다. 또한, '자바줘'는 명령어 형태로, '자바를 주어라'라는 의미로, 돼지가 아이템을 주는 행동을 기대하는 것으로 해석되며, 이는 제안된 행동으로는 달성 불가능합니다. 따라서 제안된 행동은 원문의 의도와 일치하지 않으며, 명확한 해석이 필요합니다.",
+            "verdict": "clarify",
+            "question": "'돼지 자바줘'에서 '자바'는 실제로 어떤 의미인가요? (예: 아이템 이름, 말장난, 오류 등)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "C235",
+      "text": "돼지한마리잡아줘",
+      "group": "typo_spacing",
+      "expect": {
+        "kind": "kill",
+        "entity": "pig",
+        "count": 1
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "정확히 '돼지를 잡는다'는 의미로 행동을 수행하시겠습니까, 아니면 단순히 접근만 하시겠습니까?",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 1597,
+      "audit": [
+        {
+          "stage": "semantic_review",
+          "text": "돼지한마리잡아줘",
+          "intent": {
+            "interpretation": "가장 가까운 돼지에게 접근하여 잡기",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "approach",
+            "direction": "",
+            "amount": null,
+            "target_reference": "named",
+            "target_name": "pig",
+            "target_key": "entity:1",
+            "question": ""
+          },
+          "proposal": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "approach",
+              "target": "entity:1"
+            }
+          },
+          "review": {
+            "reason": "원문 '돼지한마리잡아줘'는 돼지를 잡는 것을 요청한 명확한 행동 요청입니다. 제안된 행동은 'entity:1'에 접근하는 것인데, 이는 돼지에 대한 공격이나 잡는 행동이 아니라 단순 접근에 그칩니다. 따라서 요청한 효과(돼지 잡기)를 달성하지 못하며, '잡아줘'라는 동사의 의미를 충족하지 않습니다. 이는 원문의 의도와 일치하지 않으며, 대체 행동으로 간주되어 승인할 수 없습니다. 따라서 명확한 해석이 필요합니다.",
+            "verdict": "clarify",
+            "question": "정확히 '돼지를 잡는다'는 의미로 행동을 수행하시겠습니까, 아니면 단순히 접근만 하시겠습니까?"
+          }
+        }
+      ]
+    },
+    {
+      "id": "C236",
+      "text": "돼지  \n한  \n마리  \n잡아  \n줘",
+      "group": "typo_spacing",
+      "expect": {
+        "kind": "kill",
+        "entity": "pig",
+        "count": 1
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "'잡아 줘'라는 표현이 돼지를 사냥하거나 제거하는 것을 의미하는지, 아니면 단순히 근처에 가는 것을 의미하는지 명확히 해 주시겠습니까?",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 2007,
+      "audit": [
+        {
+          "stage": "semantic_review",
+          "text": "돼지 한 마리 잡아 줘",
+          "intent": {
+            "interpretation": "가장 가까운 돼지에게 접근하여 잡기",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "approach",
+            "direction": "",
+            "amount": null,
+            "target_reference": "named",
+            "target_name": "pig",
+            "target_key": "entity:1",
+            "question": ""
+          },
+          "proposal": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "approach",
+              "target": "entity:1"
+            }
+          },
+          "review": {
+            "reason": "원문 '돼지 한 마리 잡아 줘'는 돼지를 사냥하거나 제거하는 행위를 요청한 것으로, 명확한 목적은 돼지(entity:1)를 '잡는 것'입니다. 제안된 행동은 'approach'로, 단지 근처까지 걷는 것에 그치며 돼지를 잡거나 공격하지 않으므로 요청한 효과를 달성하지 못합니다. 따라서 제안된 행동은 원문의 의도와 일치하지 않습니다. 또한, '잡아 줘'는 부정적인 행동(예: 죽이거나 제거)을 포함할 수 있으나, 제안된 행동은 전혀 해당하지 않습니다. 이는 요청의 핵심 효과를 완전히 무시한 것으로, 대체 행동으로 간주될 수 없습니다. 따라서 명확한 오류가 있으며, 추가 확인이 필요합니다.",
+            "verdict": "clarify",
+            "question": "'잡아 줘'라는 표현이 돼지를 사냥하거나 제거하는 것을 의미하는지, 아니면 단순히 근처에 가는 것을 의미하는지 명확히 해 주시겠습니까?"
+          }
+        }
+      ]
+    },
+    {
+      "id": "C238",
+      "text": "빨리 돼지 한 마리 잡아 줘",
+      "group": "casual_polite",
+      "expect": {
+        "kind": "kill",
+        "entity": "pig",
+        "count": 1
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "어떤 돼지를 잡아야 하나요? 가장 가까운 돼지(entity:1)를 선택할까요?",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 535,
+      "audit": [
+        {
+          "stage": "interpret",
+          "text": "빨리 돼지 한 마리 잡아 줘",
+          "context": {},
+          "observation": {
+            "pos": {
+              "x": 330.5,
+              "y": 87,
+              "z": -349.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": null,
+            "targets": [
+              {
+                "key": "entity:1",
+                "kind": "entity",
+                "name": "pig",
+                "id": 1,
+                "dist": 7,
+                "pos": {
+                  "x": 337.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": -7,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:2",
+                "kind": "entity",
+                "name": "cow",
+                "id": 2,
+                "dist": 8,
+                "pos": {
+                  "x": 322.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": 8,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:3",
+                "kind": "entity",
+                "name": "sheep",
+                "id": 3,
+                "dist": 11,
+                "pos": {
+                  "x": 330.5,
+                  "y": 87,
+                  "z": -360.5
+                },
+                "relative": {
+                  "forward": -11,
+                  "right": 0,
+                  "up": 0
+                }
+              },
+              {
+                "key": "block:330:87:-342",
+                "kind": "block",
+                "name": "oak_log",
+                "dist": 7,
+                "pos": {
+                  "x": 330,
+                  "y": 87,
+                  "z": -342
+                }
+              },
+              {
+                "key": "block:334:87:-349",
+                "kind": "block",
+                "name": "dirt",
+                "dist": 4,
+                "pos": {
+                  "x": 334,
+                  "y": 87,
+                  "z": -349
+                }
+              },
+              {
+                "key": "block:330:86:-350",
+                "kind": "block",
+                "name": "grass_block",
+                "dist": 1,
+                "pos": {
+                  "x": 330,
+                  "y": 86,
+                  "z": -350
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "빨리 돼지 한 마리에게 접근하여 잡기",
+            "multiple_actions": false,
+            "ambiguous": true,
+            "action_type": "attack",
+            "direction": "",
+            "amount": null,
+            "target_reference": "named",
+            "target_name": "pig",
+            "target_key": "entity:1",
+            "question": "어떤 돼지를 잡아야 하나요? 가장 가까운 돼지(entity:1)를 선택할까요?"
+          },
+          "plan": {
+            "kind": "clarify",
+            "message": "어떤 돼지를 잡아야 하나요? 가장 가까운 돼지(entity:1)를 선택할까요?",
+            "action": null
+          },
+          "usage": {
+            "prompt_tokens": 1615,
+            "total_tokens": 1703,
+            "completion_tokens": 88,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "C237",
+      "text": "부탁인데 돼지 한 마리 잡아 줘",
+      "group": "casual_polite",
+      "expect": {
+        "kind": "kill",
+        "entity": "pig",
+        "count": 1
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "정확히 '잡아 줘'라는 요청은 돼지를 사냥하거나 제거하는 것을 의미하나요, 아니면 단순히 근처에 가는 것만 의미하나요?",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 1401,
+      "audit": [
+        {
+          "stage": "semantic_review",
+          "text": "부탁인데 돼지 한 마리 잡아 줘",
+          "intent": {
+            "interpretation": "현재 시점에서 가장 가까운 돼지 한 마리에게 접근하여 잡기 요청입니다.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "approach",
+            "direction": "",
+            "amount": null,
+            "target_reference": "named",
+            "target_name": "pig",
+            "target_key": "entity:1",
+            "question": ""
+          },
+          "proposal": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "approach",
+              "target": "entity:1"
+            }
+          },
+          "review": {
+            "reason": "원문에서 '돼지 한 마리 잡아 줘'라는 요청은 돼지를 사냥하거나 제거하는 행동을 의미합니다. 그러나 제안된 행동은 'entity:1'에 접근하는 것에 그치며, 동물을 잡거나 공격하지 않습니다. 이는 원문의 요청 효과를 달성하지 못합니다. 따라서 제안된 행동은 요청과 일치하지 않습니다.",
+            "verdict": "clarify",
+            "question": "정확히 '잡아 줘'라는 요청은 돼지를 사냥하거나 제거하는 것을 의미하나요, 아니면 단순히 근처에 가는 것만 의미하나요?"
+          }
+        }
+      ]
+    },
+    {
+      "id": "C239",
+      "text": "돼지 한 마리 잡아 줘 ㅋㅋ",
+      "group": "casual_polite",
+      "expect": {
+        "kind": "kill",
+        "entity": "pig",
+        "count": 1
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "'돼지 한 마리 잡아 줘'라는 요청에 대해, 실제로 돼지를 '잡는' 행동(예: 공격, 제압, 포획 등)을 수행할 계획인가요? 아니면 단순히 접근만 하는 것으로 충분한가요?",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 2071,
+      "audit": [
+        {
+          "stage": "semantic_review",
+          "text": "돼지 한 마리 잡아 줘 ㅋㅋ",
+          "intent": {
+            "interpretation": "현재 시점에서 보이는 돼지 한 마리에게 접근하여 잡기 요청입니다.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "approach",
+            "direction": "",
+            "amount": null,
+            "target_reference": "named",
+            "target_name": "pig",
+            "target_key": "entity:1",
+            "question": ""
+          },
+          "proposal": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "approach",
+              "target": "entity:1"
+            }
+          },
+          "review": {
+            "reason": "원문 '돼지 한 마리 잡아 줘 ㅋㅋ'은 명확한 요청으로, 돼지를 '잡는' 행동을 요구하고 있습니다. 제안된 행동은 'entity:1'에 접근하는 것만으로, 돼지를 잡거나 공격하지 않으며, 효과도 '잡거나 공격하지 않고 근처까지만 걷는다'고 명시되어 있어 요청의 핵심인 '잡아 주기'를 달성하지 못합니다. 따라서 제안된 행동은 원문의 의도와 일치하지 않습니다. 또한, '잡아 줘'는 부정적인 의미 없이 유머 어조로 표현된 요청이지만, 행동의 효과는 요청의 의미를 완전히 무시합니다. 이는 요청의 의미와 일치하지 않으며, 대체 행동으로 간주되어 승인할 수 없습니다. 따라서 명확한 수정이 필요합니다.",
+            "verdict": "clarify",
+            "question": "'돼지 한 마리 잡아 줘'라는 요청에 대해, 실제로 돼지를 '잡는' 행동(예: 공격, 제압, 포획 등)을 수행할 계획인가요? 아니면 단순히 접근만 하는 것으로 충분한가요?"
+          }
+        }
+      ]
+    },
+    {
+      "id": "C244",
+      "text": "소 옆으로 가줘",
+      "group": "paraphrase",
+      "expect": {
+        "kind": "approach",
+        "entity": "cow"
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "대상에게 다가가라는 뜻인가요, 제자리 동작을 원하는 건가요?",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 412,
+      "audit": [
+        {
+          "stage": "interpret",
+          "text": "소 옆으로 가줘",
+          "context": {},
+          "observation": {
+            "pos": {
+              "x": 330.5,
+              "y": 87,
+              "z": -349.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": null,
+            "targets": [
+              {
+                "key": "entity:1",
+                "kind": "entity",
+                "name": "pig",
+                "id": 1,
+                "dist": 7,
+                "pos": {
+                  "x": 337.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": -7,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:2",
+                "kind": "entity",
+                "name": "cow",
+                "id": 2,
+                "dist": 8,
+                "pos": {
+                  "x": 322.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": 8,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:3",
+                "kind": "entity",
+                "name": "sheep",
+                "id": 3,
+                "dist": 11,
+                "pos": {
+                  "x": 330.5,
+                  "y": 87,
+                  "z": -360.5
+                },
+                "relative": {
+                  "forward": -11,
+                  "right": 0,
+                  "up": 0
+                }
+              },
+              {
+                "key": "block:330:87:-342",
+                "kind": "block",
+                "name": "oak_log",
+                "dist": 7,
+                "pos": {
+                  "x": 330,
+                  "y": 87,
+                  "z": -342
+                }
+              },
+              {
+                "key": "block:334:87:-349",
+                "kind": "block",
+                "name": "dirt",
+                "dist": 4,
+                "pos": {
+                  "x": 334,
+                  "y": 87,
+                  "z": -349
+                }
+              },
+              {
+                "key": "block:330:86:-350",
+                "kind": "block",
+                "name": "grass_block",
+                "dist": 1,
+                "pos": {
+                  "x": 330,
+                  "y": 86,
+                  "z": -350
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "소 옆으로 이동해줘.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "move",
+            "direction": "right",
+            "amount": 2,
+            "target_reference": "named",
+            "target_name": "cow",
+            "target_key": "entity:2",
+            "question": ""
+          },
+          "plan": {
+            "kind": "clarify",
+            "message": "대상에게 다가가라는 뜻인가요, 제자리 동작을 원하는 건가요?",
+            "action": null
+          },
+          "usage": {
+            "prompt_tokens": 1608,
+            "total_tokens": 1664,
+            "completion_tokens": 56,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "C254",
+      "text": "양 가까이 가줘",
+      "group": "paraphrase",
+      "expect": {
+        "kind": "approach",
+        "entity": "sheep"
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "대상에게 다가가라는 뜻인가요, 제자리 동작을 원하는 건가요?",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 396,
+      "audit": [
+        {
+          "stage": "interpret",
+          "text": "양 가까이 가줘",
+          "context": {},
+          "observation": {
+            "pos": {
+              "x": 330.5,
+              "y": 87,
+              "z": -349.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": null,
+            "targets": [
+              {
+                "key": "entity:1",
+                "kind": "entity",
+                "name": "pig",
+                "id": 1,
+                "dist": 7,
+                "pos": {
+                  "x": 337.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": -7,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:2",
+                "kind": "entity",
+                "name": "cow",
+                "id": 2,
+                "dist": 8,
+                "pos": {
+                  "x": 322.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": 8,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:3",
+                "kind": "entity",
+                "name": "sheep",
+                "id": 3,
+                "dist": 11,
+                "pos": {
+                  "x": 330.5,
+                  "y": 87,
+                  "z": -360.5
+                },
+                "relative": {
+                  "forward": -11,
+                  "right": 0,
+                  "up": 0
+                }
+              },
+              {
+                "key": "block:330:87:-342",
+                "kind": "block",
+                "name": "oak_log",
+                "dist": 7,
+                "pos": {
+                  "x": 330,
+                  "y": 87,
+                  "z": -342
+                }
+              },
+              {
+                "key": "block:334:87:-349",
+                "kind": "block",
+                "name": "dirt",
+                "dist": 4,
+                "pos": {
+                  "x": 334,
+                  "y": 87,
+                  "z": -349
+                }
+              },
+              {
+                "key": "block:330:86:-350",
+                "kind": "block",
+                "name": "grass_block",
+                "dist": 1,
+                "pos": {
+                  "x": 330,
+                  "y": 86,
+                  "z": -350
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "현재 위치에서 양에게 가까이 이동해 주세요.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "move",
+            "direction": "forward",
+            "amount": 1,
+            "target_reference": "named",
+            "target_name": "sheep",
+            "target_key": "entity:3",
+            "question": ""
+          },
+          "plan": {
+            "kind": "clarify",
+            "message": "대상에게 다가가라는 뜻인가요, 제자리 동작을 원하는 건가요?",
+            "action": null
+          },
+          "usage": {
+            "prompt_tokens": 1608,
+            "total_tokens": 1672,
+            "completion_tokens": 64,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "C281",
+      "text": "흑 한 개 캐 줘",
+      "group": "typo_spacing",
+      "expect": {
+        "kind": "collect",
+        "block": "dirt",
+        "count": 1
+      },
+      "plan": {
+        "kind": "unavailable",
+        "message": "주변에서 요청한 대상을 확인할 수 없어요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 406,
+      "audit": [
+        {
+          "stage": "interpret",
+          "text": "흑 한 개 캐 줘",
+          "context": {},
+          "observation": {
+            "pos": {
+              "x": 330.5,
+              "y": 87,
+              "z": -349.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": null,
+            "targets": [
+              {
+                "key": "entity:1",
+                "kind": "entity",
+                "name": "pig",
+                "id": 1,
+                "dist": 7,
+                "pos": {
+                  "x": 337.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": -7,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:2",
+                "kind": "entity",
+                "name": "cow",
+                "id": 2,
+                "dist": 8,
+                "pos": {
+                  "x": 322.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": 8,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:3",
+                "kind": "entity",
+                "name": "sheep",
+                "id": 3,
+                "dist": 11,
+                "pos": {
+                  "x": 330.5,
+                  "y": 87,
+                  "z": -360.5
+                },
+                "relative": {
+                  "forward": -11,
+                  "right": 0,
+                  "up": 0
+                }
+              },
+              {
+                "key": "block:330:87:-342",
+                "kind": "block",
+                "name": "oak_log",
+                "dist": 7,
+                "pos": {
+                  "x": 330,
+                  "y": 87,
+                  "z": -342
+                }
+              },
+              {
+                "key": "block:334:87:-349",
+                "kind": "block",
+                "name": "dirt",
+                "dist": 4,
+                "pos": {
+                  "x": 334,
+                  "y": 87,
+                  "z": -349
+                }
+              },
+              {
+                "key": "block:330:86:-350",
+                "kind": "block",
+                "name": "grass_block",
+                "dist": 1,
+                "pos": {
+                  "x": 330,
+                  "y": 86,
+                  "z": -350
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "흑색 블록 한 개를 캐 줘요.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "dig",
+            "direction": "",
+            "amount": 1,
+            "target_reference": "named",
+            "target_name": "blackstone",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "unavailable",
+            "message": "주변에서 요청한 대상을 확인할 수 없어요.",
+            "action": null
+          },
+          "usage": {
+            "prompt_tokens": 1610,
+            "total_tokens": 1668,
+            "completion_tokens": 58,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "C321",
+      "text": "뒤로 돌아",
+      "group": "context",
+      "expect": {
+        "kind": "turn",
+        "angle": 180
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "동작의 방향이나 뜻을 확실히 이해하지 못했어요. 걷기인지 시점 바꾸기인지, 방향과 수량을 구체적으로 알려주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 425,
+      "audit": [
+        {
+          "stage": "motion_review",
+          "text": "뒤로 돌아",
+          "context": {},
+          "raw": "뒤로 돌아갈게요. !turn(180)",
+          "action": {
+            "type": "move",
+            "amount": 2,
+            "direction": "back"
+          },
+          "agrees": false
+        }
+      ]
+    },
+    {
+      "id": "C322",
+      "text": "뒤로 돌아",
+      "group": "context",
+      "expect": {
+        "kind": "turn",
+        "angle": 180
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "동작의 방향이나 뜻을 확실히 이해하지 못했어요. 걷기인지 시점 바꾸기인지, 방향과 수량을 구체적으로 알려주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 423,
+      "audit": [
+        {
+          "stage": "motion_review",
+          "text": "뒤로 돌아",
+          "context": {},
+          "raw": "뒤로 돌아갈게요. !turn(180)",
+          "action": {
+            "type": "move",
+            "amount": 2,
+            "direction": "back"
+          },
+          "agrees": false
+        }
+      ]
+    },
+    {
+      "id": "C323",
+      "text": "뒤로 돌아",
+      "group": "context",
+      "expect": {
+        "kind": "turn",
+        "angle": 180
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "동작의 방향이나 뜻을 확실히 이해하지 못했어요. 걷기인지 시점 바꾸기인지, 방향과 수량을 구체적으로 알려주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 431,
+      "audit": [
+        {
+          "stage": "motion_review",
+          "text": "뒤로 돌아",
+          "context": {},
+          "raw": "뒤로 돌아갈게요. !turn(180)",
+          "action": {
+            "type": "move",
+            "amount": 2,
+            "direction": "back"
+          },
+          "agrees": false
+        }
+      ]
+    },
+    {
+      "id": "C324",
+      "text": "뒤로 돌아",
+      "group": "context",
+      "expect": {
+        "kind": "turn",
+        "angle": 180
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "동작의 방향이나 뜻을 확실히 이해하지 못했어요. 걷기인지 시점 바꾸기인지, 방향과 수량을 구체적으로 알려주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 428,
+      "audit": [
+        {
+          "stage": "motion_review",
+          "text": "뒤로 돌아",
+          "context": {},
+          "raw": "뒤로 돌아갈게요. !turn(180)",
+          "action": {
+            "type": "move",
+            "amount": 2,
+            "direction": "back"
+          },
+          "agrees": false
+        }
+      ]
+    },
+    {
+      "id": "C366",
+      "text": "돼지 한 마리 잡아 줘",
+      "group": "context",
+      "expect": {
+        "kind": "kill",
+        "entity": "pig",
+        "count": 1
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "'잡아 줘'라는 요청이 실제로는 돼지를 공격하거나 제거하는 것을 의미하는지, 아니면 단순히 근처에 가는 것을 의미하는지 명확히 해 주시겠습니까?",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 1809,
+      "audit": [
+        {
+          "stage": "semantic_review",
+          "text": "돼지 한 마리 잡아 줘",
+          "intent": {
+            "interpretation": "가장 가까운 돼지에게 접근하여 잡기",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "approach",
+            "direction": "",
+            "amount": null,
+            "target_reference": "named",
+            "target_name": "pig",
+            "target_key": "entity:1",
+            "question": ""
+          },
+          "proposal": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "approach",
+              "target": "entity:1"
+            }
+          },
+          "review": {
+            "reason": "원문 '돼지 한 마리 잡아 줘'는 돼지를 사냥하거나 제거하는 행위를 요청한 것으로, 명확한 목적은 돼지(entity:1)를 '잡는 것'입니다. 제안된 행동은 'approach'로, 단지 근처까지 걷는 것에 그치며 돼지를 잡거나 공격하지 않으므로 요청한 효과를 달성하지 못합니다. 따라서 제안된 행동은 원문의 의도와 일치하지 않습니다. 돼지를 '잡는' 행위는 일반적으로 공격, 제압, 포획 등의 행동을 포함하므로, 단순 접근만으로는 충족되지 않습니다. 이는 요청의 핵심 효과를 완전히 무시한 것으로 판단됩니다. 따라서 제안된 행동은 승인할 수 없습니다.",
+            "verdict": "clarify",
+            "question": "'잡아 줘'라는 요청이 실제로는 돼지를 공격하거나 제거하는 것을 의미하는지, 아니면 단순히 근처에 가는 것을 의미하는지 명확히 해 주시겠습니까?"
+          }
+        }
+      ]
+    },
+    {
+      "id": "C367",
+      "text": "돼지 한 마리 잡아 줘",
+      "group": "context",
+      "expect": {
+        "kind": "kill",
+        "entity": "pig",
+        "count": 1
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "'잡아 줘'라는 요청이 실제로 돼지를 죽이거나 제거하는 것을 의미하는지, 아니면 단순히 근처에 가는 것만을 의미하는지 구체적으로 설명해 주시겠어요?",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 2065,
+      "audit": [
+        {
+          "stage": "semantic_review",
+          "text": "돼지 한 마리 잡아 줘",
+          "intent": {
+            "interpretation": "가장 가까운 돼지에게 접근하여 잡기",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "approach",
+            "direction": "",
+            "amount": null,
+            "target_reference": "named",
+            "target_name": "pig",
+            "target_key": "entity:1",
+            "question": ""
+          },
+          "proposal": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "approach",
+              "target": "entity:1"
+            }
+          },
+          "review": {
+            "reason": "원문 '돼지 한 마리 잡아 줘'는 돼지를 사냥하거나 제거하는 행위를 요청한 것으로, 명확한 목적은 돼지(entity:1)를 '잡는 것'입니다. 제안된 행동은 'approach'로, 단지 근처까지 걷는 것에 그치며 돼지를 잡거나 공격하지 않으므로 요청한 효과를 달성하지 못합니다. 따라서 제안된 행동은 원문의 의도와 일치하지 않습니다. 또한, '잡아 줘'는 부정적인 행동(예: 죽이거나 제거)을 포함할 수 있으나, 제안된 행동은 그 어떤 효과도 발생시키지 않으며, 단순 이동에 그칩니다. 이는 요청의 핵심인 '잡는' 행위를 완전히 생략한 것으로, 효과가 부족합니다. 따라서 제안된 행동은 원문의 의미와 일치하지 않으며, 명확한 수정이 필요합니다.",
+            "verdict": "clarify",
+            "question": "'잡아 줘'라는 요청이 실제로 돼지를 죽이거나 제거하는 것을 의미하는지, 아니면 단순히 근처에 가는 것만을 의미하는지 구체적으로 설명해 주시겠어요?"
+          }
+        }
+      ]
+    },
+    {
+      "id": "C368",
+      "text": "돼지 한 마리 잡아 줘",
+      "group": "context",
+      "expect": {
+        "kind": "kill",
+        "entity": "pig",
+        "count": 1
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "정확히 '돼지를 잡는' 행동(예: 공격, 포획)을 수행할 계획이 있나요?",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 1873,
+      "audit": [
+        {
+          "stage": "semantic_review",
+          "text": "돼지 한 마리 잡아 줘",
+          "intent": {
+            "interpretation": "가장 가까운 돼지에게 접근하여 잡기",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "approach",
+            "direction": "",
+            "amount": null,
+            "target_reference": "named",
+            "target_name": "pig",
+            "target_key": "entity:1",
+            "question": ""
+          },
+          "proposal": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "approach",
+              "target": "entity:1"
+            }
+          },
+          "review": {
+            "reason": "원문 '돼지 한 마리 잡아 줘'는 명확한 요청으로, 돼지를 '잡는' 행동을 요구합니다. 그러나 제안된 행동은 '동물을 잡거나 공격하지 않고 근처까지만 걷는다'는 것이며, 돼지를 잡는 효과를 달성하지 못합니다. 따라서 제안된 행동은 원문의 요청과 일치하지 않습니다. 또한, '잡아 줘'는 물리적 개입(예: 공격, 포획)을 의미하며, 단순 접근만으로는 충족되지 않습니다. 제안된 행동은 원문의 의도와 효과를 완전히 반영하지 못하므로, 실행할 수 없습니다. 추가로, '돼지 한 마리'라는 수량과 대상이 명확하므로 부정확한 해석의 여지가 없습니다. 따라서 명확한 수정이 필요합니다.",
+            "verdict": "clarify",
+            "question": "정확히 '돼지를 잡는' 행동(예: 공격, 포획)을 수행할 계획이 있나요?"
+          }
+        }
+      ]
+    },
+    {
+      "id": "C396",
+      "text": "오른쪽으로 도라",
+      "group": "sequence",
+      "expect": {
+        "kind": "turn",
+        "angle": 90
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "수량을 확실히 읽지 못했어요. 원하는 수량을 숫자로 적어 주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 330,
+      "audit": [
+        {
+          "stage": "quantity_rejected",
+          "text": "오른쪽으로 도라",
+          "intent": {
+            "interpretation": "오른쪽으로 시선을 돌립니다.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "view",
+            "direction": "right",
+            "amount": 90,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "turn",
+              "amount": 90
+            }
+          },
+          "quantityError": "수량을 확실히 읽지 못했어요. 원하는 수량을 숫자로 적어 주세요."
+        }
+      ]
+    },
+    {
+      "id": "C404",
+      "text": "한 칸 더 전진해",
+      "group": "sequence",
+      "expect": {
+        "kind": "move",
+        "direction": "forward",
+        "distance": 1
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "원문의 수량과 해석한 수량이 달라요. 원하는 수량을 숫자로 다시 알려주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 896,
+      "audit": [
+        {
+          "stage": "motion_review",
+          "text": "앞으로 두 칸 가",
+          "context": {},
+          "raw": "앞으로 두 칸 갈게요! !move(\"forward\", 2)",
+          "action": {
+            "type": "move",
+            "amount": 2,
+            "direction": "forward"
+          },
+          "agrees": true
+        },
+        {
+          "stage": "interpret",
+          "text": "앞으로 두 칸 가",
+          "context": {},
+          "observation": {
+            "pos": {
+              "x": 330.5,
+              "y": 87,
+              "z": -349.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": null,
+            "targets": [
+              {
+                "key": "entity:1",
+                "kind": "entity",
+                "name": "pig",
+                "id": 1,
+                "dist": 7,
+                "pos": {
+                  "x": 337.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": -7,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:2",
+                "kind": "entity",
+                "name": "cow",
+                "id": 2,
+                "dist": 8,
+                "pos": {
+                  "x": 322.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": 8,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:3",
+                "kind": "entity",
+                "name": "sheep",
+                "id": 3,
+                "dist": 11,
+                "pos": {
+                  "x": 330.5,
+                  "y": 87,
+                  "z": -360.5
+                },
+                "relative": {
+                  "forward": -11,
+                  "right": 0,
+                  "up": 0
+                }
+              },
+              {
+                "key": "block:330:87:-342",
+                "kind": "block",
+                "name": "oak_log",
+                "dist": 7,
+                "pos": {
+                  "x": 330,
+                  "y": 87,
+                  "z": -342
+                }
+              },
+              {
+                "key": "block:334:87:-349",
+                "kind": "block",
+                "name": "dirt",
+                "dist": 4,
+                "pos": {
+                  "x": 334,
+                  "y": 87,
+                  "z": -349
+                }
+              },
+              {
+                "key": "block:330:86:-350",
+                "kind": "block",
+                "name": "grass_block",
+                "dist": 1,
+                "pos": {
+                  "x": 330,
+                  "y": 86,
+                  "z": -350
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "앞으로 두 칸 이동하라.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "move",
+            "direction": "forward",
+            "amount": 2,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "move",
+              "amount": 2,
+              "direction": "forward"
+            }
+          },
+          "usage": {
+            "prompt_tokens": 1608,
+            "total_tokens": 1670,
+            "completion_tokens": 62,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        },
+        {
+          "stage": "quantity_rejected",
+          "text": "한 칸 더 전진해",
+          "intent": {
+            "interpretation": "한 칸 더 전진해",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "move",
+            "direction": "forward",
+            "amount": 2,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "move",
+              "amount": 2,
+              "direction": "forward"
+            }
+          },
+          "quantityError": "원문의 수량과 해석한 수량이 달라요. 원하는 수량을 숫자로 다시 알려주세요."
+        }
+      ]
+    },
+    {
+      "id": "C406",
+      "text": "반대 방향으로 두 칸",
+      "group": "sequence",
+      "expect": {
+        "kind": "move",
+        "direction": "right",
+        "distance": 2
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "동작의 방향이나 뜻을 확실히 이해하지 못했어요. 걷기인지 시점 바꾸기인지, 방향과 수량을 구체적으로 알려주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 1085,
+      "audit": [
+        {
+          "stage": "motion_review",
+          "text": "왼쪽으로 두 칸 가",
+          "context": {},
+          "raw": "왼쪽으로 두 칸 갈게요! !move(\"left\", 2)",
+          "action": {
+            "type": "move",
+            "amount": 2,
+            "direction": "left"
+          },
+          "agrees": true
+        },
+        {
+          "stage": "interpret",
+          "text": "왼쪽으로 두 칸 가",
+          "context": {},
+          "observation": {
+            "pos": {
+              "x": 330.5,
+              "y": 87,
+              "z": -349.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": null,
+            "targets": [
+              {
+                "key": "entity:1",
+                "kind": "entity",
+                "name": "pig",
+                "id": 1,
+                "dist": 7,
+                "pos": {
+                  "x": 337.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": -7,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:2",
+                "kind": "entity",
+                "name": "cow",
+                "id": 2,
+                "dist": 8,
+                "pos": {
+                  "x": 322.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": 8,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:3",
+                "kind": "entity",
+                "name": "sheep",
+                "id": 3,
+                "dist": 11,
+                "pos": {
+                  "x": 330.5,
+                  "y": 87,
+                  "z": -360.5
+                },
+                "relative": {
+                  "forward": -11,
+                  "right": 0,
+                  "up": 0
+                }
+              },
+              {
+                "key": "block:330:87:-342",
+                "kind": "block",
+                "name": "oak_log",
+                "dist": 7,
+                "pos": {
+                  "x": 330,
+                  "y": 87,
+                  "z": -342
+                }
+              },
+              {
+                "key": "block:334:87:-349",
+                "kind": "block",
+                "name": "dirt",
+                "dist": 4,
+                "pos": {
+                  "x": 334,
+                  "y": 87,
+                  "z": -349
+                }
+              },
+              {
+                "key": "block:330:86:-350",
+                "kind": "block",
+                "name": "grass_block",
+                "dist": 1,
+                "pos": {
+                  "x": 330,
+                  "y": 86,
+                  "z": -350
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "왼쪽으로 두 칸 이동하라.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "move",
+            "direction": "left",
+            "amount": 2,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "move",
+              "amount": 2,
+              "direction": "left"
+            }
+          },
+          "usage": {
+            "prompt_tokens": 1609,
+            "total_tokens": 1672,
+            "completion_tokens": 63,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        },
+        {
+          "stage": "motion_review",
+          "text": "반대 방향으로 두 칸",
+          "context": {
+            "lastAction": {
+              "type": "move",
+              "amount": 2,
+              "direction": "left",
+              "completed": true
+            }
+          },
+          "raw": "반대 방향으로 두 칸 갈게요! !move(\"back\", 2)",
+          "action": {
+            "type": "move",
+            "amount": 2,
+            "direction": "right"
+          },
+          "agrees": false
+        }
+      ]
+    },
+    {
+      "id": "C407",
+      "text": "반대쪽으로 두 칸 가",
+      "group": "sequence",
+      "expect": {
+        "kind": "move",
+        "direction": "right",
+        "distance": 2
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "동작의 방향이나 뜻을 확실히 이해하지 못했어요. 걷기인지 시점 바꾸기인지, 방향과 수량을 구체적으로 알려주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 1031,
+      "audit": [
+        {
+          "stage": "motion_review",
+          "text": "왼쪽으로 두 칸 가",
+          "context": {},
+          "raw": "왼쪽으로 두 칸 갈게요! !move(\"left\", 2)",
+          "action": {
+            "type": "move",
+            "amount": 2,
+            "direction": "left"
+          },
+          "agrees": true
+        },
+        {
+          "stage": "interpret",
+          "text": "왼쪽으로 두 칸 가",
+          "context": {},
+          "observation": {
+            "pos": {
+              "x": 330.5,
+              "y": 87,
+              "z": -349.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": null,
+            "targets": [
+              {
+                "key": "entity:1",
+                "kind": "entity",
+                "name": "pig",
+                "id": 1,
+                "dist": 7,
+                "pos": {
+                  "x": 337.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": -7,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:2",
+                "kind": "entity",
+                "name": "cow",
+                "id": 2,
+                "dist": 8,
+                "pos": {
+                  "x": 322.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": 8,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:3",
+                "kind": "entity",
+                "name": "sheep",
+                "id": 3,
+                "dist": 11,
+                "pos": {
+                  "x": 330.5,
+                  "y": 87,
+                  "z": -360.5
+                },
+                "relative": {
+                  "forward": -11,
+                  "right": 0,
+                  "up": 0
+                }
+              },
+              {
+                "key": "block:330:87:-342",
+                "kind": "block",
+                "name": "oak_log",
+                "dist": 7,
+                "pos": {
+                  "x": 330,
+                  "y": 87,
+                  "z": -342
+                }
+              },
+              {
+                "key": "block:334:87:-349",
+                "kind": "block",
+                "name": "dirt",
+                "dist": 4,
+                "pos": {
+                  "x": 334,
+                  "y": 87,
+                  "z": -349
+                }
+              },
+              {
+                "key": "block:330:86:-350",
+                "kind": "block",
+                "name": "grass_block",
+                "dist": 1,
+                "pos": {
+                  "x": 330,
+                  "y": 86,
+                  "z": -350
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "왼쪽으로 두 칸 이동하라.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "move",
+            "direction": "left",
+            "amount": 2,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "move",
+              "amount": 2,
+              "direction": "left"
+            }
+          },
+          "usage": {
+            "prompt_tokens": 1609,
+            "total_tokens": 1672,
+            "completion_tokens": 63,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        },
+        {
+          "stage": "motion_review",
+          "text": "반대쪽으로 두 칸 가",
+          "context": {
+            "lastAction": {
+              "type": "move",
+              "amount": 2,
+              "direction": "left",
+              "completed": true
+            }
+          },
+          "raw": "반대쪽으로 두 칸 갈게요! !move(\"back\", 2)",
+          "action": {
+            "type": "move",
+            "amount": 2,
+            "direction": "right"
+          },
+          "agrees": false
+        }
+      ]
+    },
+    {
+      "id": "C408",
+      "text": "이번에는 반대로 두 칸 가줘",
+      "group": "sequence",
+      "expect": {
+        "kind": "move",
+        "direction": "right",
+        "distance": 2
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "동작의 방향이나 뜻을 확실히 이해하지 못했어요. 걷기인지 시점 바꾸기인지, 방향과 수량을 구체적으로 알려주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 1118,
+      "audit": [
+        {
+          "stage": "motion_review",
+          "text": "왼쪽으로 두 칸 가",
+          "context": {},
+          "raw": "왼쪽으로 두 칸 갈게요! !move(\"left\", 2)",
+          "action": {
+            "type": "move",
+            "amount": 2,
+            "direction": "left"
+          },
+          "agrees": true
+        },
+        {
+          "stage": "interpret",
+          "text": "왼쪽으로 두 칸 가",
+          "context": {},
+          "observation": {
+            "pos": {
+              "x": 330.5,
+              "y": 87,
+              "z": -349.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": null,
+            "targets": [
+              {
+                "key": "entity:1",
+                "kind": "entity",
+                "name": "pig",
+                "id": 1,
+                "dist": 7,
+                "pos": {
+                  "x": 337.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": -7,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:2",
+                "kind": "entity",
+                "name": "cow",
+                "id": 2,
+                "dist": 8,
+                "pos": {
+                  "x": 322.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": 8,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:3",
+                "kind": "entity",
+                "name": "sheep",
+                "id": 3,
+                "dist": 11,
+                "pos": {
+                  "x": 330.5,
+                  "y": 87,
+                  "z": -360.5
+                },
+                "relative": {
+                  "forward": -11,
+                  "right": 0,
+                  "up": 0
+                }
+              },
+              {
+                "key": "block:330:87:-342",
+                "kind": "block",
+                "name": "oak_log",
+                "dist": 7,
+                "pos": {
+                  "x": 330,
+                  "y": 87,
+                  "z": -342
+                }
+              },
+              {
+                "key": "block:334:87:-349",
+                "kind": "block",
+                "name": "dirt",
+                "dist": 4,
+                "pos": {
+                  "x": 334,
+                  "y": 87,
+                  "z": -349
+                }
+              },
+              {
+                "key": "block:330:86:-350",
+                "kind": "block",
+                "name": "grass_block",
+                "dist": 1,
+                "pos": {
+                  "x": 330,
+                  "y": 86,
+                  "z": -350
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "왼쪽으로 두 칸 이동하라.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "move",
+            "direction": "left",
+            "amount": 2,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "move",
+              "amount": 2,
+              "direction": "left"
+            }
+          },
+          "usage": {
+            "prompt_tokens": 1609,
+            "total_tokens": 1672,
+            "completion_tokens": 63,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        },
+        {
+          "stage": "motion_review",
+          "text": "이번에는 반대로 두 칸 가줘",
+          "context": {
+            "lastAction": {
+              "type": "move",
+              "amount": 2,
+              "direction": "left",
+              "completed": true
+            }
+          },
+          "raw": "반대로 두 칸 갈게요! !move(\"back\", 2)",
+          "action": {
+            "type": "move",
+            "amount": 2,
+            "direction": "right"
+          },
+          "agrees": false
+        }
+      ]
+    },
+    {
+      "id": "C411",
+      "text": "이번엔 세 번",
+      "group": "sequence",
+      "expect": {
+        "kind": "jump",
+        "count": 3
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "원문의 수량과 해석한 수량이 달라요. 원하는 수량을 숫자로 다시 알려주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 765,
+      "audit": [
+        {
+          "stage": "motion_review",
+          "text": "두 번 점프해",
+          "context": {},
+          "raw": "두 번 뛸게요! !jump(2)",
+          "action": {
+            "type": "jump",
+            "amount": 2
+          },
+          "agrees": true
+        },
+        {
+          "stage": "interpret",
+          "text": "두 번 점프해",
+          "context": {},
+          "observation": {
+            "pos": {
+              "x": 330.5,
+              "y": 87,
+              "z": -349.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": null,
+            "targets": [
+              {
+                "key": "entity:1",
+                "kind": "entity",
+                "name": "pig",
+                "id": 1,
+                "dist": 7,
+                "pos": {
+                  "x": 337.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": -7,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:2",
+                "kind": "entity",
+                "name": "cow",
+                "id": 2,
+                "dist": 8,
+                "pos": {
+                  "x": 322.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": 8,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:3",
+                "kind": "entity",
+                "name": "sheep",
+                "id": 3,
+                "dist": 11,
+                "pos": {
+                  "x": 330.5,
+                  "y": 87,
+                  "z": -360.5
+                },
+                "relative": {
+                  "forward": -11,
+                  "right": 0,
+                  "up": 0
+                }
+              },
+              {
+                "key": "block:330:87:-342",
+                "kind": "block",
+                "name": "oak_log",
+                "dist": 7,
+                "pos": {
+                  "x": 330,
+                  "y": 87,
+                  "z": -342
+                }
+              },
+              {
+                "key": "block:334:87:-349",
+                "kind": "block",
+                "name": "dirt",
+                "dist": 4,
+                "pos": {
+                  "x": 334,
+                  "y": 87,
+                  "z": -349
+                }
+              },
+              {
+                "key": "block:330:86:-350",
+                "kind": "block",
+                "name": "grass_block",
+                "dist": 1,
+                "pos": {
+                  "x": 330,
+                  "y": 86,
+                  "z": -350
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "두 번 점프해",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "jump",
+            "direction": "",
+            "amount": 2,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "jump",
+              "amount": 2
+            }
+          },
+          "usage": {
+            "prompt_tokens": 1608,
+            "total_tokens": 1660,
+            "completion_tokens": 52,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        },
+        {
+          "stage": "quantity_rejected",
+          "text": "이번엔 세 번",
+          "intent": {
+            "interpretation": "이번엔 세 번 점프하라.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "jump",
+            "direction": "",
+            "amount": 3,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "jump",
+              "amount": 3
+            }
+          },
+          "quantityError": "원문의 수량과 해석한 수량이 달라요. 원하는 수량을 숫자로 다시 알려주세요."
+        }
+      ]
+    },
+    {
+      "id": "C413",
+      "text": "이번에는 점프 세 번",
+      "group": "sequence",
+      "expect": {
+        "kind": "jump",
+        "count": 3
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "원문의 수량과 해석한 수량이 달라요. 원하는 수량을 숫자로 다시 알려주세요.",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 741,
+      "audit": [
+        {
+          "stage": "motion_review",
+          "text": "두 번 점프해",
+          "context": {},
+          "raw": "두 번 뛸게요! !jump(2)",
+          "action": {
+            "type": "jump",
+            "amount": 2
+          },
+          "agrees": true
+        },
+        {
+          "stage": "interpret",
+          "text": "두 번 점프해",
+          "context": {},
+          "observation": {
+            "pos": {
+              "x": 330.5,
+              "y": 87,
+              "z": -349.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": null,
+            "targets": [
+              {
+                "key": "entity:1",
+                "kind": "entity",
+                "name": "pig",
+                "id": 1,
+                "dist": 7,
+                "pos": {
+                  "x": 337.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": -7,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:2",
+                "kind": "entity",
+                "name": "cow",
+                "id": 2,
+                "dist": 8,
+                "pos": {
+                  "x": 322.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": 8,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:3",
+                "kind": "entity",
+                "name": "sheep",
+                "id": 3,
+                "dist": 11,
+                "pos": {
+                  "x": 330.5,
+                  "y": 87,
+                  "z": -360.5
+                },
+                "relative": {
+                  "forward": -11,
+                  "right": 0,
+                  "up": 0
+                }
+              },
+              {
+                "key": "block:330:87:-342",
+                "kind": "block",
+                "name": "oak_log",
+                "dist": 7,
+                "pos": {
+                  "x": 330,
+                  "y": 87,
+                  "z": -342
+                }
+              },
+              {
+                "key": "block:334:87:-349",
+                "kind": "block",
+                "name": "dirt",
+                "dist": 4,
+                "pos": {
+                  "x": 334,
+                  "y": 87,
+                  "z": -349
+                }
+              },
+              {
+                "key": "block:330:86:-350",
+                "kind": "block",
+                "name": "grass_block",
+                "dist": 1,
+                "pos": {
+                  "x": 330,
+                  "y": 86,
+                  "z": -350
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "두 번 점프해",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "jump",
+            "direction": "",
+            "amount": 2,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "jump",
+              "amount": 2
+            }
+          },
+          "usage": {
+            "prompt_tokens": 1608,
+            "total_tokens": 1660,
+            "completion_tokens": 52,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        },
+        {
+          "stage": "quantity_rejected",
+          "text": "이번에는 점프 세 번",
+          "intent": {
+            "interpretation": "이번에는 점프 세 번 한다.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "jump",
+            "direction": "",
+            "amount": 3,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "jump",
+              "amount": 3
+            }
+          },
+          "quantityError": "원문의 수량과 해석한 수량이 달라요. 원하는 수량을 숫자로 다시 알려주세요."
+        }
+      ]
+    },
+    {
+      "id": "C437",
+      "text": "아래를 봐줘",
+      "group": "sequence",
+      "expect": {
+        "kind": "look",
+        "pitch": [
+          -90,
+          -45
+        ]
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "걷기, 시점 바꾸기, 점프, 동물 접근·잡기, 블록 캐기 중 어떤 행동을 할까요?",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 759,
+      "audit": [
+        {
+          "stage": "motion_review",
+          "text": "하늘을 봐",
+          "context": {},
+          "raw": "하늘을 볼게요. !lookVertical(90)",
+          "action": {
+            "type": "look",
+            "amount": 90
+          },
+          "agrees": true
+        },
+        {
+          "stage": "interpret",
+          "text": "하늘을 봐",
+          "context": {},
+          "observation": {
+            "pos": {
+              "x": 330.5,
+              "y": 87,
+              "z": -349.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": null,
+            "targets": [
+              {
+                "key": "entity:1",
+                "kind": "entity",
+                "name": "pig",
+                "id": 1,
+                "dist": 7,
+                "pos": {
+                  "x": 337.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": -7,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:2",
+                "kind": "entity",
+                "name": "cow",
+                "id": 2,
+                "dist": 8,
+                "pos": {
+                  "x": 322.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": 8,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:3",
+                "kind": "entity",
+                "name": "sheep",
+                "id": 3,
+                "dist": 11,
+                "pos": {
+                  "x": 330.5,
+                  "y": 87,
+                  "z": -360.5
+                },
+                "relative": {
+                  "forward": -11,
+                  "right": 0,
+                  "up": 0
+                }
+              },
+              {
+                "key": "block:330:87:-342",
+                "kind": "block",
+                "name": "oak_log",
+                "dist": 7,
+                "pos": {
+                  "x": 330,
+                  "y": 87,
+                  "z": -342
+                }
+              },
+              {
+                "key": "block:334:87:-349",
+                "kind": "block",
+                "name": "dirt",
+                "dist": 4,
+                "pos": {
+                  "x": 334,
+                  "y": 87,
+                  "z": -349
+                }
+              },
+              {
+                "key": "block:330:86:-350",
+                "kind": "block",
+                "name": "grass_block",
+                "dist": 1,
+                "pos": {
+                  "x": 330,
+                  "y": 86,
+                  "z": -350
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "현재 시점에서 위를 보세요.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "view",
+            "direction": "up",
+            "amount": 90,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "look",
+              "amount": 90
+            }
+          },
+          "usage": {
+            "prompt_tokens": 1608,
+            "total_tokens": 1660,
+            "completion_tokens": 52,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        },
+        {
+          "stage": "interpret",
+          "text": "아래를 봐줘",
+          "context": {
+            "lastAction": {
+              "type": "look",
+              "amount": 90,
+              "completed": true
+            }
+          },
+          "observation": {
+            "pos": {
+              "x": 330.5,
+              "y": 87,
+              "z": -349.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": null,
+            "targets": [
+              {
+                "key": "entity:1",
+                "kind": "entity",
+                "name": "pig",
+                "id": 1,
+                "dist": 7,
+                "pos": {
+                  "x": 337.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": -7,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:2",
+                "kind": "entity",
+                "name": "cow",
+                "id": 2,
+                "dist": 8,
+                "pos": {
+                  "x": 322.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": 8,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:3",
+                "kind": "entity",
+                "name": "sheep",
+                "id": 3,
+                "dist": 11,
+                "pos": {
+                  "x": 330.5,
+                  "y": 87,
+                  "z": -360.5
+                },
+                "relative": {
+                  "forward": -11,
+                  "right": 0,
+                  "up": 0
+                }
+              },
+              {
+                "key": "block:330:87:-342",
+                "kind": "block",
+                "name": "oak_log",
+                "dist": 7,
+                "pos": {
+                  "x": 330,
+                  "y": 87,
+                  "z": -342
+                }
+              },
+              {
+                "key": "block:334:87:-349",
+                "kind": "block",
+                "name": "dirt",
+                "dist": 4,
+                "pos": {
+                  "x": 334,
+                  "y": 87,
+                  "z": -349
+                }
+              },
+              {
+                "key": "block:330:86:-350",
+                "kind": "block",
+                "name": "grass_block",
+                "dist": 1,
+                "pos": {
+                  "x": 330,
+                  "y": 86,
+                  "z": -350
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "현재 관찰된 내용을 보여주라고 요청했습니다.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "unknown",
+            "direction": "",
+            "amount": null,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "clarify",
+            "message": "걷기, 시점 바꾸기, 점프, 동물 접근·잡기, 블록 캐기 중 어떤 행동을 할까요?",
+            "action": null
+          },
+          "usage": {
+            "prompt_tokens": 1620,
+            "total_tokens": 1673,
+            "completion_tokens": 53,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "C488",
+      "text": "돼지 잡지 마",
+      "group": "edge",
+      "expect": {
+        "kind": "stop"
+      },
+      "plan": {
+        "kind": "clarify",
+        "message": "대상에게 다가가라는 뜻인가요, 제자리 동작을 원하는 건가요?",
+        "action": null
+      },
+      "grade": "nonaction_instead_of_task",
+      "ms": 324,
+      "audit": [
+        {
+          "stage": "interpret",
+          "text": "돼지 잡지 마",
+          "context": {},
+          "observation": {
+            "pos": {
+              "x": 330.5,
+              "y": 87,
+              "z": -349.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": null,
+            "targets": [
+              {
+                "key": "entity:1",
+                "kind": "entity",
+                "name": "pig",
+                "id": 1,
+                "dist": 7,
+                "pos": {
+                  "x": 337.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": -7,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:2",
+                "kind": "entity",
+                "name": "cow",
+                "id": 2,
+                "dist": 8,
+                "pos": {
+                  "x": 322.5,
+                  "y": 87,
+                  "z": -349.5
+                },
+                "relative": {
+                  "forward": 0,
+                  "right": 8,
+                  "up": 0
+                }
+              },
+              {
+                "key": "entity:3",
+                "kind": "entity",
+                "name": "sheep",
+                "id": 3,
+                "dist": 11,
+                "pos": {
+                  "x": 330.5,
+                  "y": 87,
+                  "z": -360.5
+                },
+                "relative": {
+                  "forward": -11,
+                  "right": 0,
+                  "up": 0
+                }
+              },
+              {
+                "key": "block:330:87:-342",
+                "kind": "block",
+                "name": "oak_log",
+                "dist": 7,
+                "pos": {
+                  "x": 330,
+                  "y": 87,
+                  "z": -342
+                }
+              },
+              {
+                "key": "block:334:87:-349",
+                "kind": "block",
+                "name": "dirt",
+                "dist": 4,
+                "pos": {
+                  "x": 334,
+                  "y": 87,
+                  "z": -349
+                }
+              },
+              {
+                "key": "block:330:86:-350",
+                "kind": "block",
+                "name": "grass_block",
+                "dist": 1,
+                "pos": {
+                  "x": 330,
+                  "y": 86,
+                  "z": -350
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "돼지를 공격하지 마세요.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "stop",
+            "direction": "",
+            "amount": null,
+            "target_reference": "named",
+            "target_name": "pig",
+            "target_key": "entity:1",
+            "question": ""
+          },
+          "plan": {
+            "kind": "clarify",
+            "message": "대상에게 다가가라는 뜻인가요, 제자리 동작을 원하는 건가요?",
+            "action": null
+          },
+          "usage": {
+            "prompt_tokens": 1608,
+            "total_tokens": 1661,
+            "completion_tokens": 53,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        }
+      ]
+    }
+  ]
+}

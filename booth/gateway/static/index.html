@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Agent in MINECRAFT</title>
+  <link rel="stylesheet" href="/style.css?v=13">
+</head>
+<body>
+  <main class="shell">
+    <svg class="asset-filters" aria-hidden="true" width="0" height="0" focusable="false">
+      <filter id="minecraft-bg-key" color-interpolation-filters="sRGB">
+        <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  -10 -10 -10 0 27.6"/>
+      </filter>
+    </svg>
+    <h1><span>AI Agent in</span><span class="minecraft-wordmark" role="img" aria-label="Minecraft"><img src="/minecraft-wordmark-source.png" alt="" width="800" height="800"></span></h1>
+
+    <section class="layout">
+      <div class="game-column">
+        <div class="screen-wrap">
+          <canvas id="screen" width="854" height="480" aria-label="마인크래프트 3인칭 관전 화면"></canvas>
+          <div id="screen-placeholder" class="screen-placeholder">게임 화면을 준비하고 있습니다…</div>
+          <div class="screen-bottom">
+            <span id="phase">서버를 확인하는 중</span>
+            <span id="timer">남은 시간 02:00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <aside class="panel">
+          <div class="system-controls">          <button id="stop" type="button" title="현재 에이전트 행동 중지">행동 중지</button>
+          <button id="reset" type="button" title="현재 행동을 멈추고 월드 초기화">↻ 월드 초기화</button>
+</div>
+          <div id="chat" class="chat" role="log" aria-live="polite" aria-label="스티브와 나눈 대화"><p class="chat-empty">무엇을 할까요? 뜻이나 대상이 모호하면 먼저 물어볼게요.</p></div>
+          <form id="prompt-form">
+            <textarea id="prompt" rows="2" maxlength="120" aria-label="스티브에게 보낼 메시지" placeholder="스티브에게 무엇을 시킬까요?" required></textarea>
+            <button id="submit" type="submit">보내기 <span aria-hidden="true">↗</span></button>
+          </form>
+          <div class="suggestions" id="suggestions">
+            <button type="button" data-prompt="하늘을 봐">☁️ 하늘을 봐</button>
+            <button type="button" data-prompt="앞으로 조금 걸어가">🚶 앞으로 조금 걸어가</button>
+            <button type="button" data-prompt="제자리에서 180도 돌아">🔄 제자리에서 뒤돌기</button>
+            <button type="button" data-prompt="돼지 한 마리 잡아 줘">🐷 돼지 한 마리 잡아 줘</button>
+            <button type="button" data-prompt="점프하고 오른쪽으로 돌아">🦘 점프하고 오른쪽으로 돌아</button>
+          </div>
+
+          <div class="result">
+            <p id="current-prompt" class="current-prompt">대기 중</p>
+            <p id="english-goal" class="english-goal" hidden></p>
+            <p id="message" class="message" role="status">명령을 입력하세요.</p>
+          </div>
+        </aside>
+        <div id="connection" class="connection offline">연결 중…</div>
+      </div>
+    </section>
+    <footer><img class="brand" src="/gist-signature.svg" width="570" height="118" alt="GIST 광주과학기술원"></footer>
+  </main>
+  <script src="/app.js?v=13"></script>
+</body>
+</html>

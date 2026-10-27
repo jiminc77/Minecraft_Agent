@@ -1,0 +1,22 @@
+[
+  {
+    "name": "duplicate request rejected without second jump",
+    "ok": true
+  },
+  {
+    "name": "old request rejected after epoch changes",
+    "ok": true
+  },
+  {
+    "name": "invalid action arguments rejected on agent side",
+    "ok": true
+  },
+  {
+    "name": "invented entity target rejected on agent side",
+    "ok": true
+  },
+  {
+    "name": "empty and overlong input rejected before model",
+    "ok": true
+  }
+]

@@ -1,0 +1,57 @@
+{
+  "single": {
+    "passed": 48,
+    "total": 50,
+    "medianMs": 954.5,
+    "failures": [
+      {
+        "text": "아까 돼지 잡으라고 했었어",
+        "expected": "reply",
+        "actual": "attack",
+        "ok": false,
+        "ms": 1144,
+        "result": {
+          "kind": "goal",
+          "mode": "new_request",
+          "request": "아까 돼지 잡으라고 했었어",
+          "message": "동물 잡기 시작",
+          "steps": [
+            {
+              "type": "attack",
+              "selector": {
+                "kind": "entity",
+                "name": "pig",
+                "relation": "any",
+                "selection": "any"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "text": "돼지 두 마리 잡아",
+        "expected": "unavailable",
+        "actual": "clarify",
+        "ok": false,
+        "ms": 1076,
+        "result": {
+          "kind": "clarify",
+          "request": "돼지 두 마리 잡아",
+          "message": "원문의 수량과 해석한 수량이 달라요. 원하는 수량을 숫자로 다시 알려주세요.",
+          "steps": []
+        }
+      }
+    ]
+  },
+  "dialogue": {
+    "passed": 6,
+    "total": 6,
+    "failures": []
+  },
+  "unitTests": 53,
+  "live": {
+    "passed": 8,
+    "total": 8
+  },
+  "notes": "Repeated internal development regressions, not held-out or 500-case evaluation. Completed actions cannot be implicitly replayed without an identified action or a pending question."
+}

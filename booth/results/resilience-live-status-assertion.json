@@ -1,0 +1,54 @@
+[
+  {
+    "name": "a second tab cannot release another tab manual keys",
+    "ok": true,
+    "details": {
+      "ownerRetained": true
+    }
+  },
+  {
+    "name": "latest request cancels in-flight interpretation",
+    "ok": true,
+    "details": {
+      "phase": "done",
+      "counters": {
+        "swing": 0,
+        "attack": 0,
+        "dig": 0
+      }
+    }
+  },
+  {
+    "name": "stop during interpretation prevents delayed action",
+    "ok": true,
+    "details": {
+      "phase": "stopped"
+    }
+  },
+  {
+    "name": "reset during interpretation clears stale plan",
+    "ok": true,
+    "details": {
+      "phase": "ready"
+    }
+  },
+  {
+    "name": "past report produces no attack",
+    "ok": false,
+    "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(['reply','clarify','unavailable'].includes(h.phase))\n"
+  },
+  {
+    "name": "repeated simple requests remain responsive",
+    "ok": true,
+    "details": {
+      "completed": 8
+    }
+  },
+  {
+    "name": "manual takeover cancels in-flight interpretation",
+    "ok": true,
+    "details": {
+      "phase": "manual"
+    }
+  }
+]

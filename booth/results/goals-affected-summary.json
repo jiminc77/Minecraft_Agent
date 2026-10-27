@@ -1,0 +1,9 @@
+{
+  "mode": "language-only frozen observations; events not executed",
+  "n": 6,
+  "planner_sha256": "37dc2aa79e3bbc79097f4a87005578fa0d1a94532c398d6d326f00a4c3c2fd48",
+  "grades": {
+    "exploratory_action": 4,
+    "exploratory_nonaction": 2
+  }
+}

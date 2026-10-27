@@ -1,0 +1,2516 @@
+{
+  "mode": "language only; kind-level probes, not physical completion",
+  "passed": 14,
+  "total": 20,
+  "rows": [
+    {
+      "text": "오른쪽으로 90도 돌고 두 칸 걸어줘",
+      "expected": "sequence",
+      "actual": "sequence",
+      "ok": true,
+      "plan": {
+        "kind": "execute",
+        "message": "오른쪽으로 90도 회전한 후 앞쪽으로 두 칸 이동할게요.",
+        "action": {
+          "type": "sequence",
+          "steps": [
+            {
+              "type": "turn",
+              "amount": 90
+            },
+            {
+              "type": "move",
+              "amount": 2,
+              "direction": "forward"
+            }
+          ]
+        }
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "오른쪽으로 90도 돌고 두 칸 걸어줘",
+          "context": {},
+          "goal": {
+            "reason": "원문의 행동과 수량을 보존한다.",
+            "kind": "sequence",
+            "utterance": "오른쪽으로 90도 돌고 두 칸 걸어줘",
+            "steps": [
+              "오른쪽으로 90도 회전",
+              "앞으로 두 칸 걸어"
+            ],
+            "target": "",
+            "message": "요청을 처리할게요."
+          }
+        },
+        {
+          "stage": "motion_review",
+          "text": "오른쪽으로 90도 회전",
+          "context": {
+            "pending": null
+          },
+          "raw": "오른쪽으로 90도 회전할게요! !turn(90)",
+          "action": {
+            "type": "turn",
+            "amount": 90
+          },
+          "agrees": true
+        },
+        {
+          "stage": "interpret",
+          "text": "오른쪽으로 90도 회전",
+          "context": {
+            "pending": null
+          },
+          "observation": {
+            "pos": {
+              "x": 0.5,
+              "y": 0,
+              "z": 0.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": "block:0:1:2",
+            "targets": [
+              {
+                "key": "block:0:1:2",
+                "kind": "block",
+                "name": "dirt",
+                "pos": {
+                  "x": 0,
+                  "y": 1,
+                  "z": 2
+                },
+                "dist": 2,
+                "relative": {
+                  "forward": 2,
+                  "right": 0,
+                  "up": 1
+                }
+              },
+              {
+                "key": "block:3:0:3",
+                "kind": "block",
+                "name": "oak_log",
+                "pos": {
+                  "x": 3,
+                  "y": 0,
+                  "z": 3
+                },
+                "dist": 4,
+                "relative": {
+                  "forward": 3,
+                  "right": -3,
+                  "up": 0
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "오른쪽으로 90도 시선을 돌립니다.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "view",
+            "direction": "right",
+            "amount": 90,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "turn",
+              "amount": 90
+            }
+          },
+          "usage": {
+            "prompt_tokens": 1428,
+            "total_tokens": 1485,
+            "completion_tokens": 57,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        },
+        {
+          "stage": "motion_review",
+          "text": "앞으로 두 칸 걸어",
+          "context": {
+            "pending": null,
+            "lastAction": {
+              "type": "turn",
+              "amount": 90,
+              "completed": true
+            }
+          },
+          "raw": "앞으로 두 칸 갈게요! !move(\"forward\", 2)",
+          "action": {
+            "type": "move",
+            "amount": 2,
+            "direction": "forward"
+          },
+          "agrees": true
+        },
+        {
+          "stage": "interpret",
+          "text": "앞으로 두 칸 걸어",
+          "context": {
+            "pending": null,
+            "lastAction": {
+              "type": "turn",
+              "amount": 90,
+              "completed": true
+            }
+          },
+          "observation": {
+            "pos": {
+              "x": 0.5,
+              "y": 0,
+              "z": 0.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": "block:0:1:2",
+            "targets": [
+              {
+                "key": "block:0:1:2",
+                "kind": "block",
+                "name": "dirt",
+                "pos": {
+                  "x": 0,
+                  "y": 1,
+                  "z": 2
+                },
+                "dist": 2,
+                "relative": {
+                  "forward": 2,
+                  "right": 0,
+                  "up": 1
+                }
+              },
+              {
+                "key": "block:3:0:3",
+                "kind": "block",
+                "name": "oak_log",
+                "pos": {
+                  "x": 3,
+                  "y": 0,
+                  "z": 3
+                },
+                "dist": 4,
+                "relative": {
+                  "forward": 3,
+                  "right": -3,
+                  "up": 0
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "앞으로 두 칸 이동한다.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "move",
+            "direction": "forward",
+            "amount": 2,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "move",
+              "amount": 2,
+              "direction": "forward"
+            }
+          },
+          "usage": {
+            "prompt_tokens": 1436,
+            "total_tokens": 1486,
+            "completion_tokens": 50,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "오른쪽으로 90도 돌고 두 칸 걸어줘",
+          "plan": {
+            "kind": "execute",
+            "message": "요청을 처리할게요.",
+            "action": {
+              "type": "sequence",
+              "steps": [
+                {
+                  "type": "turn",
+                  "amount": 90
+                },
+                {
+                  "type": "move",
+                  "amount": 2,
+                  "direction": "forward"
+                }
+              ]
+            }
+          },
+          "review": {
+            "ok": false,
+            "reason": "원문에서 '오른쪽으로 90도 돌고 두 칸 걸어줘'라는 지시는 시선을 오른쪽으로 90도 회전한 후 전진 두 칸을 의미합니다. 그러나 plan의 action에서 turn은 방향을 바꾸는 것으로 해석되지만, '오른쪽으로'라는 방향은 원문의 시점 기준으로 명확히 지정되어 있어야 하며, 현재 plan은 방향을 명시하지 않고 단순히 90도 회전만 수행하고 있습니다. 이는 원문의 방향 지시와 일치하지 않습니다.",
+            "question": "원문의 '오른쪽으로'는 현재 시점에서의 오른쪽을 의미하나요, 아니면 목표 블록 기준의 오른쪽을 의미하나요? 방향 지정이 명확하지 않아 plan의 회전 방향이 정확히 결정되지 않습니다."
+          }
+        },
+        {
+          "stage": "goal",
+          "text": "오른쪽으로 90도 돌고 두 칸 걸어줘",
+          "context": {},
+          "goal": {
+            "reason": "원문의 행동과 수량을 보존한다.",
+            "kind": "sequence",
+            "utterance": "오른쪽으로 90도 돌고 두 칸 걸어줘",
+            "steps": [
+              "오른쪽으로 90도 회전",
+              "앞으로 두 칸 걸어"
+            ],
+            "target": "",
+            "message": "오른쪽으로 90도 회전한 후 앞쪽으로 두 칸 이동할게요."
+          }
+        },
+        {
+          "stage": "motion_review",
+          "text": "오른쪽으로 90도 회전",
+          "context": {
+            "pending": null
+          },
+          "raw": "오른쪽으로 90도 회전할게요! !turn(90)",
+          "action": {
+            "type": "turn",
+            "amount": 90
+          },
+          "agrees": true
+        },
+        {
+          "stage": "interpret",
+          "text": "오른쪽으로 90도 회전",
+          "context": {
+            "pending": null
+          },
+          "observation": {
+            "pos": {
+              "x": 0.5,
+              "y": 0,
+              "z": 0.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": "block:0:1:2",
+            "targets": [
+              {
+                "key": "block:0:1:2",
+                "kind": "block",
+                "name": "dirt",
+                "pos": {
+                  "x": 0,
+                  "y": 1,
+                  "z": 2
+                },
+                "dist": 2,
+                "relative": {
+                  "forward": 2,
+                  "right": 0,
+                  "up": 1
+                }
+              },
+              {
+                "key": "block:3:0:3",
+                "kind": "block",
+                "name": "oak_log",
+                "pos": {
+                  "x": 3,
+                  "y": 0,
+                  "z": 3
+                },
+                "dist": 4,
+                "relative": {
+                  "forward": 3,
+                  "right": -3,
+                  "up": 0
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "오른쪽으로 90도 시선을 돌립니다.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "view",
+            "direction": "right",
+            "amount": 90,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "turn",
+              "amount": 90
+            }
+          },
+          "usage": {
+            "prompt_tokens": 1428,
+            "total_tokens": 1485,
+            "completion_tokens": 57,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        },
+        {
+          "stage": "motion_review",
+          "text": "앞으로 두 칸 걸어",
+          "context": {
+            "pending": null,
+            "lastAction": {
+              "type": "turn",
+              "amount": 90,
+              "completed": true
+            }
+          },
+          "raw": "앞으로 두 칸 갈게요! !move(\"forward\", 2)",
+          "action": {
+            "type": "move",
+            "amount": 2,
+            "direction": "forward"
+          },
+          "agrees": true
+        },
+        {
+          "stage": "interpret",
+          "text": "앞으로 두 칸 걸어",
+          "context": {
+            "pending": null,
+            "lastAction": {
+              "type": "turn",
+              "amount": 90,
+              "completed": true
+            }
+          },
+          "observation": {
+            "pos": {
+              "x": 0.5,
+              "y": 0,
+              "z": 0.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": "block:0:1:2",
+            "targets": [
+              {
+                "key": "block:0:1:2",
+                "kind": "block",
+                "name": "dirt",
+                "pos": {
+                  "x": 0,
+                  "y": 1,
+                  "z": 2
+                },
+                "dist": 2,
+                "relative": {
+                  "forward": 2,
+                  "right": 0,
+                  "up": 1
+                }
+              },
+              {
+                "key": "block:3:0:3",
+                "kind": "block",
+                "name": "oak_log",
+                "pos": {
+                  "x": 3,
+                  "y": 0,
+                  "z": 3
+                },
+                "dist": 4,
+                "relative": {
+                  "forward": 3,
+                  "right": -3,
+                  "up": 0
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "앞으로 두 칸 이동한다.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "move",
+            "direction": "forward",
+            "amount": 2,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "move",
+              "amount": 2,
+              "direction": "forward"
+            }
+          },
+          "usage": {
+            "prompt_tokens": 1436,
+            "total_tokens": 1486,
+            "completion_tokens": 50,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "오른쪽으로 90도 돌고 두 칸 걸어줘",
+          "plan": {
+            "kind": "execute",
+            "message": "오른쪽으로 90도 회전한 후 앞쪽으로 두 칸 이동할게요.",
+            "action": {
+              "type": "sequence",
+              "steps": [
+                {
+                  "type": "turn",
+                  "amount": 90
+                },
+                {
+                  "type": "move",
+                  "amount": 2,
+                  "direction": "forward"
+                }
+              ]
+            }
+          },
+          "review": {
+            "ok": true,
+            "reason": "원문의 지시는 오른쪽으로 90도 회전한 후 앞쪽으로 두 칸 이동하는 것으로, 계획도 이를 정확히 반영하고 있습니다. 목표 블록들(흙과 옻나무 원목)에 대한 접근은 회전과 전진을 통해 가능하며, 추가적인 작업 없이도 계획이 원문의 의도를 충족합니다.",
+            "question": ""
+          }
+        }
+      ]
+    },
+    {
+      "text": "세 번 점프한 다음 하늘을 봐줘",
+      "expected": "sequence",
+      "actual": "clarify",
+      "ok": false,
+      "plan": {
+        "kind": "clarify",
+        "message": "요청하신 순서나 범위를 확실히 해석하지 못했어요. 동작과 대상을 조금 더 구체적으로 알려주세요.",
+        "action": null
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "세 번 점프한 다음 하늘을 봐줘",
+          "context": {},
+          "goal": {
+            "reason": "이동 거리 답변으로 목표가 완성됨. 일곱 칸 이동은 단일 행동.",
+            "kind": "sequence",
+            "utterance": "세 번 점프한 다음 하늘을 봐줘",
+            "steps": [
+              "점프 세 번",
+              "위를 쳐다봐"
+            ],
+            "target": "",
+            "message": "점프 세 번을 한 다음 위를 쳐다볼게요."
+          }
+        },
+        {
+          "stage": "motion_review",
+          "text": "점프 세 번",
+          "context": {
+            "pending": null
+          },
+          "raw": "세 번 뛸게요! !jump(3)",
+          "action": {
+            "type": "jump",
+            "amount": 3
+          },
+          "agrees": true
+        },
+        {
+          "stage": "interpret",
+          "text": "점프 세 번",
+          "context": {
+            "pending": null
+          },
+          "observation": {
+            "pos": {
+              "x": 0.5,
+              "y": 0,
+              "z": 0.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": "block:0:1:2",
+            "targets": [
+              {
+                "key": "block:0:1:2",
+                "kind": "block",
+                "name": "dirt",
+                "pos": {
+                  "x": 0,
+                  "y": 1,
+                  "z": 2
+                },
+                "dist": 2,
+                "relative": {
+                  "forward": 2,
+                  "right": 0,
+                  "up": 1
+                }
+              },
+              {
+                "key": "block:3:0:3",
+                "kind": "block",
+                "name": "oak_log",
+                "pos": {
+                  "x": 3,
+                  "y": 0,
+                  "z": 3
+                },
+                "dist": 4,
+                "relative": {
+                  "forward": 3,
+                  "right": -3,
+                  "up": 0
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "점프를 세 번 한다.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "jump",
+            "direction": "",
+            "amount": 3,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "jump",
+              "amount": 3
+            }
+          },
+          "usage": {
+            "prompt_tokens": 1422,
+            "total_tokens": 1468,
+            "completion_tokens": 46,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        },
+        {
+          "stage": "motion_review",
+          "text": "위를 쳐다봐",
+          "context": {
+            "pending": null,
+            "lastAction": {
+              "type": "jump",
+              "amount": 3,
+              "completed": true
+            }
+          },
+          "raw": "위를 쳐다볼게요. !lookVertical(80)",
+          "action": {
+            "type": "look",
+            "amount": 90
+          },
+          "agrees": true
+        },
+        {
+          "stage": "interpret",
+          "text": "위를 쳐다봐",
+          "context": {
+            "pending": null,
+            "lastAction": {
+              "type": "jump",
+              "amount": 3,
+              "completed": true
+            }
+          },
+          "observation": {
+            "pos": {
+              "x": 0.5,
+              "y": 0,
+              "z": 0.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": "block:0:1:2",
+            "targets": [
+              {
+                "key": "block:0:1:2",
+                "kind": "block",
+                "name": "dirt",
+                "pos": {
+                  "x": 0,
+                  "y": 1,
+                  "z": 2
+                },
+                "dist": 2,
+                "relative": {
+                  "forward": 2,
+                  "right": 0,
+                  "up": 1
+                }
+              },
+              {
+                "key": "block:3:0:3",
+                "kind": "block",
+                "name": "oak_log",
+                "pos": {
+                  "x": 3,
+                  "y": 0,
+                  "z": 3
+                },
+                "dist": 4,
+                "relative": {
+                  "forward": 3,
+                  "right": -3,
+                  "up": 0
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "위를 쳐다보세요.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "view",
+            "direction": "up",
+            "amount": 90,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "look",
+              "amount": 90
+            }
+          },
+          "usage": {
+            "prompt_tokens": 1435,
+            "total_tokens": 1486,
+            "completion_tokens": 51,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "세 번 점프한 다음 하늘을 봐줘",
+          "plan": {
+            "kind": "execute",
+            "message": "점프 세 번을 한 다음 위를 쳐다볼게요.",
+            "action": {
+              "type": "sequence",
+              "steps": [
+                {
+                  "type": "jump",
+                  "amount": 3
+                },
+                {
+                  "type": "look",
+                  "amount": 90
+                }
+              ]
+            }
+          },
+          "review": {
+            "ok": false,
+            "reason": "원문의 '하늘을 봐줘'는 시선을 위로 올리는 동작을 의미하나, plan의 'look' 동작은 amount: 90으로 방향 전환을 의미하며, 이는 시점 변경을 유도하는 회전 동작으로, 원문의 의도와 일치하지 않습니다. 원문은 시선을 위로 향하게 하는 'look up' 동작이 필요합니다.",
+            "question": "원문에서 '하늘을 봐줘'는 시선을 위로 올리는 동작을 의미하므로, 'look' 동작의 amount를 90이 아닌 'up' 또는 '90'의 방향을 명확히 하여 위를 향하게 해야 합니다. 이 동작을 어떻게 수정할까요?"
+          }
+        },
+        {
+          "stage": "goal",
+          "text": "세 번 점프한 다음 하늘을 봐줘",
+          "context": {},
+          "goal": {
+            "reason": "이동/점프/시점 변경은 각각 단일 행동으로 처리되며, 순서는 원문과 일치해야 함.",
+            "kind": "sequence",
+            "utterance": "세 번 점프한 다음 하늘을 봐줘",
+            "steps": [
+              "세 번 점프",
+              "위를 쳐다봐"
+            ],
+            "target": "",
+            "message": "세 번 점프한 다음 위를 쳐다봐요."
+          }
+        },
+        {
+          "stage": "motion_review",
+          "text": "세 번 점프",
+          "context": {
+            "pending": null
+          },
+          "raw": "세 번 뛸게요! !jump(3)",
+          "action": {
+            "type": "jump",
+            "amount": 3
+          },
+          "agrees": true
+        },
+        {
+          "stage": "interpret",
+          "text": "세 번 점프",
+          "context": {
+            "pending": null
+          },
+          "observation": {
+            "pos": {
+              "x": 0.5,
+              "y": 0,
+              "z": 0.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": "block:0:1:2",
+            "targets": [
+              {
+                "key": "block:0:1:2",
+                "kind": "block",
+                "name": "dirt",
+                "pos": {
+                  "x": 0,
+                  "y": 1,
+                  "z": 2
+                },
+                "dist": 2,
+                "relative": {
+                  "forward": 2,
+                  "right": 0,
+                  "up": 1
+                }
+              },
+              {
+                "key": "block:3:0:3",
+                "kind": "block",
+                "name": "oak_log",
+                "pos": {
+                  "x": 3,
+                  "y": 0,
+                  "z": 3
+                },
+                "dist": 4,
+                "relative": {
+                  "forward": 3,
+                  "right": -3,
+                  "up": 0
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "세 번 점프한다.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "jump",
+            "direction": "",
+            "amount": 3,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "jump",
+              "amount": 3
+            }
+          },
+          "usage": {
+            "prompt_tokens": 1423,
+            "total_tokens": 1469,
+            "completion_tokens": 46,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        },
+        {
+          "stage": "motion_review",
+          "text": "위를 쳐다봐",
+          "context": {
+            "pending": null,
+            "lastAction": {
+              "type": "jump",
+              "amount": 3,
+              "completed": true
+            }
+          },
+          "raw": "위를 쳐다볼게요. !lookVertical(80)",
+          "action": {
+            "type": "look",
+            "amount": 90
+          },
+          "agrees": true
+        },
+        {
+          "stage": "interpret",
+          "text": "위를 쳐다봐",
+          "context": {
+            "pending": null,
+            "lastAction": {
+              "type": "jump",
+              "amount": 3,
+              "completed": true
+            }
+          },
+          "observation": {
+            "pos": {
+              "x": 0.5,
+              "y": 0,
+              "z": 0.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": "block:0:1:2",
+            "targets": [
+              {
+                "key": "block:0:1:2",
+                "kind": "block",
+                "name": "dirt",
+                "pos": {
+                  "x": 0,
+                  "y": 1,
+                  "z": 2
+                },
+                "dist": 2,
+                "relative": {
+                  "forward": 2,
+                  "right": 0,
+                  "up": 1
+                }
+              },
+              {
+                "key": "block:3:0:3",
+                "kind": "block",
+                "name": "oak_log",
+                "pos": {
+                  "x": 3,
+                  "y": 0,
+                  "z": 3
+                },
+                "dist": 4,
+                "relative": {
+                  "forward": 3,
+                  "right": -3,
+                  "up": 0
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "위를 쳐다보세요.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "view",
+            "direction": "up",
+            "amount": 90,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "look",
+              "amount": 90
+            }
+          },
+          "usage": {
+            "prompt_tokens": 1435,
+            "total_tokens": 1486,
+            "completion_tokens": 51,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "세 번 점프한 다음 하늘을 봐줘",
+          "plan": {
+            "kind": "execute",
+            "message": "세 번 점프한 다음 위를 쳐다봐요.",
+            "action": {
+              "type": "sequence",
+              "steps": [
+                {
+                  "type": "jump",
+                  "amount": 3
+                },
+                {
+                  "type": "look",
+                  "amount": 90
+                }
+              ]
+            }
+          },
+          "review": {
+            "ok": false,
+            "reason": "원문의 '하늘을 봐줘'는 시선을 위로 향하게 하는 'look' 동작이지만, plan의 'look'은 amount:90으로 방향을 회전하는 것으로 해석되어 원문의 의도와 다릅니다. 원문은 시선을 위로 향하게 하는 'look up'을 요구하므로, 'look' 동작의 amount가 90이면 시점이 회전되어 원문의 '하늘을 봐줘'와 일치하지 않습니다.",
+            "question": "원문의 '하늘을 봐줘'는 시선을 위로 향하게 하는 동작이므로, 'look' 동작의 amount를 90이 아닌 'up' 또는 '90'의 방향을 명시적으로 'up'으로 설정해야 합니다. 이 동작을 올바르게 수행하려면 'look'의 amount를 어떻게 수정해야 하나요?"
+          }
+        }
+      ]
+    },
+    {
+      "text": "앞으로 두 칸, 그다음 뒤로 두 칸",
+      "expected": "sequence",
+      "actual": "sequence",
+      "ok": true,
+      "plan": {
+        "kind": "execute",
+        "message": "앞으로 두 칸, 그다음 뒤로 두 칸 이동할게요.",
+        "action": {
+          "type": "sequence",
+          "steps": [
+            {
+              "type": "move",
+              "amount": 2,
+              "direction": "forward"
+            },
+            {
+              "type": "move",
+              "amount": 2,
+              "direction": "back"
+            }
+          ]
+        }
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "앞으로 두 칸, 그다음 뒤로 두 칸",
+          "context": {},
+          "goal": {
+            "reason": "이동 거리 답변으로 목표가 완성됨. 두 칸 전진 후 두 칸 후진은 순서가 명확한 여러 동작.",
+            "kind": "sequence",
+            "utterance": "앞으로 두 칸, 그다음 뒤로 두 칸",
+            "steps": [
+              "앞으로 두 칸 걸어",
+              "뒤로 두 칸 걸어"
+            ],
+            "target": "",
+            "message": "앞으로 두 칸, 그다음 뒤로 두 칸 이동할게요."
+          }
+        },
+        {
+          "stage": "motion_review",
+          "text": "앞으로 두 칸 걸어",
+          "context": {
+            "pending": null
+          },
+          "raw": "앞으로 두 칸 갈게요! !move(\"forward\", 2)",
+          "action": {
+            "type": "move",
+            "amount": 2,
+            "direction": "forward"
+          },
+          "agrees": true
+        },
+        {
+          "stage": "interpret",
+          "text": "앞으로 두 칸 걸어",
+          "context": {
+            "pending": null
+          },
+          "observation": {
+            "pos": {
+              "x": 0.5,
+              "y": 0,
+              "z": 0.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": "block:0:1:2",
+            "targets": [
+              {
+                "key": "block:0:1:2",
+                "kind": "block",
+                "name": "dirt",
+                "pos": {
+                  "x": 0,
+                  "y": 1,
+                  "z": 2
+                },
+                "dist": 2,
+                "relative": {
+                  "forward": 2,
+                  "right": 0,
+                  "up": 1
+                }
+              },
+              {
+                "key": "block:3:0:3",
+                "kind": "block",
+                "name": "oak_log",
+                "pos": {
+                  "x": 3,
+                  "y": 0,
+                  "z": 3
+                },
+                "dist": 4,
+                "relative": {
+                  "forward": 3,
+                  "right": -3,
+                  "up": 0
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "앞으로 두 칸 걷기",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "move",
+            "direction": "forward",
+            "amount": 2,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "move",
+              "amount": 2,
+              "direction": "forward"
+            }
+          },
+          "usage": {
+            "prompt_tokens": 1425,
+            "total_tokens": 1475,
+            "completion_tokens": 50,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        },
+        {
+          "stage": "motion_review",
+          "text": "뒤로 두 칸 걸어",
+          "context": {
+            "pending": null,
+            "lastAction": {
+              "type": "move",
+              "amount": 2,
+              "direction": "forward",
+              "completed": true
+            }
+          },
+          "raw": "뒤로 두 칸 갈게요! !move(\"back\", 2)",
+          "action": {
+            "type": "move",
+            "amount": 2,
+            "direction": "back"
+          },
+          "agrees": true
+        },
+        {
+          "stage": "interpret",
+          "text": "뒤로 두 칸 걸어",
+          "context": {
+            "pending": null,
+            "lastAction": {
+              "type": "move",
+              "amount": 2,
+              "direction": "forward",
+              "completed": true
+            }
+          },
+          "observation": {
+            "pos": {
+              "x": 0.5,
+              "y": 0,
+              "z": 0.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": "block:0:1:2",
+            "targets": [
+              {
+                "key": "block:0:1:2",
+                "kind": "block",
+                "name": "dirt",
+                "pos": {
+                  "x": 0,
+                  "y": 1,
+                  "z": 2
+                },
+                "dist": 2,
+                "relative": {
+                  "forward": 2,
+                  "right": 0,
+                  "up": 1
+                }
+              },
+              {
+                "key": "block:3:0:3",
+                "kind": "block",
+                "name": "oak_log",
+                "pos": {
+                  "x": 3,
+                  "y": 0,
+                  "z": 3
+                },
+                "dist": 4,
+                "relative": {
+                  "forward": 3,
+                  "right": -3,
+                  "up": 0
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "뒤로 두 칸 걸어가기",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "move",
+            "direction": "back",
+            "amount": 2,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "move",
+              "amount": 2,
+              "direction": "back"
+            }
+          },
+          "usage": {
+            "prompt_tokens": 1439,
+            "total_tokens": 1490,
+            "completion_tokens": 51,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "앞으로 두 칸, 그다음 뒤로 두 칸",
+          "plan": {
+            "kind": "execute",
+            "message": "앞으로 두 칸, 그다음 뒤로 두 칸 이동할게요.",
+            "action": {
+              "type": "sequence",
+              "steps": [
+                {
+                  "type": "move",
+                  "amount": 2,
+                  "direction": "forward"
+                },
+                {
+                  "type": "move",
+                  "amount": 2,
+                  "direction": "back"
+                }
+              ]
+            }
+          },
+          "review": {
+            "ok": true,
+            "reason": "원문의 지시는 앞뒤로 각각 두 칸 이동하는 것으로, 계획도 이를 정확히 반영하고 있습니다. 이동 방향과 수량이 일치하며, 목표 블록들에 대한 접근도 계획에 포함되어 있습니다.",
+            "question": ""
+          }
+        }
+      ]
+    },
+    {
+      "text": "제자리에서 180도 돌고 앞으로 세 걸음",
+      "expected": "sequence",
+      "actual": "sequence",
+      "ok": true,
+      "plan": {
+        "kind": "execute",
+        "message": "제자리에서 180도 돌고, 앞으로 세 걸음 걸어갑니다.",
+        "action": {
+          "type": "sequence",
+          "steps": [
+            {
+              "type": "turn",
+              "amount": 180
+            },
+            {
+              "type": "move",
+              "amount": 3,
+              "direction": "forward"
+            }
+          ]
+        }
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "제자리에서 180도 돌고 앞으로 세 걸음",
+          "context": {},
+          "goal": {
+            "reason": "이동과 회전을 순서대로 분리하여 처리함. 제자리 180도 회전은 뒤돌기로 표현.",
+            "kind": "sequence",
+            "utterance": "제자리에서 180도 돌고 앞으로 세 걸음",
+            "steps": [
+              "뒤돌기",
+              "앞으로 세 걸음 걸어"
+            ],
+            "target": "",
+            "message": "제자리에서 180도 돌고, 앞으로 세 걸음 걸어갑니다."
+          }
+        },
+        {
+          "stage": "motion_review",
+          "text": "뒤돌기",
+          "context": {
+            "pending": null
+          },
+          "raw": "뒤돌아볼게요. !turn(180)",
+          "action": {
+            "type": "turn",
+            "amount": 180
+          },
+          "agrees": true
+        },
+        {
+          "stage": "interpret",
+          "text": "뒤돌기",
+          "context": {
+            "pending": null
+          },
+          "observation": {
+            "pos": {
+              "x": 0.5,
+              "y": 0,
+              "z": 0.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": "block:0:1:2",
+            "targets": [
+              {
+                "key": "block:0:1:2",
+                "kind": "block",
+                "name": "dirt",
+                "pos": {
+                  "x": 0,
+                  "y": 1,
+                  "z": 2
+                },
+                "dist": 2,
+                "relative": {
+                  "forward": 2,
+                  "right": 0,
+                  "up": 1
+                }
+              },
+              {
+                "key": "block:3:0:3",
+                "kind": "block",
+                "name": "oak_log",
+                "pos": {
+                  "x": 3,
+                  "y": 0,
+                  "z": 3
+                },
+                "dist": 4,
+                "relative": {
+                  "forward": 3,
+                  "right": -3,
+                  "up": 0
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "현재 시점에서 뒤쪽으로 180도 시선을 돌립니다.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "view",
+            "direction": "back",
+            "amount": 180,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "turn",
+              "amount": 180
+            }
+          },
+          "usage": {
+            "prompt_tokens": 1421,
+            "total_tokens": 1486,
+            "completion_tokens": 65,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        },
+        {
+          "stage": "motion_review",
+          "text": "앞으로 세 걸음 걸어",
+          "context": {
+            "pending": null,
+            "lastAction": {
+              "type": "turn",
+              "amount": 180,
+              "completed": true
+            }
+          },
+          "raw": "앞으로 세 걸음 갈게요! !move(\"forward\", 3)",
+          "action": {
+            "type": "move",
+            "amount": 3,
+            "direction": "forward"
+          },
+          "agrees": true
+        },
+        {
+          "stage": "interpret",
+          "text": "앞으로 세 걸음 걸어",
+          "context": {
+            "pending": null,
+            "lastAction": {
+              "type": "turn",
+              "amount": 180,
+              "completed": true
+            }
+          },
+          "observation": {
+            "pos": {
+              "x": 0.5,
+              "y": 0,
+              "z": 0.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": "block:0:1:2",
+            "targets": [
+              {
+                "key": "block:0:1:2",
+                "kind": "block",
+                "name": "dirt",
+                "pos": {
+                  "x": 0,
+                  "y": 1,
+                  "z": 2
+                },
+                "dist": 2,
+                "relative": {
+                  "forward": 2,
+                  "right": 0,
+                  "up": 1
+                }
+              },
+              {
+                "key": "block:3:0:3",
+                "kind": "block",
+                "name": "oak_log",
+                "pos": {
+                  "x": 3,
+                  "y": 0,
+                  "z": 3
+                },
+                "dist": 4,
+                "relative": {
+                  "forward": 3,
+                  "right": -3,
+                  "up": 0
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "앞으로 세 걸음 걷기",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "move",
+            "direction": "forward",
+            "amount": 3,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "move",
+              "amount": 3,
+              "direction": "forward"
+            }
+          },
+          "usage": {
+            "prompt_tokens": 1437,
+            "total_tokens": 1487,
+            "completion_tokens": 50,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "제자리에서 180도 돌고 앞으로 세 걸음",
+          "plan": {
+            "kind": "execute",
+            "message": "제자리에서 180도 돌고, 앞으로 세 걸음 걸어갑니다.",
+            "action": {
+              "type": "sequence",
+              "steps": [
+                {
+                  "type": "turn",
+                  "amount": 180
+                },
+                {
+                  "type": "move",
+                  "amount": 3,
+                  "direction": "forward"
+                }
+              ]
+            }
+          },
+          "review": {
+            "ok": true,
+            "reason": "원문의 지시사항은 제자리에서 180도 회전한 후 앞으로 세 걸음 이동하는 것으로, 계획도 이를 정확히 반영하고 있습니다. 목표 블록들(흙 블록과 옻나무 원목)은 각각 전진 방향과 상대 위치에서 접근 가능하며, 회전과 이동을 통해 목표 위치에 도달할 수 있습니다. 추가적인 작업 없이 계획이 원문을 충족합니다.",
+            "question": ""
+          }
+        }
+      ]
+    },
+    {
+      "text": "저 나무 한 그루의 원목 전부 캐자",
+      "expected": "tree",
+      "actual": "tree",
+      "ok": true,
+      "plan": {
+        "kind": "execute",
+        "message": "나무 한 그루의 원목을 전부 캐는 중입니다. 잎은 남겨둘게요.",
+        "action": {
+          "type": "tree",
+          "target": "block:3:0:3"
+        }
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "저 나무 한 그루의 원목 전부 캐자",
+          "context": {},
+          "goal": {
+            "reason": "나무 한 그루의 원목 전체 채굴 요청. 관찰된 가장 가까운 oak_log을 선택.",
+            "kind": "tree",
+            "utterance": "저 나무 한 그루의 원목 전부 캐자",
+            "steps": [],
+            "target": "block:3:0:3",
+            "message": "나무 한 그루의 원목을 전부 캐는 중입니다. 잎은 남겨둘게요."
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "저 나무 한 그루의 원목 전부 캐자",
+          "plan": {
+            "kind": "execute",
+            "message": "나무 한 그루의 원목을 전부 캐는 중입니다. 잎은 남겨둘게요.",
+            "action": {
+              "type": "tree",
+              "target": "block:3:0:3"
+            }
+          },
+          "review": {
+            "ok": true,
+            "reason": "원문 목표는 '나무 한 그루의 원목 전부 캐기'이며, 계획은 해당 나무(block:3:0:3, oak_log)의 원목을 전부 제거하는 tree 작업을 수행하고 있습니다. 잎은 남겨둔다는 설명도 원문의 지시와 일치합니다. 접근은 목표의 일부로, 나무에 접근하기 위해 다른 블록(흙)을 캐는 것은 필요에 따라 허용됩니다. 따라서 목표가 계획에 따라 빠짐없이 달성됩니다.",
+            "question": ""
+          }
+        }
+      ]
+    },
+    {
+      "text": "가장 가까운 나무 원목을 남김없이 캐줘",
+      "expected": "tree",
+      "actual": "clarify",
+      "ok": false,
+      "plan": {
+        "kind": "clarify",
+        "message": "요청하신 순서나 범위를 확실히 해석하지 못했어요. 동작과 대상을 조금 더 구체적으로 알려주세요.",
+        "action": null
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "가장 가까운 나무 원목을 남김없이 캐줘",
+          "context": {},
+          "goal": {
+            "reason": "가장 가까운 나무 원목을 남김없이 캐는 것은 tree 작업.",
+            "kind": "tree",
+            "utterance": "가장 가까운 나무 원목을 남김없이 캐줘",
+            "steps": [],
+            "target": "block:3:0:3",
+            "message": "가장 가까운 나무(오크 로그)를 모두 캐는 중입니다. 잎은 남겨둘 수 있습니다."
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "가장 가까운 나무 원목을 남김없이 캐줘",
+          "plan": {
+            "kind": "execute",
+            "message": "가장 가까운 나무(오크 로그)를 모두 캐는 중입니다. 잎은 남겨둘 수 있습니다.",
+            "action": {
+              "type": "tree",
+              "target": "block:3:0:3"
+            }
+          },
+          "review": {
+            "ok": false,
+            "reason": "원문 목표는 '가장 가까운 나무 원목을 남김없이 캐줘'로, '남김없이 캐는 것'이 핵심입니다. 그러나 plan의 action은 'tree'로, 'block:3:0:3'의 오크 로그를 대상으로 하며, 이는 원목만 제거하고 잎은 남기는 방식입니다. 이는 '남김없이 캐는 것'과 불일치합니다. 또한, '가장 가까운 나무'는 'block:0:1:2'가 아니라 'block:3:0:3'이므로, 접근 방향과 대상이 잘못되었습니다.",
+            "question": "가장 가까운 나무(오크 로그)를 남김없이 캐는 것이 목표라면, 대상 블록은 'block:3:0:3'이 맞는지, 그리고 잎도 제거해야 하는지 확인해 주세요."
+          }
+        },
+        {
+          "stage": "goal",
+          "text": "가장 가까운 나무 원목을 남김없이 캐줘",
+          "context": {},
+          "goal": {
+            "reason": "원문의 행동과 수량을 보존한다. '남김없이 캐는 것'은 원목과 잎을 모두 제거해야 하며, 가장 가까운 나무는 block:3:0:3의 오크 로그이다. 이전 오류를 수정하여 tree 대신 전체 나무를 캐는 동작을 수행한다.",
+            "kind": "tree",
+            "utterance": "가장 가까운 나무 원목을 남김없이 캐줘",
+            "steps": [],
+            "target": "block:3:0:3",
+            "message": "가장 가까운 나무(오크 로그)의 원목과 잎을 모두 캐는 중입니다."
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "가장 가까운 나무 원목을 남김없이 캐줘",
+          "plan": {
+            "kind": "execute",
+            "message": "가장 가까운 나무(오크 로그)의 원목과 잎을 모두 캐는 중입니다.",
+            "action": {
+              "type": "tree",
+              "target": "block:3:0:3"
+            }
+          },
+          "review": {
+            "ok": false,
+            "reason": "원문 목표는 '가장 가까운 나무 원목을 남김없이 캐줘'로, 나무의 원목만 채굴하는 것이 목적입니다. 그러나 계획은 '오크 로그의 원목과 잎을 모두 캐는 중'이라고 명시하고 있으며, 잎은 원목이 아니므로 원목만 남김없이 캐는 목표와 불일치합니다. 또한, 'tree' 액션은 원목과 잎을 모두 제거하므로, 원목만 남김없이 캐는 목적에 부합하지 않습니다.",
+            "question": "원목만 남김없이 캐는 것이 목표라면, 잎은 제거하지 않아도 되는지 확인해 주세요. 만약 잎도 제거해야 한다면, 원문 목표의 '원목'만 캐는 의미가 흐려지므로, 목표를 재확인해 주시기 바랍니다."
+          }
+        }
+      ]
+    },
+    {
+      "text": "앞의 나무 한 그루만 다 없애줘, 잎은 놔둬",
+      "expected": "tree",
+      "actual": "clarify",
+      "ok": false,
+      "plan": {
+        "kind": "clarify",
+        "message": "어떤 나무를 캐시겠어요? 가장 가까운 나무는 올리브 나무(원목)이지만, 이는 전체 나무 구조를 포함하지 않습니다. 정확한 나무를 지정해 주세요.",
+        "action": null
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "앞의 나무 한 그루만 다 없애줘, 잎은 놔둬",
+          "context": {},
+          "goal": {
+            "reason": "원문의 행동과 수량을 보존한다.",
+            "kind": "tree",
+            "utterance": "앞의 나무 한 그루만 다 없애줘, 잎은 놔둬",
+            "steps": [],
+            "target": "block:3:0:3",
+            "message": "앞의 나무 한 그루를 캐고, 잎은 그대로 두겠습니다."
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "앞의 나무 한 그루만 다 없애줘, 잎은 놔둬",
+          "plan": {
+            "kind": "execute",
+            "message": "앞의 나무 한 그루를 캐고, 잎은 그대로 두겠습니다.",
+            "action": {
+              "type": "tree",
+              "target": "block:3:0:3"
+            }
+          },
+          "review": {
+            "ok": false,
+            "reason": "원문에서 '앞의 나무 한 그루만 다 없애줘, 잎은 놔둬'라는 지시는 나무의 원목만 제거하고 잎은 그대로 두는 것을 의미합니다. 그러나 plan에서 지정된 action은 'tree'로, 이는 나무의 연결된 원목만 제거하고 잎은 그대로 두는 것으로 올바르게 해석될 수 있으나, target이 'block:3:0:3'인 oak_log이므로, 이는 나무의 원목이 아닌 단일 원목 블록을 가리킵니다. 원문의 '앞의 나무 한 그루'는 전체 나무(원목 + 잎)를 의미하며, 이는 단일 원목 블록이 아니라 전체 구조를 의미합니다. 따라서 target이 원목 블록 하나로 축소되어 원문의 목표를 충족하지 못합니다.",
+            "question": "앞의 나무 한 그루를 전체적으로 제거하기 위해, 원목과 잎이 연결된 전체 나무 구조를 타겟으로 지정해야 합니다. 현재 target은 단일 원목 블록(block:3:0:3)이므로, 전체 나무의 중심 블록(예: oak_log이 있는 위치)을 기준으로 하여 나무 전체를 타겟으로 설정해야 합니다. 이에 따라 target을 수정할 필요가 있나요?"
+          }
+        },
+        {
+          "stage": "goal",
+          "text": "앞의 나무 한 그루만 다 없애줘, 잎은 놔둬",
+          "context": {},
+          "goal": {
+            "reason": "원문의 '앞의 나무 한 그루'는 전체 나무 구조(원목 + 잎)를 의미하므로, 단일 원목 블록이 아닌 전체 나무를 대상으로 해야 함. 현재 관찰에서 가장 가까운 나무는 oak_log이지만, 이는 원목 블록 하나일 뿐 전체 나무를 나타내지 않음. 따라서 전체 나무를 식별하기 위해 추가 정보를 요청해야 함.",
+            "kind": "clarify",
+            "utterance": "앞의 나무 한 그루만 다 없애줘, 잎은 놔둬",
+            "steps": [],
+            "target": "",
+            "message": "어떤 나무를 캐시겠어요? 가장 가까운 나무는 올리브 나무(원목)이지만, 이는 전체 나무 구조를 포함하지 않습니다. 정확한 나무를 지정해 주세요."
+          }
+        }
+      ]
+    },
+    {
+      "text": "나무 다 캐서 없애자",
+      "expected": "tree",
+      "actual": "clarify",
+      "ok": false,
+      "plan": {
+        "kind": "clarify",
+        "message": "요청하신 순서나 범위를 확실히 해석하지 못했어요. 동작과 대상을 조금 더 구체적으로 알려주세요.",
+        "action": null
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "나무 다 캐서 없애자",
+          "context": {},
+          "goal": {
+            "reason": "원문의 행동과 수량을 보존한다.",
+            "kind": "tree",
+            "utterance": "나무 다 캐서 없애자",
+            "steps": [],
+            "target": "block:3:0:3",
+            "message": "가장 가까운 오아크 원목(3,0,3)을 캐고, 잎은 남겨둘게요."
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "나무 다 캐서 없애자",
+          "plan": {
+            "kind": "execute",
+            "message": "가장 가까운 오아크 원목(3,0,3)을 캐고, 잎은 남겨둘게요.",
+            "action": {
+              "type": "tree",
+              "target": "block:3:0:3"
+            }
+          },
+          "review": {
+            "ok": false,
+            "reason": "원문 목표는 '나무 다 캐서 없애자'로, 모든 원목을 제거하는 것이며, 계획은 오아크 원목 하나만 캐는 것으로 제한되어 있어 목표 달성에 부족합니다. 또한, '잎은 남겨둘게요'라는 추가 지시는 원문에 없으며, 원목 채굴의 일부로 간주되지 않습니다.",
+            "question": "모든 원목을 제거하는 데 필요한 추가 작업은 무엇인가요? 다른 나무나 원목이 있는 위치는 어디인가요?"
+          }
+        },
+        {
+          "stage": "goal",
+          "text": "나무 다 캐서 없애자",
+          "context": {},
+          "goal": {
+            "reason": "원문의 목표는 나무 전체를 채굴하여 없애는 것으로, 관찰된 오아크 원목 하나만 채굴하는 것은 부족함. 목표 달성을 위해 모든 원목을 제거해야 하며, 추가 지시 없이도 원목 채굴이 전부임.",
+            "kind": "tree",
+            "utterance": "나무 다 캐서 없애자",
+            "steps": [],
+            "target": "block:3:0:3",
+            "message": "오아크 나무의 원목을 모두 채굴하고, 잎은 남겨둘게요."
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "나무 다 캐서 없애자",
+          "plan": {
+            "kind": "execute",
+            "message": "오아크 나무의 원목을 모두 채굴하고, 잎은 남겨둘게요.",
+            "action": {
+              "type": "tree",
+              "target": "block:3:0:3"
+            }
+          },
+          "review": {
+            "ok": false,
+            "reason": "원문 목표는 '나무 다 캐서 없애자'로, 모든 원목을 제거하는 것이며, '오아크 나무의 원목을 모두 채굴하고, 잎은 남겨둘게요.'라는 계획은 잎을 남긴다는 점에서 원문의 '없애자'라는 목표와 불일치합니다. 잎도 제거해야 원목과 함께 완전히 없애는 것으로 간주됩니다.",
+            "question": "잎도 제거해야 하는지 확인해 주세요. 원문 목표는 나무 전체를 없애는 것이므로, 잎까지 제거하는 것이 맞는지 여부를 명확히 해 주세요."
+          }
+        }
+      ]
+    },
+    {
+      "text": "앞에 쌓인 흙을 파서 올라갈 계단을 내줘",
+      "expected": "carve",
+      "actual": "unavailable",
+      "ok": false,
+      "plan": {
+        "kind": "unavailable",
+        "message": "대상과 작업 범위를 확인하지 못했어요. 가까이 있는 나무나 깎을 흙 벽을 지정해 주세요.",
+        "action": null
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "앞에 쌓인 흙을 파서 올라갈 계단을 내줘",
+          "context": {},
+          "goal": {
+            "reason": "원문의 행동과 수량을 보존한다.",
+            "kind": "carve",
+            "utterance": "앞에 쌓인 흙을 파서 올라갈 계단을 내줘",
+            "steps": [],
+            "target": "block:3:0:3",
+            "message": "앞에 있는 흙을 깎아 계단을 만들게요."
+          }
+        }
+      ]
+    },
+    {
+      "text": "이 흙 벽에 한 칸 폭으로 계단길을 깎아줘",
+      "expected": "carve",
+      "actual": "carve",
+      "ok": true,
+      "plan": {
+        "kind": "execute",
+        "message": "정면의 흙 벽에 한 칸 폭으로 계단 길을 깎아드릴게요.",
+        "action": {
+          "type": "carve",
+          "target": "block:0:1:2"
+        }
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "이 흙 벽에 한 칸 폭으로 계단길을 깎아줘",
+          "context": {},
+          "goal": {
+            "reason": "원문의 행동과 수량을 보존한다.",
+            "kind": "carve",
+            "utterance": "이 흙 벽에 한 칸 폭으로 계단길을 깎아줘",
+            "steps": [],
+            "target": "block:0:1:2",
+            "message": "정면의 흙 벽에 한 칸 폭으로 계단 길을 깎아드릴게요."
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "이 흙 벽에 한 칸 폭으로 계단길을 깎아줘",
+          "plan": {
+            "kind": "execute",
+            "message": "정면의 흙 벽에 한 칸 폭으로 계단 길을 깎아드릴게요.",
+            "action": {
+              "type": "carve",
+              "target": "block:0:1:2"
+            }
+          },
+          "review": {
+            "ok": true,
+            "reason": "원문의 지시는 '이 흙 벽에 한 칸 폭으로 계단길을 깎아줘'로, 흙 벽(block:0:1:2)에 대해 carve 작업을 수행하는 것이 목적입니다. 계획도 해당 위치에 대해 carve를 수행하고 있으며, 작업의 수량(한 칸 폭), 방향(정면), 대상(흙 벽)이 일치합니다. 추가적인 작업이나 변경 없이 원문 목표를 그대로 달성하고 있습니다.",
+            "question": ""
+          }
+        }
+      ]
+    },
+    {
+      "text": "새 블록 놓지 말고 흙 벽을 깎아서 올라가자",
+      "expected": "carve",
+      "actual": "clarify",
+      "ok": false,
+      "plan": {
+        "kind": "clarify",
+        "message": "요청하신 순서나 범위를 확실히 해석하지 못했어요. 동작과 대상을 조금 더 구체적으로 알려주세요.",
+        "action": null
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "새 블록 놓지 말고 흙 벽을 깎아서 올라가자",
+          "context": {},
+          "goal": {
+            "reason": "원문의 행동과 수량을 보존한다.",
+            "kind": "carve",
+            "utterance": "흙 벽을 깎아서 올라가자",
+            "steps": [],
+            "target": "block:0:1:2",
+            "message": "앞의 흙 벽을 깎아서 올라갈게요."
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "새 블록 놓지 말고 흙 벽을 깎아서 올라가자",
+          "plan": {
+            "kind": "execute",
+            "message": "앞의 흙 벽을 깎아서 올라갈게요.",
+            "action": {
+              "type": "carve",
+              "target": "block:0:1:2"
+            }
+          },
+          "review": {
+            "ok": false,
+            "reason": "원문에서 '새 블록 놓지 말고 흙 벽을 깎아서 올라가자'는 지시는 흙 벽을 파서 계단을 만들고 올라가는 것을 의미합니다. 그러나 plan의 action은 'carve'로, target인 block:0:1:2(흙 벽)을 파는 것으로 해석되지만, 이는 원문의 '흙 벽을 깎아서 올라가기'라는 목표를 충족하지 못합니다. 'carve'는 기존 흙 벽을 파서 한 칸 폭 최대 네 칸 높이의 계단을 만들고 올라가는 것으로 정의되지만, 현재 target은 (0,1,2)로, y=1인 높이에 위치해 있어, 벽의 하단이 아니라 중간에 위치할 수 있습니다. 따라서 이 위치에서의 파기 작업은 계단 형성과 올라가기라는 목표를 달성하기에 부적절합니다. 또한, '앞의 흙 벽'이라는 표현은 앞쪽에 있는 벽을 의미하며, 현재 target은 (0,1,2)로, 상대적 위치가 forward=2, up=1이므로, 벽의 바로 앞이 아니라 다소 떨어진 위치에 있습니다. 이는 접근 방식이 잘못된 것으로 판단됩니다.",
+            "question": "앞의 흙 벽을 깎아서 올라가기 위해, 가장 가까운 앞쪽 흙 벽 블록(예: forward=1, up=0 또는 up=1인 위치)을 선택해야 합니다. 현재 target인 (0,1,2)는 벽의 바로 앞이 아니라, 다소 떨어진 위치에 있습니다. 올바른 흙 벽 블록은 어디인가요?"
+          }
+        },
+        {
+          "stage": "goal",
+          "text": "새 블록 놓지 말고 흙 벽을 깎아서 올라가자",
+          "context": {},
+          "goal": {
+            "reason": "원문의 지시를 정확히 해석하고, 이전 검토 기록을 반영하여 목표를 수정함. '흙 벽을 깎아서 올라가기'는 기존 흙 지형을 깎아 계단을 만들고 올라가는 것을 의미하며, 현재 관찰에서 가장 가까운 흙 벽(오른쪽 앞쪽)을 선택함. 이는 'carve' 동작으로 처리 가능하며, 정면의 가까운 블록이어야 하므로, 관찰 목록에서 'dirt' 블록 중 정면에 가까운 block:0:1:2를 대상으로 함. 이 블록은 y=1 높이에 위치하므로, 계단 형성에 적합하며, 앞쪽 벽의 하단 부분에 해당함. 따라서 이 블록을 기준으로 계단을 깎아 올라가는 것이 적절함.",
+            "kind": "carve",
+            "utterance": "흙 벽을 깎아서 올라가자",
+            "steps": [],
+            "target": "block:0:1:2",
+            "message": "앞의 흙 벽을 깎아 계단을 만들어 올라가요."
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "새 블록 놓지 말고 흙 벽을 깎아서 올라가자",
+          "plan": {
+            "kind": "execute",
+            "message": "앞의 흙 벽을 깎아 계단을 만들어 올라가요.",
+            "action": {
+              "type": "carve",
+              "target": "block:0:1:2"
+            }
+          },
+          "review": {
+            "ok": false,
+            "reason": "원문에서 '새 블록 놓지 말고 흙 벽을 깎아서 올라가자'는 지시는 흙 벽을 파서 계단을 만들고 올라가는 것을 의미합니다. 그러나 plan의 action은 'carve'로, target이 'block:0:1:2'인 흙 벽을 깎는 것으로 보이지만, 이 위치는 이미 존재하는 블록이므로 'carve'는 기존 흙 벽을 파서 계단을 만드는 것으로 해석되어야 합니다. 그러나 'carve'는 한 칸 폭 최대 네 칸 높이의 계단을 만들고 올라가는 동작이며, 이는 원문의 '계단을 만들어 올라가자'와 일치합니다. 다만, 'carve'의 대상이 'block:0:1:2'인 흙 벽이지만, 이 위치는 y=1이므로 땅 위에 있는 벽이 아니라, 높이가 1인 위치에 있는 벽입니다. 이는 계단을 만들기 위한 적절한 위치가 아닐 수 있습니다. 또한, 'carve'는 기존 벽을 파서 계단을 만들고 올라가는 동작이지만, 이 동작이 실제로 계단을 만들고 올라가는지, 아니면 단순히 벽을 파는 것인지에 대한 명확한 설명이 부족합니다. 따라서 'carve'가 원문의 의도를 정확히 반영하는지 확인이 필요합니다.",
+            "question": "carve 동작이 흙 벽을 파서 한 칸 폭 최대 네 칸 높이의 계단을 만들고, 그 계단을 통해 올라가는 동작을 수행하는지 확인해 주세요. 만약 그렇지 않다면, 계단을 만들고 올라가는 동작을 수행할 수 있는 다른 동작이 있는지 알려주세요."
+          }
+        }
+      ]
+    },
+    {
+      "text": "돌을 놓아서 계단 지어줘",
+      "expected": "nonaction",
+      "actual": "clarify",
+      "ok": true,
+      "plan": {
+        "kind": "clarify",
+        "message": "계단을 설치하려는 건가요, 아니면 앞의 지형을 깎아서 계단을 만들려는 건가요?",
+        "action": null
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "돌을 놓아서 계단 지어줘",
+          "context": {},
+          "goal": {
+            "reason": "원문의 행동과 수량을 보존한다.",
+            "kind": "clarify",
+            "utterance": "돌을 놓아서 계단 지어줘",
+            "steps": [],
+            "target": "",
+            "message": "계단을 설치하려는 건가요, 아니면 앞의 지형을 깎아서 계단을 만들려는 건가요?"
+          }
+        }
+      ]
+    },
+    {
+      "text": "작업대를 만들어줘",
+      "expected": "nonaction",
+      "actual": "unavailable",
+      "ok": true,
+      "plan": {
+        "kind": "unavailable",
+        "message": "작업대를 만드는 것은 현재 지원하지 않는 작업입니다.",
+        "action": null
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "작업대를 만들어줘",
+          "context": {},
+          "goal": {
+            "reason": "원문의 행동과 수량을 보존한다.",
+            "kind": "unsupported",
+            "utterance": "작업대를 만들어줘",
+            "steps": [],
+            "target": "",
+            "message": "작업대를 만드는 것은 현재 지원하지 않는 작업입니다."
+          }
+        }
+      ]
+    },
+    {
+      "text": "왼편으로 네 걸음 옮겨줘",
+      "expected": "move",
+      "actual": "move",
+      "ok": true,
+      "plan": {
+        "kind": "execute",
+        "message": "요청한 행동을 시작할게요.",
+        "action": {
+          "type": "move",
+          "amount": 4,
+          "direction": "left"
+        }
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "왼편으로 네 걸음 옮겨줘",
+          "context": {},
+          "goal": {
+            "reason": "이동 거리 답변으로 목표가 완성됨. 네 걸음 이동은 단일 행동.",
+            "kind": "single",
+            "utterance": "왼편으로 네 걸음 옮겨줘",
+            "steps": [],
+            "target": "",
+            "message": "왼편으로 네 걸음 이동할게요."
+          }
+        },
+        {
+          "stage": "motion_review",
+          "text": "왼편으로 네 걸음 옮겨줘",
+          "context": {},
+          "raw": "왼편으로 네 걸음 옮길게요! !move(\"left\", 4)",
+          "action": {
+            "type": "move",
+            "amount": 4,
+            "direction": "left"
+          },
+          "agrees": true
+        },
+        {
+          "stage": "interpret",
+          "text": "왼편으로 네 걸음 옮겨줘",
+          "context": {},
+          "observation": {
+            "pos": {
+              "x": 0.5,
+              "y": 0,
+              "z": 0.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": "block:0:1:2",
+            "targets": [
+              {
+                "key": "block:0:1:2",
+                "kind": "block",
+                "name": "dirt",
+                "pos": {
+                  "x": 0,
+                  "y": 1,
+                  "z": 2
+                },
+                "dist": 2,
+                "relative": {
+                  "forward": 2,
+                  "right": 0,
+                  "up": 1
+                }
+              },
+              {
+                "key": "block:3:0:3",
+                "kind": "block",
+                "name": "oak_log",
+                "pos": {
+                  "x": 3,
+                  "y": 0,
+                  "z": 3
+                },
+                "dist": 4,
+                "relative": {
+                  "forward": 3,
+                  "right": -3,
+                  "up": 0
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "왼쪽으로 네 블록 이동해줘.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "move",
+            "direction": "left",
+            "amount": 4,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "move",
+              "amount": 4,
+              "direction": "left"
+            }
+          },
+          "usage": {
+            "prompt_tokens": 1429,
+            "total_tokens": 1484,
+            "completion_tokens": 55,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        }
+      ]
+    },
+    {
+      "text": "대각선 오른쪽 앞으로 2칸 걸어",
+      "expected": "move",
+      "actual": "move",
+      "ok": true,
+      "plan": {
+        "kind": "execute",
+        "message": "요청한 행동을 시작할게요.",
+        "action": {
+          "type": "move",
+          "amount": 2,
+          "direction": "forward_right"
+        }
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "대각선 오른쪽 앞으로 2칸 걸어",
+          "context": {},
+          "goal": {
+            "reason": "원문의 행동과 수량을 보존한다.",
+            "kind": "single",
+            "utterance": "대각선 오른쪽 앞으로 2칸 걸어",
+            "steps": [],
+            "target": "",
+            "message": "요청을 처리할게요."
+          }
+        },
+        {
+          "stage": "motion_review",
+          "text": "대각선 오른쪽 앞으로 2칸 걸어",
+          "context": {},
+          "raw": "대각선 오른쪽 앞으로 2칸 갈게요! !move(\"forward_right\", 2)",
+          "action": {
+            "type": "move",
+            "amount": 2,
+            "direction": "forward_right"
+          },
+          "agrees": true
+        },
+        {
+          "stage": "interpret",
+          "text": "대각선 오른쪽 앞으로 2칸 걸어",
+          "context": {},
+          "observation": {
+            "pos": {
+              "x": 0.5,
+              "y": 0,
+              "z": 0.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": "block:0:1:2",
+            "targets": [
+              {
+                "key": "block:0:1:2",
+                "kind": "block",
+                "name": "dirt",
+                "pos": {
+                  "x": 0,
+                  "y": 1,
+                  "z": 2
+                },
+                "dist": 2,
+                "relative": {
+                  "forward": 2,
+                  "right": 0,
+                  "up": 1
+                }
+              },
+              {
+                "key": "block:3:0:3",
+                "kind": "block",
+                "name": "oak_log",
+                "pos": {
+                  "x": 3,
+                  "y": 0,
+                  "z": 3
+                },
+                "dist": 4,
+                "relative": {
+                  "forward": 3,
+                  "right": -3,
+                  "up": 0
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "대각선 오른쪽 앞으로 2칸 이동하라.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "move",
+            "direction": "forward_right",
+            "amount": 2,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "move",
+              "amount": 2,
+              "direction": "forward_right"
+            }
+          },
+          "usage": {
+            "prompt_tokens": 1430,
+            "total_tokens": 1498,
+            "completion_tokens": 68,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        }
+      ]
+    },
+    {
+      "text": "앞쪽으로 다섯 발짝 걸어줘",
+      "expected": "move",
+      "actual": "move",
+      "ok": true,
+      "plan": {
+        "kind": "execute",
+        "message": "요청한 행동을 시작할게요.",
+        "action": {
+          "type": "move",
+          "amount": 5,
+          "direction": "forward"
+        }
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "앞쪽으로 다섯 발짝 걸어줘",
+          "context": {},
+          "goal": {
+            "reason": "원문의 행동과 수량을 보존한다.",
+            "kind": "single",
+            "utterance": "앞쪽으로 다섯 발짝 걸어줘",
+            "steps": [],
+            "target": "",
+            "message": "요청을 처리할게요."
+          }
+        },
+        {
+          "stage": "motion_review",
+          "text": "앞쪽으로 다섯 발짝 걸어줘",
+          "context": {},
+          "raw": "앞쪽으로 다섯 발짝 갈게요! !move(\"forward\", 5)",
+          "action": {
+            "type": "move",
+            "amount": 5,
+            "direction": "forward"
+          },
+          "agrees": true
+        },
+        {
+          "stage": "interpret",
+          "text": "앞쪽으로 다섯 발짝 걸어줘",
+          "context": {},
+          "observation": {
+            "pos": {
+              "x": 0.5,
+              "y": 0,
+              "z": 0.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": "block:0:1:2",
+            "targets": [
+              {
+                "key": "block:0:1:2",
+                "kind": "block",
+                "name": "dirt",
+                "pos": {
+                  "x": 0,
+                  "y": 1,
+                  "z": 2
+                },
+                "dist": 2,
+                "relative": {
+                  "forward": 2,
+                  "right": 0,
+                  "up": 1
+                }
+              },
+              {
+                "key": "block:3:0:3",
+                "kind": "block",
+                "name": "oak_log",
+                "pos": {
+                  "x": 3,
+                  "y": 0,
+                  "z": 3
+                },
+                "dist": 4,
+                "relative": {
+                  "forward": 3,
+                  "right": -3,
+                  "up": 0
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "앞쪽으로 다섯 발짝 걸어줘",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "move",
+            "direction": "forward",
+            "amount": 5,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "move",
+              "amount": 5,
+              "direction": "forward"
+            }
+          },
+          "usage": {
+            "prompt_tokens": 1428,
+            "total_tokens": 1491,
+            "completion_tokens": 63,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        }
+      ]
+    },
+    {
+      "text": "제자리에서 두 번 뛰어올라",
+      "expected": "jump",
+      "actual": "jump",
+      "ok": true,
+      "plan": {
+        "kind": "execute",
+        "message": "요청한 행동을 시작할게요.",
+        "action": {
+          "type": "jump",
+          "amount": 2
+        }
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "제자리에서 두 번 뛰어올라",
+          "context": {},
+          "goal": {
+            "reason": "원문의 행동과 수량을 보존한다.",
+            "kind": "single",
+            "utterance": "제자리에서 두 번 뛰어올라",
+            "steps": [],
+            "target": "",
+            "message": "제자리에서 두 번 점프할게요."
+          }
+        },
+        {
+          "stage": "motion_review",
+          "text": "제자리에서 두 번 뛰어올라",
+          "context": {},
+          "raw": "제자리에서 두 번 뛸게요! !jump(2)",
+          "action": {
+            "type": "jump",
+            "amount": 2
+          },
+          "agrees": true
+        },
+        {
+          "stage": "interpret",
+          "text": "제자리에서 두 번 뛰어올라",
+          "context": {},
+          "observation": {
+            "pos": {
+              "x": 0.5,
+              "y": 0,
+              "z": 0.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": "block:0:1:2",
+            "targets": [
+              {
+                "key": "block:0:1:2",
+                "kind": "block",
+                "name": "dirt",
+                "pos": {
+                  "x": 0,
+                  "y": 1,
+                  "z": 2
+                },
+                "dist": 2,
+                "relative": {
+                  "forward": 2,
+                  "right": 0,
+                  "up": 1
+                }
+              },
+              {
+                "key": "block:3:0:3",
+                "kind": "block",
+                "name": "oak_log",
+                "pos": {
+                  "x": 3,
+                  "y": 0,
+                  "z": 3
+                },
+                "dist": 4,
+                "relative": {
+                  "forward": 3,
+                  "right": -3,
+                  "up": 0
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "제자리에서 두 번 점프한다.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "jump",
+            "direction": "",
+            "amount": 2,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "jump",
+              "amount": 2
+            }
+          },
+          "usage": {
+            "prompt_tokens": 1430,
+            "total_tokens": 1480,
+            "completion_tokens": 50,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        }
+      ]
+    },
+    {
+      "text": "멈추라고 할 때까지 계속 걸어",
+      "expected": "nonaction",
+      "actual": "clarify",
+      "ok": true,
+      "plan": {
+        "kind": "clarify",
+        "message": "어떤 조건에서 멈출지 알려주세요.",
+        "action": null
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "멈추라고 할 때까지 계속 걸어",
+          "context": {},
+          "goal": {
+            "reason": "원문의 행동과 수량을 보존한다.",
+            "kind": "clarify",
+            "utterance": "멈추라고 할 때까지 계속 걸어",
+            "steps": [],
+            "target": "",
+            "message": "어떤 조건에서 멈출지 알려주세요."
+          }
+        }
+      ]
+    },
+    {
+      "text": "숲에 있는 나무를 전부 없애",
+      "expected": "nonaction",
+      "actual": "clarify",
+      "ok": true,
+      "plan": {
+        "kind": "clarify",
+        "message": "어떤 나무를 말하는 건가요? 가장 가까운 나무를 채굴할까요?",
+        "action": null
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "숲에 있는 나무를 전부 없애",
+          "context": {},
+          "goal": {
+            "reason": "원문의 행동과 수량을 보존한다.",
+            "kind": "clarify",
+            "utterance": "숲에 있는 나무를 전부 없애",
+            "steps": [],
+            "target": "",
+            "message": "어떤 나무를 말하는 건가요? 가장 가까운 나무를 채굴할까요?"
+          }
+        }
+      ]
+    },
+    {
+      "text": "반가워 스티브",
+      "expected": "reply",
+      "actual": "reply",
+      "ok": true,
+      "plan": {
+        "kind": "reply",
+        "message": "반가워요, 스티브!",
+        "action": null
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "반가워 스티브",
+          "context": {},
+          "goal": {
+            "reason": "원문의 행동과 수량을 보존한다.",
+            "kind": "chat",
+            "utterance": "반가워 스티브",
+            "steps": [],
+            "target": "",
+            "message": "반가워요, 스티브!"
+          }
+        }
+      ]
+    }
+  ]
+}

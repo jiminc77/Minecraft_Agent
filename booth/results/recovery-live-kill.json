@@ -1,0 +1,40 @@
+[
+  {
+    "name": "gateway connection loss expires manual controls",
+    "ok": true,
+    "ms": 8808,
+    "details": {
+      "stopMs": 203,
+      "controls": {
+        "forward": false,
+        "back": false,
+        "left": false,
+        "right": false,
+        "jump": false,
+        "sprint": false
+      }
+    }
+  },
+  {
+    "name": "mindcraft process automatically recovers",
+    "ok": true,
+    "ms": 12047,
+    "details": {
+      "before": "491454",
+      "after": "494120",
+      "phase": "ready",
+      "viewer": true
+    }
+  },
+  {
+    "name": "client process automatically recovers",
+    "ok": true,
+    "ms": 15050,
+    "details": {
+      "before": "485116",
+      "after": "494310",
+      "phase": "ready",
+      "viewer": true
+    }
+  }
+]

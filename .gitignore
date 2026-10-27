@@ -1,0 +1,26 @@
+# Allow-list: only source, docs and results are tracked. Runtimes, worlds and secrets stay on the host.
+/*
+!/.gitignore
+!/README.md
+!/booth/
+
+/booth/*
+!/booth/*.js
+!/booth/*.json
+!/booth/*.md
+!/booth/*.patch
+!/booth/*.png
+!/booth/*.py
+!/booth/gateway/
+!/booth/mindcraft/
+!/booth/ops/
+!/booth/results/
+!/booth/tests/
+
+node_modules/
+__pycache__/
+# Visitor conversation audit log and bot memories contain what booth visitors typed.
+/booth/gateway/conversation.jsonl
+/booth/mindcraft/bots/
+/booth/mindcraft/keys.json
+/booth/results/*/.orig/

@@ -1,0 +1,1 @@
+{"type":"module","scripts":{"test":"node --test tests/*.test.mjs"},"dependencies":{"ajv":"8.17.1","hangul-util":"1.0.0"}}

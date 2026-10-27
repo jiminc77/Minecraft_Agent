@@ -1,0 +1,305 @@
+TAP version 13
+# Subtest: schema rejects invalid direction, out of range, and invented target
+ok 1 - schema rejects invalid direction, out of range, and invented target
+  ---
+  duration_ms: 2.085266
+  ...
+# Subtest: clarification never executes; next answer receives pending context
+ok 2 - clarification never executes; next answer receives pending context
+  ---
+  duration_ms: 1.724551
+  ...
+# Subtest: old model response cannot execute after a newer request
+ok 3 - old model response cannot execute after a newer request
+  ---
+  duration_ms: 2.514884
+  ...
+# Subtest: manual takeover invalidates pending inference and context
+ok 4 - manual takeover invalidates pending inference and context
+  ---
+  duration_ms: 0.530181
+  ...
+# Subtest: failure to confirm stop prevents planning and execution
+ok 5 - failure to confirm stop prevents planning and execution
+  ---
+  duration_ms: 0.309883
+  ...
+# Subtest: timeout after dispatch requests a stop and never marks completion
+ok 6 - timeout after dispatch requests a stop and never marks completion
+  ---
+  duration_ms: 30.911913
+  ...
+# Subtest: unconfirmed stop is not reported as a successful stop
+ok 7 - unconfirmed stop is not reported as a successful stop
+  ---
+  duration_ms: 0.365365
+  ...
+# Subtest: late progress observation cannot overwrite a completed result
+ok 8 - late progress observation cannot overwrite a completed result
+  ---
+  duration_ms: 10.817636
+  ...
+# Subtest: grounded steps use distinct transport epochs and stop between steps
+ok 9 - grounded steps use distinct transport epochs and stop between steps
+  ---
+  duration_ms: 0.877276
+  ...
+# Subtest: late first-step result cannot launch a second step after new input
+ok 10 - late first-step result cannot launch a second step after new input
+  ---
+  duration_ms: 2.41887
+  ...
+# Subtest: grounded pending goal is passed to followup resolver without execution
+ok 11 - grounded pending goal is passed to followup resolver without execution
+  ---
+  duration_ms: 0.555853
+  ...
+# Subtest: later-step ambiguity preserves only remaining steps for followup
+ok 12 - later-step ambiguity preserves only remaining steps for followup
+  ---
+  duration_ms: 0.256721
+  ...
+# Subtest: tree fixes a connected component and excludes neighboring separate trees
+ok 13 - tree fixes a connected component and excludes neighboring separate trees
+  ---
+  duration_ms: 0.828404
+  ...
+# Subtest: oversized connected tree fails before execution
+ok 14 - oversized connected tree fails before execution
+  ---
+  duration_ms: 0.292182
+  ...
+# Subtest: three high wall creates three ascending footholds with exact removal budget
+ok 15 - three high wall creates three ascending footholds with exact removal budget
+  ---
+  duration_ms: 0.460549
+  ...
+# Subtest: foreign blocks and missing supports reject whole carve before digging
+ok 16 - foreign blocks and missing supports reject whole carve before digging
+  ---
+  duration_ms: 0.150336
+  ...
+# Subtest: sequence schema rejects nested or excessive plans
+ok 17 - sequence schema rejects nested or excessive plans
+  ---
+  duration_ms: 1.592686
+  ...
+# Subtest: land candidates require dry feet, headroom and forward supported ground
+ok 18 - land candidates require dry feet, headroom and forward supported ground
+  ---
+  duration_ms: 0.389386
+  ...
+# Subtest: travel schema admits continuous and long combined movement but rejects oversized requests
+ok 19 - travel schema admits continuous and long combined movement but rejects oversized requests
+  ---
+  duration_ms: 0.22174
+  ...
+# Subtest: whole-tree goal stays whole and needs an independent semantic review
+ok 20 - whole-tree goal stays whole and needs an independent semantic review
+  ---
+  duration_ms: 2.566946
+  ...
+# Subtest: semantic mismatch rejects a valid geometric target
+ok 21 - semantic mismatch rejects a valid geometric target
+  ---
+  duration_ms: 0.301193
+  ...
+# Subtest: invented goal target never reaches execution
+ok 22 - invented goal target never reaches execution
+  ---
+  duration_ms: 0.218169
+  ...
+# Subtest: greeting response does not create an executable command
+ok 23 - greeting response does not create an executable command
+  ---
+  duration_ms: 0.143025
+  ...
+# Subtest: long sequence cannot silently discard steps
+ok 24 - long sequence cannot silently discard steps
+  ---
+  duration_ms: 0.211919
+  ...
+# Subtest: internal semantic error gets one bounded repair before asking the user
+ok 25 - internal semantic error gets one bounded repair before asking the user
+  ---
+  duration_ms: 0.432467
+  ...
+# Subtest: conflicting step interpretation remains gated by the whole-goal review
+ok 26 - conflicting step interpretation remains gated by the whole-goal review
+  ---
+  duration_ms: 1.369756
+  ...
+# Subtest: command-form rotation disagrees with a walking proposal
+ok 27 - command-form rotation disagrees with a walking proposal
+  ---
+  duration_ms: 0.683038
+  ...
+# Subtest: directions and amounts must both agree
+ok 28 - directions and amounts must both agree
+  ---
+  duration_ms: 0.140526
+  ...
+# Subtest: command-form text is parsed as data, never evaluated
+ok 29 - command-form text is parsed as data, never evaluated
+  ---
+  duration_ms: 0.082854
+  ...
+# Subtest: 100 remains 100 and is rejected rather than clamped by decoding
+ok 30 - 100 remains 100 and is rejected rather than clamped by decoding
+  ---
+  duration_ms: 2.079466
+  ...
+# Subtest: unresolved pronoun cannot select even an existing pig
+ok 31 - unresolved pronoun cannot select even an existing pig
+  ---
+  duration_ms: 0.097374
+  ...
+# Subtest: compound requests do not run only the first action
+ok 32 - compound requests do not run only the first action
+  ---
+  duration_ms: 0.082263
+  ...
+# Subtest: explicit named type cannot resolve to different animal
+ok 33 - explicit named type cannot resolve to different animal
+  ---
+  duration_ms: 0.056052
+  ...
+# Subtest: clear quantities and directions are preserved
+ok 34 - clear quantities and directions are preserved
+  ---
+  duration_ms: 0.317243
+  ...
+# Subtest: ambiguous verb never executes
+ok 35 - ambiguous verb never executes
+  ---
+  duration_ms: 0.056882
+  ...
+# Subtest: a real cursor may resolve unnamed reference
+ok 36 - a real cursor may resolve unnamed reference
+  ---
+  duration_ms: 0.072733
+  ...
+# Subtest: spaceless native numeral independently verifies model quantity
+ok 37 - spaceless native numeral independently verifies model quantity
+  ---
+  duration_ms: 0.853965
+  ...
+# Subtest: unknown numeral is not converted to one
+ok 38 - unknown numeral is not converted to one
+  ---
+  duration_ms: 0.094134
+  ...
+# Subtest: Sino and digit numerals remain unbounded for comparison
+ok 39 - Sino and digit numerals remain unbounded for comparison
+  ---
+  duration_ms: 0.138016
+  ...
+# Subtest: native tens and repeated actions are understood by public parser
+ok 40 - native tens and repeated actions are understood by public parser
+  ---
+  duration_ms: 0.160127
+  ...
+# Subtest: attack contract is executable and cannot finish from approach-only evidence
+ok 41 - attack contract is executable and cannot finish from approach-only evidence
+  ---
+  duration_ms: 3.185131
+  ...
+# Subtest: attack completion requires positive death evidence, absence is not death
+ok 42 - attack completion requires positive death evidence, absence is not death
+  ---
+  duration_ms: 0.140796
+  ...
+# Subtest: non-action contract carrying steps is rejected
+ok 43 - non-action contract carrying steps is rejected
+  ---
+  duration_ms: 0.456209
+  ...
+# Subtest: out-of-range quantities are not clipped or executed
+ok 44 - out-of-range quantities are not clipped or executed
+  ---
+  duration_ms: 1.851276
+  ...
+# Subtest: reference answer cannot change pending action or quantity
+ok 45 - reference answer cannot change pending action or quantity
+  ---
+  duration_ms: 1.022362
+  ...
+# Subtest: new request can replace pending goal
+ok 46 - new request can replace pending goal
+  ---
+  duration_ms: 0.641376
+  ...
+# Subtest: indefinite one target can select a visible candidate, definite ambiguity asks
+ok 47 - indefinite one target can select a visible candidate, definite ambiguity asks
+  ---
+  duration_ms: 0.112855
+  ...
+# Subtest: truncated query can select any visible block, cannot assert unique or farthest
+ok 48 - truncated query can select any visible block, cannot assert unique or farthest
+  ---
+  duration_ms: 0.080833
+  ...
+# Subtest: travel preserves simultaneous jump and exact distance
+ok 49 - travel preserves simultaneous jump and exact distance
+  ---
+  duration_ms: 0.306202
+  ...
+# Subtest: executor failure is never overwritten by approach distance
+ok 50 - executor failure is never overwritten by approach distance
+  ---
+  duration_ms: 0.208428
+  ...
+# Subtest: complete fresh request bypasses dialogue rewrite despite previous command
+ok 51 - complete fresh request bypasses dialogue rewrite despite previous command
+  ---
+  duration_ms: 0.808914
+  ...
+# Subtest: death evidence for a different entity cannot complete the requested attack
+ok 52 - death evidence for a different entity cannot complete the requested attack
+  ---
+  duration_ms: 0.215089
+  ...
+# Subtest: unresolved referent cannot replay a completed goal without a pending question
+ok 53 - unresolved referent cannot replay a completed goal without a pending question
+  ---
+  duration_ms: 0.353874
+  ...
+# Subtest: past reports cannot enter planning or execution
+ok 54 - past reports cannot enter planning or execution
+  ---
+  duration_ms: 0.406317
+  ...
+# Subtest: an unrecognized named target cannot become arbitrary nearest block removal
+ok 55 - an unrecognized named target cannot become arbitrary nearest block removal
+  ---
+  duration_ms: 0.158876
+  ...
+# Subtest: missing context and pointer cannot be filled with a guessed visible target
+ok 56 - missing context and pointer cannot be filled with a guessed visible target
+  ---
+  duration_ms: 0.855375
+  ...
+# Subtest: indefinite nearest ties and matching side members can choose a candidate
+ok 57 - indefinite nearest ties and matching side members can choose a candidate
+  ---
+  duration_ms: 0.167126
+  ...
+# Subtest: independent parameters exclude completed context and bind semantic vertical reference
+ok 58 - independent parameters exclude completed context and bind semantic vertical reference
+  ---
+  duration_ms: 0.7197
+  ...
+# Subtest: moving approach target gets one bounded retry with the same entity
+ok 59 - moving approach target gets one bounded retry with the same entity
+  ---
+  duration_ms: 0.307462
+  ...
+1..59
+# tests 59
+# suites 0
+# pass 59
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 125.041169

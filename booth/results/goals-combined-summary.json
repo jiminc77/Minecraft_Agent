@@ -1,0 +1,18 @@
+{
+  "mode": "full 500-case language batch plus six affected sequence cases rerun after alternative interpretation change; no game execution",
+  "full_batch": "goals-language500.jsonl",
+  "affected_rerun": "goals-affected.jsonl",
+  "n": 500,
+  "rerun_n": 6,
+  "grades": {
+    "correct_intent": 385,
+    "nonaction_instead_of_task": 46,
+    "wrong_action": 1,
+    "error": 1,
+    "appropriate_nonaction": 9,
+    "system_event_not_run": 18,
+    "exploratory_action": 12,
+    "exploratory_nonaction": 23,
+    "input_rejected": 5
+  }
+}

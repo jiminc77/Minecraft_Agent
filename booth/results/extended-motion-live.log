@@ -1,0 +1,8 @@
+{"name":"100 blocks is executed without truncating to 30","ok":true,"details":{"message":"목표 위치에 도착했어요.","distance":100},"ms":31216}
+{"name":"jumping overlaps with forward motion","ok":true,"details":{"message":"10.0칸 이동했어요.","jumps":1,"ascents":7,"overlap":true},"ms":6991}
+{"name":"continuous walking proceeds beyond old default until button stop","ok":true,"details":{"distance":8.580000000000041,"message":"행동을 멈췄어요."},"ms":5937}
+{"name":"new utterance cancels continuous walking","ok":true,"details":{"message":"시점을 바꿨어요."},"ms":4335}
+{"name":"swim to forward dry land","ok":true,"details":{"message":"물 밖의 육지에 올라왔어요.","pos":{"x":1007.41,"y":88,"z":1000.5}},"ms":5663}
+{"name":"no land found does not invent a destination","ok":true,"details":{"message":"말씀하신 방향에서 올라설 수 있는 육지를 찾지 못했어요."},"ms":2959}
+{"name":"oversized travel is rejected without clamping","ok":true,"details":{"message":"요청한 수량이 현재 실행 범위를 벗어나 수행하지 않았어요."},"ms":2138}
+{"passed":7,"total":7}

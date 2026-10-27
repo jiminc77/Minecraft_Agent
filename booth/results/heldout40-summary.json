@@ -1,0 +1,11 @@
+{
+  "mode": "language-only frozen observations; events not executed",
+  "n": 40,
+  "planner_sha256": "5d64df0a02b6c31ae02d8118ba0b628dd226afd4e6fb22e053f830c9c37e3f81",
+  "grades": {
+    "correct_intent": 25,
+    "nonaction_instead_of_task": 3,
+    "appropriate_nonaction": 11,
+    "input_rejected": 1
+  }
+}

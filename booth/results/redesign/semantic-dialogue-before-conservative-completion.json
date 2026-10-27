@@ -1,0 +1,2357 @@
+{
+  "rows": [
+    {
+      "dialog": [
+        "돼지 잡아줘",
+        "죽이라고",
+        "돼지",
+        "돼지 죽이라고"
+      ],
+      "ok": true,
+      "turns": [
+        {
+          "text": "돼지 잡아줘",
+          "result": {
+            "kind": "goal",
+            "mode": "new_request",
+            "request": "돼지 잡아줘",
+            "message": "동물 잡기 시작",
+            "steps": [
+              {
+                "type": "attack",
+                "selector": {
+                  "kind": "entity",
+                  "name": "pig",
+                  "relation": "nearest",
+                  "selection": "unique"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "text": "죽이라고",
+          "result": {
+            "kind": "goal",
+            "mode": "correction",
+            "request": "돼지를 죽여줘",
+            "message": "동물 잡기 시작",
+            "steps": [
+              {
+                "type": "attack",
+                "selector": {
+                  "kind": "entity",
+                  "name": "pig",
+                  "relation": "any",
+                  "selection": "any"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "text": "돼지",
+          "result": {
+            "kind": "goal",
+            "mode": "correction",
+            "request": "돼지를 죽여줘",
+            "message": "동물 잡기 시작",
+            "steps": [
+              {
+                "type": "attack",
+                "selector": {
+                  "kind": "entity",
+                  "name": "pig",
+                  "relation": "any",
+                  "selection": "any"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "text": "돼지 죽이라고",
+          "result": {
+            "kind": "goal",
+            "mode": "new_request",
+            "request": "돼지 죽이라고",
+            "message": "동물 잡기 시작",
+            "steps": [
+              {
+                "type": "attack",
+                "selector": {
+                  "kind": "entity",
+                  "name": "pig",
+                  "relation": "any",
+                  "selection": "any"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "dialog": [
+        "돼지에게 가 줘",
+        "오른쪽 돼지"
+      ],
+      "ok": true,
+      "turns": [
+        {
+          "text": "돼지에게 가 줘",
+          "result": {
+            "kind": "goal",
+            "mode": "new_request",
+            "request": "돼지에게 가 줘",
+            "message": "대상 접근 시작",
+            "steps": [
+              {
+                "type": "approach",
+                "selector": {
+                  "kind": "entity",
+                  "name": "pig",
+                  "relation": "any",
+                  "selection": "any"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "text": "오른쪽 돼지",
+          "result": {
+            "kind": "goal",
+            "mode": "correction",
+            "request": "오른쪽 돼지에게 접근해 줘",
+            "message": "대상 접근 시작",
+            "steps": [
+              {
+                "type": "approach",
+                "selector": {
+                  "kind": "entity",
+                  "name": "pig",
+                  "relation": "right",
+                  "selection": "unique"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "dialog": [
+        "저거 하나 캐줘",
+        "점토"
+      ],
+      "ok": true,
+      "turns": [
+        {
+          "text": "저거 하나 캐줘",
+          "result": {
+            "kind": "clarify",
+            "request": "그것 하나 캐줘",
+            "message": "어떤 대상을 말씀하시나요? 이름이나 위치를 알려주세요.",
+            "steps": [],
+            "pendingGoal": {
+              "kind": "goal",
+              "mode": "new_request",
+              "request": "그것 하나 캐줘",
+              "message": "블록 제거 시작",
+              "steps": [
+                {
+                  "type": "dig",
+                  "amount": 1,
+                  "selector": {
+                    "kind": "block",
+                    "name": "",
+                    "relation": "cursor",
+                    "selection": "unique"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "text": "점토",
+          "result": {
+            "kind": "goal",
+            "mode": "answer",
+            "request": "점토 블록 하나를 캐줘",
+            "message": "블록 제거 시작",
+            "steps": [
+              {
+                "type": "dig",
+                "amount": 1,
+                "selector": {
+                  "kind": "block",
+                  "name": "clay",
+                  "relation": "any",
+                  "selection": "any"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "dialog": [
+        "저거 해줘",
+        "앞으로 두 칸 가"
+      ],
+      "ok": true,
+      "turns": [
+        {
+          "text": "저거 해줘",
+          "result": {
+            "needs_context": false,
+            "kind": "clarify",
+            "mode": "chat",
+            "request": "저거 해줘",
+            "message": "어떤 것을 해드릴까요? 구체적인 명령을 알려주세요.",
+            "actions": [],
+            "steps": []
+          }
+        },
+        {
+          "text": "앞으로 두 칸 가",
+          "result": {
+            "kind": "goal",
+            "mode": "new_request",
+            "request": "앞으로 두 칸 가",
+            "message": "이동 시작",
+            "steps": [
+              {
+                "type": "move",
+                "direction": "forward",
+                "amount": 2
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "dialog": [
+        "돼지 잡아줘",
+        "아니 소를 잡아줘"
+      ],
+      "ok": true,
+      "turns": [
+        {
+          "text": "돼지 잡아줘",
+          "result": {
+            "kind": "goal",
+            "mode": "new_request",
+            "request": "돼지 잡아줘",
+            "message": "동물 잡기 시작",
+            "steps": [
+              {
+                "type": "attack",
+                "selector": {
+                  "kind": "entity",
+                  "name": "pig",
+                  "relation": "nearest",
+                  "selection": "unique"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "text": "아니 소를 잡아줘",
+          "result": {
+            "kind": "goal",
+            "mode": "new_request",
+            "request": "소를 잡아줘",
+            "message": "동물 잡기 시작",
+            "steps": [
+              {
+                "type": "attack",
+                "selector": {
+                  "kind": "entity",
+                  "name": "cow",
+                  "relation": "nearest",
+                  "selection": "unique"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "dialog": [
+        "저거 하나 캐줘",
+        "아니 하늘을 봐"
+      ],
+      "ok": true,
+      "turns": [
+        {
+          "text": "저거 하나 캐줘",
+          "result": {
+            "kind": "clarify",
+            "request": "그것 하나 캐줘",
+            "message": "어떤 대상을 말씀하시나요? 이름이나 위치를 알려주세요.",
+            "steps": [],
+            "pendingGoal": {
+              "kind": "goal",
+              "mode": "new_request",
+              "request": "그것 하나 캐줘",
+              "message": "블록 제거 시작",
+              "steps": [
+                {
+                  "type": "dig",
+                  "amount": 1,
+                  "selector": {
+                    "kind": "block",
+                    "name": "",
+                    "relation": "cursor",
+                    "selection": "unique"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "text": "아니 하늘을 봐",
+          "result": {
+            "kind": "goal",
+            "mode": "new_request",
+            "request": "아니 하늘을 봐",
+            "message": "시선 변경 시작",
+            "steps": [
+              {
+                "type": "look",
+                "amount": 90
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "stage": "fresh_request_intent",
+      "text": "돼지 잡아줘",
+      "intent": {
+        "needs_context": false,
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "돼지 잡아줘",
+        "message": "",
+        "actions": [
+          "attack"
+        ]
+      }
+    },
+    {
+      "stage": "request_intent",
+      "text": "돼지 잡아줘",
+      "intent": {
+        "needs_context": false,
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "돼지 잡아줘",
+        "message": "",
+        "actions": [
+          "attack"
+        ]
+      },
+      "elapsedMs": 535
+    },
+    {
+      "stage": "semantic_request",
+      "text": "돼지 잡아줘",
+      "context": {
+        "history": []
+      },
+      "goal": {
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "돼지 잡아줘",
+        "message": "동물 잡기 시작",
+        "steps": [
+          {
+            "type": "attack",
+            "selector": {
+              "kind": "entity",
+              "name": "pig",
+              "relation": "nearest",
+              "selection": "unique"
+            }
+          }
+        ]
+      },
+      "elapsedMs": 1029
+    },
+    {
+      "stage": "target_grounding",
+      "selector": {
+        "kind": "entity",
+        "name": "pig",
+        "relation": "nearest",
+        "selection": "unique"
+      },
+      "targets": [
+        {
+          "key": "entity:1",
+          "name": "pig",
+          "kind": "entity",
+          "dist": 4,
+          "relative": {
+            "right": -3,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "entity:2",
+          "name": "pig",
+          "kind": "entity",
+          "dist": 5,
+          "relative": {
+            "right": 3,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "entity:3",
+          "name": "cow",
+          "kind": "entity",
+          "dist": 6,
+          "relative": {
+            "right": 5,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:2:87:3",
+          "name": "clay",
+          "kind": "block",
+          "dist": 3,
+          "relative": {
+            "right": 2,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:4:87:3",
+          "name": "oak_log",
+          "kind": "block",
+          "dist": 5,
+          "relative": {
+            "right": 4,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:6:87:3",
+          "name": "dirt",
+          "kind": "block",
+          "dist": 7,
+          "relative": {
+            "right": 6,
+            "forward": 3,
+            "up": 0
+          }
+        }
+      ],
+      "bound": {
+        "ok": true,
+        "target": {
+          "kind": "entity",
+          "name": "pig",
+          "key": "entity:1",
+          "relative": {
+            "right": -3,
+            "forward": 3,
+            "up": 0
+          },
+          "dist": 4,
+          "pos": {
+            "x": -3,
+            "y": 87,
+            "z": 3
+          }
+        }
+      }
+    },
+    {
+      "stage": "fresh_request_intent",
+      "text": "죽이라고",
+      "intent": {
+        "needs_context": false,
+        "kind": "unavailable",
+        "mode": "new_request",
+        "request": "죽이라고",
+        "message": "부정한 행동은 수행할 수 없습니다.",
+        "actions": []
+      }
+    },
+    {
+      "stage": "dialogue_resolution",
+      "text": "죽이라고",
+      "context": {
+        "history": [
+          {
+            "role": "user",
+            "text": "돼지 잡아줘"
+          },
+          {
+            "role": "assistant",
+            "text": "동물 잡기 시작"
+          }
+        ],
+        "lastRequest": "돼지 잡아줘",
+        "pending": null
+      },
+      "resolved": {
+        "mode": "correction",
+        "request": "돼지를 죽여줘"
+      }
+    },
+    {
+      "stage": "request_intent",
+      "text": "죽이라고",
+      "intent": {
+        "needs_context": false,
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "돼지를 죽여줘",
+        "message": "",
+        "actions": [
+          "attack"
+        ]
+      },
+      "elapsedMs": 1543
+    },
+    {
+      "stage": "semantic_request",
+      "text": "죽이라고",
+      "context": {
+        "history": [
+          {
+            "role": "user",
+            "text": "돼지 잡아줘"
+          },
+          {
+            "role": "assistant",
+            "text": "동물 잡기 시작"
+          }
+        ],
+        "lastRequest": "돼지 잡아줘",
+        "pending": null
+      },
+      "goal": {
+        "kind": "goal",
+        "mode": "correction",
+        "request": "돼지를 죽여줘",
+        "message": "동물 잡기 시작",
+        "steps": [
+          {
+            "type": "attack",
+            "selector": {
+              "kind": "entity",
+              "name": "pig",
+              "relation": "any",
+              "selection": "any"
+            }
+          }
+        ]
+      },
+      "elapsedMs": 2030
+    },
+    {
+      "stage": "target_grounding",
+      "selector": {
+        "kind": "entity",
+        "name": "pig",
+        "relation": "any",
+        "selection": "any"
+      },
+      "targets": [
+        {
+          "key": "entity:1",
+          "name": "pig",
+          "kind": "entity",
+          "dist": 4,
+          "relative": {
+            "right": -3,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "entity:2",
+          "name": "pig",
+          "kind": "entity",
+          "dist": 5,
+          "relative": {
+            "right": 3,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "entity:3",
+          "name": "cow",
+          "kind": "entity",
+          "dist": 6,
+          "relative": {
+            "right": 5,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:2:87:3",
+          "name": "clay",
+          "kind": "block",
+          "dist": 3,
+          "relative": {
+            "right": 2,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:4:87:3",
+          "name": "oak_log",
+          "kind": "block",
+          "dist": 5,
+          "relative": {
+            "right": 4,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:6:87:3",
+          "name": "dirt",
+          "kind": "block",
+          "dist": 7,
+          "relative": {
+            "right": 6,
+            "forward": 3,
+            "up": 0
+          }
+        }
+      ],
+      "bound": {
+        "ok": true,
+        "target": {
+          "kind": "entity",
+          "name": "pig",
+          "key": "entity:1",
+          "relative": {
+            "right": -3,
+            "forward": 3,
+            "up": 0
+          },
+          "dist": 4,
+          "pos": {
+            "x": -3,
+            "y": 87,
+            "z": 3
+          }
+        }
+      }
+    },
+    {
+      "stage": "fresh_request_intent",
+      "text": "돼지",
+      "intent": {
+        "needs_context": false,
+        "kind": "reply",
+        "mode": "chat",
+        "request": "돼지",
+        "message": "",
+        "actions": []
+      }
+    },
+    {
+      "stage": "dialogue_resolution",
+      "text": "돼지",
+      "context": {
+        "history": [
+          {
+            "role": "user",
+            "text": "돼지 잡아줘"
+          },
+          {
+            "role": "assistant",
+            "text": "동물 잡기 시작"
+          },
+          {
+            "role": "user",
+            "text": "죽이라고"
+          },
+          {
+            "role": "assistant",
+            "text": "동물 잡기 시작"
+          }
+        ],
+        "lastRequest": "돼지를 죽여줘",
+        "pending": null
+      },
+      "resolved": {
+        "mode": "correction",
+        "request": "돼지를 죽여줘"
+      }
+    },
+    {
+      "stage": "request_intent",
+      "text": "돼지",
+      "intent": {
+        "needs_context": false,
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "돼지를 죽여줘",
+        "message": "",
+        "actions": [
+          "attack"
+        ]
+      },
+      "elapsedMs": 1325
+    },
+    {
+      "stage": "semantic_request",
+      "text": "돼지",
+      "context": {
+        "history": [
+          {
+            "role": "user",
+            "text": "돼지 잡아줘"
+          },
+          {
+            "role": "assistant",
+            "text": "동물 잡기 시작"
+          },
+          {
+            "role": "user",
+            "text": "죽이라고"
+          },
+          {
+            "role": "assistant",
+            "text": "동물 잡기 시작"
+          }
+        ],
+        "lastRequest": "돼지를 죽여줘",
+        "pending": null
+      },
+      "goal": {
+        "kind": "goal",
+        "mode": "correction",
+        "request": "돼지를 죽여줘",
+        "message": "동물 잡기 시작",
+        "steps": [
+          {
+            "type": "attack",
+            "selector": {
+              "kind": "entity",
+              "name": "pig",
+              "relation": "any",
+              "selection": "any"
+            }
+          }
+        ]
+      },
+      "elapsedMs": 1757
+    },
+    {
+      "stage": "target_grounding",
+      "selector": {
+        "kind": "entity",
+        "name": "pig",
+        "relation": "any",
+        "selection": "any"
+      },
+      "targets": [
+        {
+          "key": "entity:1",
+          "name": "pig",
+          "kind": "entity",
+          "dist": 4,
+          "relative": {
+            "right": -3,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "entity:2",
+          "name": "pig",
+          "kind": "entity",
+          "dist": 5,
+          "relative": {
+            "right": 3,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "entity:3",
+          "name": "cow",
+          "kind": "entity",
+          "dist": 6,
+          "relative": {
+            "right": 5,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:2:87:3",
+          "name": "clay",
+          "kind": "block",
+          "dist": 3,
+          "relative": {
+            "right": 2,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:4:87:3",
+          "name": "oak_log",
+          "kind": "block",
+          "dist": 5,
+          "relative": {
+            "right": 4,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:6:87:3",
+          "name": "dirt",
+          "kind": "block",
+          "dist": 7,
+          "relative": {
+            "right": 6,
+            "forward": 3,
+            "up": 0
+          }
+        }
+      ],
+      "bound": {
+        "ok": true,
+        "target": {
+          "kind": "entity",
+          "name": "pig",
+          "key": "entity:1",
+          "relative": {
+            "right": -3,
+            "forward": 3,
+            "up": 0
+          },
+          "dist": 4,
+          "pos": {
+            "x": -3,
+            "y": 87,
+            "z": 3
+          }
+        }
+      }
+    },
+    {
+      "stage": "fresh_request_intent",
+      "text": "돼지 죽이라고",
+      "intent": {
+        "needs_context": false,
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "돼지 죽이라고",
+        "message": "",
+        "actions": [
+          "attack"
+        ]
+      }
+    },
+    {
+      "stage": "request_intent",
+      "text": "돼지 죽이라고",
+      "intent": {
+        "needs_context": false,
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "돼지 죽이라고",
+        "message": "",
+        "actions": [
+          "attack"
+        ]
+      },
+      "elapsedMs": 540
+    },
+    {
+      "stage": "semantic_request",
+      "text": "돼지 죽이라고",
+      "context": {
+        "history": [
+          {
+            "role": "user",
+            "text": "돼지 잡아줘"
+          },
+          {
+            "role": "assistant",
+            "text": "동물 잡기 시작"
+          },
+          {
+            "role": "user",
+            "text": "죽이라고"
+          },
+          {
+            "role": "assistant",
+            "text": "동물 잡기 시작"
+          },
+          {
+            "role": "user",
+            "text": "돼지"
+          },
+          {
+            "role": "assistant",
+            "text": "동물 잡기 시작"
+          }
+        ],
+        "lastRequest": "돼지를 죽여줘",
+        "pending": null
+      },
+      "goal": {
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "돼지 죽이라고",
+        "message": "동물 잡기 시작",
+        "steps": [
+          {
+            "type": "attack",
+            "selector": {
+              "kind": "entity",
+              "name": "pig",
+              "relation": "any",
+              "selection": "any"
+            }
+          }
+        ]
+      },
+      "elapsedMs": 1009
+    },
+    {
+      "stage": "target_grounding",
+      "selector": {
+        "kind": "entity",
+        "name": "pig",
+        "relation": "any",
+        "selection": "any"
+      },
+      "targets": [
+        {
+          "key": "entity:1",
+          "name": "pig",
+          "kind": "entity",
+          "dist": 4,
+          "relative": {
+            "right": -3,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "entity:2",
+          "name": "pig",
+          "kind": "entity",
+          "dist": 5,
+          "relative": {
+            "right": 3,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "entity:3",
+          "name": "cow",
+          "kind": "entity",
+          "dist": 6,
+          "relative": {
+            "right": 5,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:2:87:3",
+          "name": "clay",
+          "kind": "block",
+          "dist": 3,
+          "relative": {
+            "right": 2,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:4:87:3",
+          "name": "oak_log",
+          "kind": "block",
+          "dist": 5,
+          "relative": {
+            "right": 4,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:6:87:3",
+          "name": "dirt",
+          "kind": "block",
+          "dist": 7,
+          "relative": {
+            "right": 6,
+            "forward": 3,
+            "up": 0
+          }
+        }
+      ],
+      "bound": {
+        "ok": true,
+        "target": {
+          "kind": "entity",
+          "name": "pig",
+          "key": "entity:1",
+          "relative": {
+            "right": -3,
+            "forward": 3,
+            "up": 0
+          },
+          "dist": 4,
+          "pos": {
+            "x": -3,
+            "y": 87,
+            "z": 3
+          }
+        }
+      }
+    },
+    {
+      "stage": "fresh_request_intent",
+      "text": "돼지에게 가 줘",
+      "intent": {
+        "needs_context": false,
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "돼지에게 가 줘",
+        "message": "",
+        "actions": [
+          "approach"
+        ]
+      }
+    },
+    {
+      "stage": "request_intent",
+      "text": "돼지에게 가 줘",
+      "intent": {
+        "needs_context": false,
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "돼지에게 가 줘",
+        "message": "",
+        "actions": [
+          "approach"
+        ]
+      },
+      "elapsedMs": 581
+    },
+    {
+      "stage": "semantic_request",
+      "text": "돼지에게 가 줘",
+      "context": {
+        "history": []
+      },
+      "goal": {
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "돼지에게 가 줘",
+        "message": "대상 접근 시작",
+        "steps": [
+          {
+            "type": "approach",
+            "selector": {
+              "kind": "entity",
+              "name": "pig",
+              "relation": "any",
+              "selection": "any"
+            }
+          }
+        ]
+      },
+      "elapsedMs": 1051
+    },
+    {
+      "stage": "target_grounding",
+      "selector": {
+        "kind": "entity",
+        "name": "pig",
+        "relation": "any",
+        "selection": "any"
+      },
+      "targets": [
+        {
+          "key": "entity:1",
+          "name": "pig",
+          "kind": "entity",
+          "dist": 4,
+          "relative": {
+            "right": -3,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "entity:2",
+          "name": "pig",
+          "kind": "entity",
+          "dist": 5,
+          "relative": {
+            "right": 3,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "entity:3",
+          "name": "cow",
+          "kind": "entity",
+          "dist": 6,
+          "relative": {
+            "right": 5,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:2:87:3",
+          "name": "clay",
+          "kind": "block",
+          "dist": 3,
+          "relative": {
+            "right": 2,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:4:87:3",
+          "name": "oak_log",
+          "kind": "block",
+          "dist": 5,
+          "relative": {
+            "right": 4,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:6:87:3",
+          "name": "dirt",
+          "kind": "block",
+          "dist": 7,
+          "relative": {
+            "right": 6,
+            "forward": 3,
+            "up": 0
+          }
+        }
+      ],
+      "bound": {
+        "ok": true,
+        "target": {
+          "kind": "entity",
+          "name": "pig",
+          "key": "entity:1",
+          "relative": {
+            "right": -3,
+            "forward": 3,
+            "up": 0
+          },
+          "dist": 4,
+          "pos": {
+            "x": -3,
+            "y": 87,
+            "z": 3
+          }
+        }
+      }
+    },
+    {
+      "stage": "fresh_request_intent",
+      "text": "오른쪽 돼지",
+      "intent": {
+        "needs_context": true,
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "Approach the pig on the right.",
+        "message": "",
+        "actions": [
+          "approach"
+        ]
+      }
+    },
+    {
+      "stage": "dialogue_resolution",
+      "text": "오른쪽 돼지",
+      "context": {
+        "history": [
+          {
+            "role": "user",
+            "text": "돼지에게 가 줘"
+          },
+          {
+            "role": "assistant",
+            "text": "대상 접근 시작"
+          }
+        ],
+        "lastRequest": "돼지에게 가 줘",
+        "pending": null
+      },
+      "resolved": {
+        "mode": "correction",
+        "request": "오른쪽 돼지에게 접근해 줘"
+      }
+    },
+    {
+      "stage": "request_intent",
+      "text": "오른쪽 돼지",
+      "intent": {
+        "needs_context": false,
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "오른쪽 돼지에게 접근해 줘",
+        "message": "",
+        "actions": [
+          "approach"
+        ]
+      },
+      "elapsedMs": 1630
+    },
+    {
+      "stage": "semantic_request",
+      "text": "오른쪽 돼지",
+      "context": {
+        "history": [
+          {
+            "role": "user",
+            "text": "돼지에게 가 줘"
+          },
+          {
+            "role": "assistant",
+            "text": "대상 접근 시작"
+          }
+        ],
+        "lastRequest": "돼지에게 가 줘",
+        "pending": null
+      },
+      "goal": {
+        "kind": "goal",
+        "mode": "correction",
+        "request": "오른쪽 돼지에게 접근해 줘",
+        "message": "대상 접근 시작",
+        "steps": [
+          {
+            "type": "approach",
+            "selector": {
+              "kind": "entity",
+              "name": "pig",
+              "relation": "right",
+              "selection": "unique"
+            }
+          }
+        ]
+      },
+      "elapsedMs": 2119
+    },
+    {
+      "stage": "target_grounding",
+      "selector": {
+        "kind": "entity",
+        "name": "pig",
+        "relation": "right",
+        "selection": "unique"
+      },
+      "targets": [
+        {
+          "key": "entity:1",
+          "name": "pig",
+          "kind": "entity",
+          "dist": 4,
+          "relative": {
+            "right": -3,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "entity:2",
+          "name": "pig",
+          "kind": "entity",
+          "dist": 5,
+          "relative": {
+            "right": 3,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "entity:3",
+          "name": "cow",
+          "kind": "entity",
+          "dist": 6,
+          "relative": {
+            "right": 5,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:2:87:3",
+          "name": "clay",
+          "kind": "block",
+          "dist": 3,
+          "relative": {
+            "right": 2,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:4:87:3",
+          "name": "oak_log",
+          "kind": "block",
+          "dist": 5,
+          "relative": {
+            "right": 4,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:6:87:3",
+          "name": "dirt",
+          "kind": "block",
+          "dist": 7,
+          "relative": {
+            "right": 6,
+            "forward": 3,
+            "up": 0
+          }
+        }
+      ],
+      "bound": {
+        "ok": true,
+        "target": {
+          "kind": "entity",
+          "name": "pig",
+          "key": "entity:2",
+          "relative": {
+            "right": 3,
+            "forward": 3,
+            "up": 0
+          },
+          "dist": 5,
+          "pos": {
+            "x": 3,
+            "y": 87,
+            "z": 3
+          }
+        }
+      }
+    },
+    {
+      "stage": "fresh_request_intent",
+      "text": "저거 하나 캐줘",
+      "intent": {
+        "needs_context": false,
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "그것 하나 캐줘",
+        "message": "",
+        "actions": [
+          "dig"
+        ]
+      }
+    },
+    {
+      "stage": "request_intent",
+      "text": "저거 하나 캐줘",
+      "intent": {
+        "needs_context": false,
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "그것 하나 캐줘",
+        "message": "",
+        "actions": [
+          "dig"
+        ]
+      },
+      "elapsedMs": 549
+    },
+    {
+      "stage": "semantic_request",
+      "text": "저거 하나 캐줘",
+      "context": {
+        "history": []
+      },
+      "goal": {
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "그것 하나 캐줘",
+        "message": "블록 제거 시작",
+        "steps": [
+          {
+            "type": "dig",
+            "amount": 1,
+            "selector": {
+              "kind": "block",
+              "name": "",
+              "relation": "cursor",
+              "selection": "unique"
+            }
+          }
+        ]
+      },
+      "elapsedMs": 1076
+    },
+    {
+      "stage": "target_grounding",
+      "selector": {
+        "kind": "block",
+        "name": "",
+        "relation": "cursor",
+        "selection": "unique"
+      },
+      "targets": [
+        {
+          "key": "entity:1",
+          "name": "pig",
+          "kind": "entity",
+          "dist": 4,
+          "relative": {
+            "right": -3,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "entity:2",
+          "name": "pig",
+          "kind": "entity",
+          "dist": 5,
+          "relative": {
+            "right": 3,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "entity:3",
+          "name": "cow",
+          "kind": "entity",
+          "dist": 6,
+          "relative": {
+            "right": 5,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:2:87:3",
+          "name": "clay",
+          "kind": "block",
+          "dist": 3,
+          "relative": {
+            "right": 2,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:4:87:3",
+          "name": "oak_log",
+          "kind": "block",
+          "dist": 5,
+          "relative": {
+            "right": 4,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:6:87:3",
+          "name": "dirt",
+          "kind": "block",
+          "dist": 7,
+          "relative": {
+            "right": 6,
+            "forward": 3,
+            "up": 0
+          }
+        }
+      ],
+      "bound": {
+        "ok": false,
+        "kind": "clarify",
+        "message": "어떤 대상을 말씀하시나요? 이름이나 위치를 알려주세요."
+      }
+    },
+    {
+      "stage": "fresh_request_intent",
+      "text": "점토",
+      "intent": {
+        "needs_context": false,
+        "kind": "reply",
+        "mode": "chat",
+        "request": "점토",
+        "message": "",
+        "actions": []
+      }
+    },
+    {
+      "stage": "dialogue_resolution",
+      "text": "점토",
+      "context": {
+        "history": [
+          {
+            "role": "user",
+            "text": "저거 하나 캐줘"
+          },
+          {
+            "role": "assistant",
+            "text": "어떤 대상을 말씀하시나요? 이름이나 위치를 알려주세요."
+          }
+        ],
+        "lastRequest": "그것 하나 캐줘",
+        "pending": {
+          "utterance": "그것 하나 캐줘",
+          "question": "어떤 대상을 말씀하시나요? 이름이나 위치를 알려주세요.",
+          "goal": {
+            "kind": "goal",
+            "mode": "new_request",
+            "request": "그것 하나 캐줘",
+            "message": "블록 제거 시작",
+            "steps": [
+              {
+                "type": "dig",
+                "amount": 1,
+                "selector": {
+                  "kind": "block",
+                  "name": "",
+                  "relation": "cursor",
+                  "selection": "unique"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "resolved": {
+        "mode": "answer",
+        "request": "점토 블록 하나를 캐줘"
+      }
+    },
+    {
+      "stage": "request_intent",
+      "text": "점토",
+      "intent": {
+        "needs_context": false,
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "점토 블록 하나를 캐줘",
+        "message": "",
+        "actions": [
+          "dig"
+        ]
+      },
+      "elapsedMs": 1467
+    },
+    {
+      "stage": "semantic_request",
+      "text": "점토",
+      "context": {
+        "history": [
+          {
+            "role": "user",
+            "text": "저거 하나 캐줘"
+          },
+          {
+            "role": "assistant",
+            "text": "어떤 대상을 말씀하시나요? 이름이나 위치를 알려주세요."
+          }
+        ],
+        "lastRequest": "그것 하나 캐줘",
+        "pending": {
+          "utterance": "그것 하나 캐줘",
+          "question": "어떤 대상을 말씀하시나요? 이름이나 위치를 알려주세요.",
+          "goal": {
+            "kind": "goal",
+            "mode": "new_request",
+            "request": "그것 하나 캐줘",
+            "message": "블록 제거 시작",
+            "steps": [
+              {
+                "type": "dig",
+                "amount": 1,
+                "selector": {
+                  "kind": "block",
+                  "name": "",
+                  "relation": "cursor",
+                  "selection": "unique"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "goal": {
+        "kind": "goal",
+        "mode": "answer",
+        "request": "점토 블록 하나를 캐줘",
+        "message": "블록 제거 시작",
+        "steps": [
+          {
+            "type": "dig",
+            "amount": 1,
+            "selector": {
+              "kind": "block",
+              "name": "clay",
+              "relation": "any",
+              "selection": "any"
+            }
+          }
+        ]
+      },
+      "elapsedMs": 2036
+    },
+    {
+      "stage": "target_grounding",
+      "selector": {
+        "kind": "block",
+        "name": "clay",
+        "relation": "any",
+        "selection": "any"
+      },
+      "targets": [
+        {
+          "key": "entity:1",
+          "name": "pig",
+          "kind": "entity",
+          "dist": 4,
+          "relative": {
+            "right": -3,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "entity:2",
+          "name": "pig",
+          "kind": "entity",
+          "dist": 5,
+          "relative": {
+            "right": 3,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "entity:3",
+          "name": "cow",
+          "kind": "entity",
+          "dist": 6,
+          "relative": {
+            "right": 5,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:2:87:3",
+          "name": "clay",
+          "kind": "block",
+          "dist": 3,
+          "relative": {
+            "right": 2,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:4:87:3",
+          "name": "oak_log",
+          "kind": "block",
+          "dist": 5,
+          "relative": {
+            "right": 4,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:6:87:3",
+          "name": "dirt",
+          "kind": "block",
+          "dist": 7,
+          "relative": {
+            "right": 6,
+            "forward": 3,
+            "up": 0
+          }
+        }
+      ],
+      "bound": {
+        "ok": true,
+        "target": {
+          "kind": "block",
+          "name": "clay",
+          "key": "block:2:87:3",
+          "relative": {
+            "right": 2,
+            "forward": 3,
+            "up": 0
+          },
+          "dist": 3,
+          "pos": {
+            "x": 2,
+            "y": 87,
+            "z": 3
+          }
+        }
+      }
+    },
+    {
+      "stage": "fresh_request_intent",
+      "text": "저거 해줘",
+      "intent": {
+        "needs_context": false,
+        "kind": "clarify",
+        "mode": "chat",
+        "request": "저거 해줘",
+        "message": "어떤 것을 해드릴까요? 구체적인 명령을 알려주세요.",
+        "actions": []
+      }
+    },
+    {
+      "stage": "request_intent",
+      "text": "저거 해줘",
+      "intent": {
+        "needs_context": false,
+        "kind": "clarify",
+        "mode": "chat",
+        "request": "저거 해줘",
+        "message": "어떤 것을 해드릴까요? 구체적인 명령을 알려주세요.",
+        "actions": []
+      },
+      "elapsedMs": 793
+    },
+    {
+      "stage": "fresh_request_intent",
+      "text": "앞으로 두 칸 가",
+      "intent": {
+        "needs_context": false,
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "앞으로 두 칸 가",
+        "message": "",
+        "actions": [
+          "move"
+        ]
+      }
+    },
+    {
+      "stage": "request_intent",
+      "text": "앞으로 두 칸 가",
+      "intent": {
+        "needs_context": false,
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "앞으로 두 칸 가",
+        "message": "",
+        "actions": [
+          "move"
+        ]
+      },
+      "elapsedMs": 513
+    },
+    {
+      "stage": "semantic_request",
+      "text": "앞으로 두 칸 가",
+      "context": {
+        "history": [
+          {
+            "role": "user",
+            "text": "저거 해줘"
+          },
+          {
+            "role": "assistant",
+            "text": "어떤 것을 해드릴까요? 구체적인 명령을 알려주세요."
+          }
+        ],
+        "lastRequest": "저거 해줘",
+        "pending": {
+          "utterance": "저거 해줘",
+          "question": "어떤 것을 해드릴까요? 구체적인 명령을 알려주세요."
+        }
+      },
+      "goal": {
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "앞으로 두 칸 가",
+        "message": "이동 시작",
+        "steps": [
+          {
+            "type": "move",
+            "direction": "forward",
+            "amount": 2
+          }
+        ]
+      },
+      "elapsedMs": 846
+    },
+    {
+      "stage": "fresh_request_intent",
+      "text": "돼지 잡아줘",
+      "intent": {
+        "needs_context": false,
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "돼지 잡아줘",
+        "message": "",
+        "actions": [
+          "attack"
+        ]
+      }
+    },
+    {
+      "stage": "request_intent",
+      "text": "돼지 잡아줘",
+      "intent": {
+        "needs_context": false,
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "돼지 잡아줘",
+        "message": "",
+        "actions": [
+          "attack"
+        ]
+      },
+      "elapsedMs": 513
+    },
+    {
+      "stage": "semantic_request",
+      "text": "돼지 잡아줘",
+      "context": {
+        "history": []
+      },
+      "goal": {
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "돼지 잡아줘",
+        "message": "동물 잡기 시작",
+        "steps": [
+          {
+            "type": "attack",
+            "selector": {
+              "kind": "entity",
+              "name": "pig",
+              "relation": "nearest",
+              "selection": "unique"
+            }
+          }
+        ]
+      },
+      "elapsedMs": 1017
+    },
+    {
+      "stage": "target_grounding",
+      "selector": {
+        "kind": "entity",
+        "name": "pig",
+        "relation": "nearest",
+        "selection": "unique"
+      },
+      "targets": [
+        {
+          "key": "entity:1",
+          "name": "pig",
+          "kind": "entity",
+          "dist": 4,
+          "relative": {
+            "right": -3,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "entity:2",
+          "name": "pig",
+          "kind": "entity",
+          "dist": 5,
+          "relative": {
+            "right": 3,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "entity:3",
+          "name": "cow",
+          "kind": "entity",
+          "dist": 6,
+          "relative": {
+            "right": 5,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:2:87:3",
+          "name": "clay",
+          "kind": "block",
+          "dist": 3,
+          "relative": {
+            "right": 2,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:4:87:3",
+          "name": "oak_log",
+          "kind": "block",
+          "dist": 5,
+          "relative": {
+            "right": 4,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:6:87:3",
+          "name": "dirt",
+          "kind": "block",
+          "dist": 7,
+          "relative": {
+            "right": 6,
+            "forward": 3,
+            "up": 0
+          }
+        }
+      ],
+      "bound": {
+        "ok": true,
+        "target": {
+          "kind": "entity",
+          "name": "pig",
+          "key": "entity:1",
+          "relative": {
+            "right": -3,
+            "forward": 3,
+            "up": 0
+          },
+          "dist": 4,
+          "pos": {
+            "x": -3,
+            "y": 87,
+            "z": 3
+          }
+        }
+      }
+    },
+    {
+      "stage": "fresh_request_intent",
+      "text": "아니 소를 잡아줘",
+      "intent": {
+        "needs_context": false,
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "소를 잡아줘",
+        "message": "",
+        "actions": [
+          "attack"
+        ]
+      }
+    },
+    {
+      "stage": "request_intent",
+      "text": "아니 소를 잡아줘",
+      "intent": {
+        "needs_context": false,
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "소를 잡아줘",
+        "message": "",
+        "actions": [
+          "attack"
+        ]
+      },
+      "elapsedMs": 528
+    },
+    {
+      "stage": "semantic_request",
+      "text": "아니 소를 잡아줘",
+      "context": {
+        "history": [
+          {
+            "role": "user",
+            "text": "돼지 잡아줘"
+          },
+          {
+            "role": "assistant",
+            "text": "동물 잡기 시작"
+          }
+        ],
+        "lastRequest": "돼지 잡아줘",
+        "pending": null
+      },
+      "goal": {
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "소를 잡아줘",
+        "message": "동물 잡기 시작",
+        "steps": [
+          {
+            "type": "attack",
+            "selector": {
+              "kind": "entity",
+              "name": "cow",
+              "relation": "nearest",
+              "selection": "unique"
+            }
+          }
+        ]
+      },
+      "elapsedMs": 1005
+    },
+    {
+      "stage": "target_grounding",
+      "selector": {
+        "kind": "entity",
+        "name": "cow",
+        "relation": "nearest",
+        "selection": "unique"
+      },
+      "targets": [
+        {
+          "key": "entity:1",
+          "name": "pig",
+          "kind": "entity",
+          "dist": 4,
+          "relative": {
+            "right": -3,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "entity:2",
+          "name": "pig",
+          "kind": "entity",
+          "dist": 5,
+          "relative": {
+            "right": 3,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "entity:3",
+          "name": "cow",
+          "kind": "entity",
+          "dist": 6,
+          "relative": {
+            "right": 5,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:2:87:3",
+          "name": "clay",
+          "kind": "block",
+          "dist": 3,
+          "relative": {
+            "right": 2,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:4:87:3",
+          "name": "oak_log",
+          "kind": "block",
+          "dist": 5,
+          "relative": {
+            "right": 4,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:6:87:3",
+          "name": "dirt",
+          "kind": "block",
+          "dist": 7,
+          "relative": {
+            "right": 6,
+            "forward": 3,
+            "up": 0
+          }
+        }
+      ],
+      "bound": {
+        "ok": true,
+        "target": {
+          "kind": "entity",
+          "name": "cow",
+          "key": "entity:3",
+          "relative": {
+            "right": 5,
+            "forward": 3,
+            "up": 0
+          },
+          "dist": 6,
+          "pos": {
+            "x": 5,
+            "y": 87,
+            "z": 3
+          }
+        }
+      }
+    },
+    {
+      "stage": "fresh_request_intent",
+      "text": "저거 하나 캐줘",
+      "intent": {
+        "needs_context": false,
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "그것 하나 캐줘",
+        "message": "",
+        "actions": [
+          "dig"
+        ]
+      }
+    },
+    {
+      "stage": "request_intent",
+      "text": "저거 하나 캐줘",
+      "intent": {
+        "needs_context": false,
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "그것 하나 캐줘",
+        "message": "",
+        "actions": [
+          "dig"
+        ]
+      },
+      "elapsedMs": 558
+    },
+    {
+      "stage": "semantic_request",
+      "text": "저거 하나 캐줘",
+      "context": {
+        "history": []
+      },
+      "goal": {
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "그것 하나 캐줘",
+        "message": "블록 제거 시작",
+        "steps": [
+          {
+            "type": "dig",
+            "amount": 1,
+            "selector": {
+              "kind": "block",
+              "name": "",
+              "relation": "cursor",
+              "selection": "unique"
+            }
+          }
+        ]
+      },
+      "elapsedMs": 1063
+    },
+    {
+      "stage": "target_grounding",
+      "selector": {
+        "kind": "block",
+        "name": "",
+        "relation": "cursor",
+        "selection": "unique"
+      },
+      "targets": [
+        {
+          "key": "entity:1",
+          "name": "pig",
+          "kind": "entity",
+          "dist": 4,
+          "relative": {
+            "right": -3,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "entity:2",
+          "name": "pig",
+          "kind": "entity",
+          "dist": 5,
+          "relative": {
+            "right": 3,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "entity:3",
+          "name": "cow",
+          "kind": "entity",
+          "dist": 6,
+          "relative": {
+            "right": 5,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:2:87:3",
+          "name": "clay",
+          "kind": "block",
+          "dist": 3,
+          "relative": {
+            "right": 2,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:4:87:3",
+          "name": "oak_log",
+          "kind": "block",
+          "dist": 5,
+          "relative": {
+            "right": 4,
+            "forward": 3,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:6:87:3",
+          "name": "dirt",
+          "kind": "block",
+          "dist": 7,
+          "relative": {
+            "right": 6,
+            "forward": 3,
+            "up": 0
+          }
+        }
+      ],
+      "bound": {
+        "ok": false,
+        "kind": "clarify",
+        "message": "어떤 대상을 말씀하시나요? 이름이나 위치를 알려주세요."
+      }
+    },
+    {
+      "stage": "fresh_request_intent",
+      "text": "아니 하늘을 봐",
+      "intent": {
+        "needs_context": false,
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "아니 하늘을 봐",
+        "message": "",
+        "actions": [
+          "look"
+        ]
+      }
+    },
+    {
+      "stage": "request_intent",
+      "text": "아니 하늘을 봐",
+      "intent": {
+        "needs_context": false,
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "아니 하늘을 봐",
+        "message": "",
+        "actions": [
+          "look"
+        ]
+      },
+      "elapsedMs": 592
+    },
+    {
+      "stage": "semantic_request",
+      "text": "아니 하늘을 봐",
+      "context": {
+        "history": [
+          {
+            "role": "user",
+            "text": "저거 하나 캐줘"
+          },
+          {
+            "role": "assistant",
+            "text": "어떤 대상을 말씀하시나요? 이름이나 위치를 알려주세요."
+          }
+        ],
+        "lastRequest": "그것 하나 캐줘",
+        "pending": {
+          "utterance": "그것 하나 캐줘",
+          "question": "어떤 대상을 말씀하시나요? 이름이나 위치를 알려주세요.",
+          "goal": {
+            "kind": "goal",
+            "mode": "new_request",
+            "request": "그것 하나 캐줘",
+            "message": "블록 제거 시작",
+            "steps": [
+              {
+                "type": "dig",
+                "amount": 1,
+                "selector": {
+                  "kind": "block",
+                  "name": "",
+                  "relation": "cursor",
+                  "selection": "unique"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "goal": {
+        "kind": "goal",
+        "mode": "new_request",
+        "request": "아니 하늘을 봐",
+        "message": "시선 변경 시작",
+        "steps": [
+          {
+            "type": "look",
+            "amount": 90
+          }
+        ]
+      },
+      "elapsedMs": 835
+    }
+  ]
+}

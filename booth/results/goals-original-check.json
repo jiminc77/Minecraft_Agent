@@ -1,0 +1,37 @@
+{
+  "original_files_checked": 112,
+  "changed": [],
+  "services": {
+    "booth-vllm-30b": "active",
+    "booth-mindcraft": "active",
+    "booth-gateway": "active",
+    "booth-xvfb": "active",
+    "booth-client": "active",
+    "steve-booth": "active"
+  },
+  "health": {
+    "8765": {
+      "phase": "ready",
+      "korean": "",
+      "english": "",
+      "message": "명령을 입력하세요.",
+      "active_since": null,
+      "run_seconds": 120,
+      "mode": "steve",
+      "translation_model": "Qwen/Qwen2.5-7B-Instruct",
+      "action_stats": null,
+      "goal_embed": null
+    },
+    "8767": {
+      "phase": "ready",
+      "korean": "",
+      "english": "",
+      "message": "명령을 입력하세요.",
+      "active_since": null,
+      "run_seconds": 120,
+      "mode": "mindcraft",
+      "translation_model": "Qwen3-30B-A3B-Instruct-2507-FP8",
+      "agent_in_game": true
+    }
+  }
+}

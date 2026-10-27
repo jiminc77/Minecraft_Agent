@@ -1,0 +1,1359 @@
+{
+  "mode": "frozen observation, no physical game execution",
+  "passed": 19,
+  "total": 19,
+  "rows": [
+    {
+      "text": "앞으로 멈추지 말고 걸어가",
+      "expected": {
+        "type": "travel",
+        "distance": null,
+        "jumping": false
+      },
+      "ok": true,
+      "plan": {
+        "kind": "execute",
+        "message": "요청한 이동을 시작할게요. 새 입력이나 행동 중지로 멈출 수 있고, 최대 75초 후 멈춰요.",
+        "action": {
+          "type": "travel",
+          "direction": "forward",
+          "distance": null,
+          "jumping": false
+        }
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "앞으로 멈추지 말고 걸어가",
+          "context": {},
+          "goal": {
+            "reason": "지속 이동 또는 동시 이동 목표",
+            "kind": "travel",
+            "utterance": "앞으로 멈추지 말고 걸어가",
+            "steps": [],
+            "target": "",
+            "message": "요청한 이동을 시작할게요.",
+            "direction": "forward",
+            "distance": null,
+            "jumping": false
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "앞으로 멈추지 말고 걸어가",
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 이동을 시작할게요. 새 입력이나 행동 중지로 멈출 수 있고, 최대 75초 후 멈춰요.",
+            "action": {
+              "type": "travel",
+              "direction": "forward",
+              "distance": null,
+              "jumping": false
+            }
+          },
+          "review": {
+            "ok": true,
+            "reason": "원문의 지시는 '앞으로 멈추지 말고 걸어가'로, 전방으로 지속적으로 이동하라는 의미입니다. 이는 travel.direction='forward'와 travel.distance=null(무한 이동)로 정확히 반영됩니다. 점프 없이 걷기만 수행하므로 jumping=false이며, targets는 이동 시작 지점으로 적절합니다. 이동 중에는 시선 방향을 유지한 채 전진하므로, 회전 없이 forward로 이동하는 것이 맞습니다. 모든 조건이 원문과 일치합니다.",
+            "question": ""
+          }
+        }
+      ]
+    },
+    {
+      "text": "멈추지 말고 쭉 가라고",
+      "expected": {
+        "type": "travel",
+        "distance": null,
+        "jumping": false
+      },
+      "ok": true,
+      "plan": {
+        "kind": "execute",
+        "message": "요청한 이동을 계속할게요. 새 입력이나 행동 중지로 멈출 수 있고, 최대 75초 후 멈춰요.",
+        "action": {
+          "type": "travel",
+          "direction": "forward",
+          "distance": null,
+          "jumping": false
+        }
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "멈추지 말고 쭉 가라고",
+          "context": {},
+          "goal": {
+            "reason": "지속 이동 또는 동시 이동 목표",
+            "kind": "travel",
+            "utterance": "멈추지 말고 쭉 가라고",
+            "steps": [],
+            "target": "",
+            "message": "요청한 이동을 계속할게요.",
+            "direction": "forward",
+            "distance": null,
+            "jumping": false
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "멈추지 말고 쭉 가라고",
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 이동을 계속할게요. 새 입력이나 행동 중지로 멈출 수 있고, 최대 75초 후 멈춰요.",
+            "action": {
+              "type": "travel",
+              "direction": "forward",
+              "distance": null,
+              "jumping": false
+            }
+          },
+          "review": {
+            "ok": true,
+            "reason": "원문의 지시 '멈추지 말고 쭉 가라고'는 지속적인 전진 이동을 요구하며, 이는 travel.distance가 null인 상태에서 forward 방향으로 이동하는 것으로 충족됩니다. 이동 중 점프는 명시되지 않았으므로 jumping=false로 설정하는 것이 적절합니다. targets는 이동 시작 지점으로, 이동 방향과 일치합니다.",
+            "question": ""
+          }
+        }
+      ]
+    },
+    {
+      "text": "계속 앞으로 걸어줘",
+      "expected": {
+        "type": "travel",
+        "distance": null,
+        "jumping": false
+      },
+      "ok": true,
+      "plan": {
+        "kind": "execute",
+        "message": "요청한 이동을 시작할게요. 새 입력이나 행동 중지로 멈출 수 있고, 최대 75초 후 멈춰요.",
+        "action": {
+          "type": "travel",
+          "direction": "forward",
+          "distance": null,
+          "jumping": false
+        }
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "계속 앞으로 걸어줘",
+          "context": {},
+          "goal": {
+            "reason": "지속 이동 또는 동시 이동 목표",
+            "kind": "travel",
+            "utterance": "계속 앞으로 걸어줘",
+            "steps": [],
+            "target": "",
+            "message": "요청한 이동을 시작할게요.",
+            "direction": "forward",
+            "distance": null,
+            "jumping": false
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "계속 앞으로 걸어줘",
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 이동을 시작할게요. 새 입력이나 행동 중지로 멈출 수 있고, 최대 75초 후 멈춰요.",
+            "action": {
+              "type": "travel",
+              "direction": "forward",
+              "distance": null,
+              "jumping": false
+            }
+          },
+          "review": {
+            "ok": true,
+            "reason": "요청된 '계속 앞으로 걸어줘' 지시는 travel.direction='forward'와 distance=null로 구현되며, 이는 무제한 거리로 전진하는 동작을 의미합니다. targets에 포함된 블록은 이동 경로의 시작 지점으로서, 이동 방향과 일치합니다. 이동 중 점프는 요청되지 않았으므로 jumping=false로 설정됩니다. 이 계획은 원문의 의도를 정확히 반영합니다.",
+            "question": ""
+          }
+        }
+      ]
+    },
+    {
+      "text": "점프하면서 계속 앞으로 가",
+      "expected": {
+        "type": "travel",
+        "distance": null,
+        "jumping": true
+      },
+      "ok": true,
+      "plan": {
+        "kind": "execute",
+        "message": "점프하며 앞으로 계속 이동을 시작할게요. 새 입력이나 행동 중지로 멈출 수 있고, 최대 75초 후 멈춰요.",
+        "action": {
+          "type": "travel",
+          "direction": "forward",
+          "distance": null,
+          "jumping": true
+        }
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "점프하면서 계속 앞으로 가",
+          "context": {},
+          "goal": {
+            "reason": "지속 이동 또는 동시 이동 목표",
+            "kind": "travel",
+            "utterance": "점프하면서 계속 앞으로 가",
+            "steps": [],
+            "target": "",
+            "message": "점프하며 앞으로 계속 이동을 시작할게요.",
+            "direction": "forward",
+            "distance": null,
+            "jumping": true
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "점프하면서 계속 앞으로 가",
+          "plan": {
+            "kind": "execute",
+            "message": "점프하며 앞으로 계속 이동을 시작할게요. 새 입력이나 행동 중지로 멈출 수 있고, 최대 75초 후 멈춰요.",
+            "action": {
+              "type": "travel",
+              "direction": "forward",
+              "distance": null,
+              "jumping": true
+            }
+          },
+          "review": {
+            "ok": true,
+            "reason": "원문의 지시는 '점프하면서 계속 앞으로 가'로, 이는 점프 동작을 유지하며 전방으로 지속적으로 이동하는 것을 의미합니다. 실행 계획은 travel.direction='forward', travel.jumping=true로 설정되어 있어, 시선 방향으로 전진하면서 점프를 지속하는 동작을 수행합니다. 이는 원문의 의도와 일치하며, targets는 이동 시작 지점으로서 적절합니다. 추가적인 회전이나 방향 조정이 필요 없고, 점프와 전진의 동시 수행이 가능합니다.",
+            "question": ""
+          }
+        }
+      ]
+    },
+    {
+      "text": "점프하면서 10칸 앞으로 가자",
+      "expected": {
+        "type": "travel",
+        "distance": 10,
+        "jumping": true
+      },
+      "ok": true,
+      "plan": {
+        "kind": "execute",
+        "message": "점프하며 앞으로 10칸 이동을 시작할게요.",
+        "action": {
+          "type": "travel",
+          "direction": "forward",
+          "distance": 10,
+          "jumping": true
+        }
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "점프하면서 10칸 앞으로 가자",
+          "context": {},
+          "goal": {
+            "reason": "지속 이동 또는 동시 이동 목표",
+            "kind": "travel",
+            "utterance": "점프하면서 10칸 앞으로 가자",
+            "steps": [],
+            "target": "",
+            "message": "점프하며 앞으로 10칸 이동을 시작할게요.",
+            "direction": "forward",
+            "distance": 10,
+            "jumping": true
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "점프하면서 10칸 앞으로 가자",
+          "plan": {
+            "kind": "execute",
+            "message": "점프하며 앞으로 10칸 이동을 시작할게요.",
+            "action": {
+              "type": "travel",
+              "direction": "forward",
+              "distance": 10,
+              "jumping": true
+            }
+          },
+          "review": {
+            "ok": true,
+            "reason": "원문의 지시는 '점프하면서 10칸 앞으로 가자'로, 이는 점프 동작을 유지하며 전방으로 10칸 이동하는 것을 의미합니다. 실행 계획은 travel.direction='forward', distance=10, jumping=true로 정확히 이 지시를 반영하고 있으며, targets는 이동 시작 위치를 나타내며 계획과 일치합니다. 추가적인 조건이나 제약 없이 실행 가능합니다.",
+            "question": ""
+          }
+        }
+      ]
+    },
+    {
+      "text": "앞으로 8칸 가는 동안 계속 점프해",
+      "expected": {
+        "type": "travel",
+        "distance": 8,
+        "jumping": true
+      },
+      "ok": true,
+      "plan": {
+        "kind": "execute",
+        "message": "요청한 이동을 시작할게요.",
+        "action": {
+          "type": "travel",
+          "direction": "forward",
+          "distance": 8,
+          "jumping": true
+        }
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "앞으로 8칸 가는 동안 계속 점프해",
+          "context": {},
+          "goal": {
+            "reason": "지속 이동 또는 동시 이동 목표",
+            "kind": "travel",
+            "utterance": "앞으로 8칸 가는 동안 계속 점프해",
+            "steps": [],
+            "target": "",
+            "message": "요청한 이동을 시작할게요.",
+            "direction": "forward",
+            "distance": 8,
+            "jumping": true
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "앞으로 8칸 가는 동안 계속 점프해",
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 이동을 시작할게요.",
+            "action": {
+              "type": "travel",
+              "direction": "forward",
+              "distance": 8,
+              "jumping": true
+            }
+          },
+          "review": {
+            "ok": true,
+            "reason": "요청된 동작은 앞쪽으로 8칸 이동하면서 점프를 지속하는 것으로, 실행 계획의 travel.distance=8과 travel.jumping=true가 이를 정확히 반영하고 있습니다. 이동 방향은 시선 기준 전방이며, 점프는 이동 중 지속되며, 목표 블록과의 상대 위치도 일치합니다. 추가적인 조건이나 제약 없이 실행 가능합니다.",
+            "question": ""
+          }
+        }
+      ]
+    },
+    {
+      "text": "앞으로 5칸 이동과 점프를 동시에 해",
+      "expected": {
+        "type": "travel",
+        "distance": 5,
+        "jumping": true
+      },
+      "ok": true,
+      "plan": {
+        "kind": "execute",
+        "message": "요청한 이동과 점프를 동시에 시작할게요.",
+        "action": {
+          "type": "travel",
+          "direction": "forward",
+          "distance": 5,
+          "jumping": true
+        }
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "앞으로 5칸 이동과 점프를 동시에 해",
+          "context": {},
+          "goal": {
+            "reason": "지속 이동 또는 동시 이동 목표",
+            "kind": "travel",
+            "utterance": "앞으로 5칸 이동과 점프를 동시에 해",
+            "steps": [],
+            "target": "",
+            "message": "요청한 이동과 점프를 동시에 시작할게요.",
+            "direction": "forward",
+            "distance": 5,
+            "jumping": true
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "앞으로 5칸 이동과 점프를 동시에 해",
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 이동과 점프를 동시에 시작할게요.",
+            "action": {
+              "type": "travel",
+              "direction": "forward",
+              "distance": 5,
+              "jumping": true
+            }
+          },
+          "review": {
+            "ok": true,
+            "reason": "요청된 '앞으로 5칸 이동과 점프를 동시에 해'라는 지시는 travel.distance=5와 travel.jumping=true로 정확히 표현되며, 이는 시선 방향 기준으로 전진하면서 점프하는 동작을 의미합니다. targets는 이동 시작 위치를 제공하며, 이동과 점프의 실행 가능성을 판단하는 데 충분합니다. 추가적인 조건이나 제약 없이 요청이 계획에 빠짐없이 포함되었습니다.",
+            "question": ""
+          }
+        }
+      ]
+    },
+    {
+      "text": "점프하며 앞으로 열 칸 가줘",
+      "expected": {
+        "type": "travel",
+        "distance": 10,
+        "jumping": true
+      },
+      "ok": true,
+      "plan": {
+        "kind": "execute",
+        "message": "요청한 이동을 시작할게요.",
+        "action": {
+          "type": "travel",
+          "direction": "forward",
+          "distance": 10,
+          "jumping": true
+        }
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "점프하며 앞으로 열 칸 가줘",
+          "context": {},
+          "goal": {
+            "reason": "지속 이동 또는 동시 이동 목표",
+            "kind": "travel",
+            "utterance": "점프하며 앞으로 열 칸 가줘",
+            "steps": [],
+            "target": "",
+            "message": "요청한 이동을 시작할게요.",
+            "direction": "forward",
+            "distance": 10,
+            "jumping": true
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "점프하며 앞으로 열 칸 가줘",
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 이동을 시작할게요.",
+            "action": {
+              "type": "travel",
+              "direction": "forward",
+              "distance": 10,
+              "jumping": true
+            }
+          },
+          "review": {
+            "ok": true,
+            "reason": "요청된 점프하며 앞으로 10칸 이동은 travel.jumping=true와 distance=10, direction=forward로 정확히 수행 가능합니다. targets는 시작 블록 기준 앞쪽 8칸에 위치한 흙 블록으로, 이동 경로 상에 존재하므로 경로 추정에 충분합니다. 점프 동작은 이동 중 지속적으로 수행되며, 시선 방향 유지 전진이므로 회전 없이 forward로 이동합니다. 이동 범위 내에 물리적 장애물이 명시되지 않았으므로 실행 가능합니다.",
+            "question": ""
+          }
+        }
+      ]
+    },
+    {
+      "text": "걸어가자 앞으로 100칸",
+      "expected": {
+        "type": "travel",
+        "distance": 100,
+        "jumping": false
+      },
+      "ok": true,
+      "plan": {
+        "kind": "execute",
+        "message": "요청한 이동을 시작할게요.",
+        "action": {
+          "type": "travel",
+          "direction": "forward",
+          "distance": 100,
+          "jumping": false
+        }
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "걸어가자 앞으로 100칸",
+          "context": {},
+          "goal": {
+            "reason": "지속 이동 또는 동시 이동 목표",
+            "kind": "travel",
+            "utterance": "걸어가자 앞으로 100칸",
+            "steps": [],
+            "target": "",
+            "message": "요청한 이동을 시작할게요.",
+            "direction": "forward",
+            "distance": 100,
+            "jumping": false
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "걸어가자 앞으로 100칸",
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 이동을 시작할게요.",
+            "action": {
+              "type": "travel",
+              "direction": "forward",
+              "distance": 100,
+              "jumping": false
+            }
+          },
+          "review": {
+            "ok": true,
+            "reason": "요청된 이동 거리(100칸)와 방향(앞쪽)이 명확하며, 실행 계획에 정확히 반영되었습니다. 이동 중 점프는 비활성화되어 있으며, 목표 블록(흙)은 시작 위치에서 전방 8칸 거리에 위치해 있어 이동 경로와 일치합니다. 추가적인 조건이나 제약 없이 실행 가능합니다.",
+            "question": ""
+          }
+        }
+      ]
+    },
+    {
+      "text": "전진 80칸 부탁해",
+      "expected": {
+        "type": "travel",
+        "distance": 80,
+        "jumping": false
+      },
+      "ok": true,
+      "plan": {
+        "kind": "execute",
+        "message": "요청한 이동을 시작할게요.",
+        "action": {
+          "type": "travel",
+          "direction": "forward",
+          "distance": 80,
+          "jumping": false
+        }
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "전진 80칸 부탁해",
+          "context": {},
+          "goal": {
+            "reason": "지속 이동 또는 동시 이동 목표",
+            "kind": "travel",
+            "utterance": "전진 80칸 부탁해",
+            "steps": [],
+            "target": "",
+            "message": "요청한 이동을 시작할게요.",
+            "direction": "forward",
+            "distance": 80,
+            "jumping": false
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "전진 80칸 부탁해",
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 이동을 시작할게요.",
+            "action": {
+              "type": "travel",
+              "direction": "forward",
+              "distance": 80,
+              "jumping": false
+            }
+          },
+          "review": {
+            "ok": true,
+            "reason": "요청된 전진 80칸 이동은 실행 계획에 명확히 포함되어 있으며, 목표 블록과의 상대 위치(전방 8칸)도 일치합니다. 이동 방향과 거리가 정확히 지정되었고, 추가적인 조건 없이 진행 가능합니다.",
+            "question": ""
+          }
+        }
+      ]
+    },
+    {
+      "text": "앞으로 백 칸 가",
+      "expected": {
+        "type": "travel",
+        "distance": 100,
+        "jumping": false
+      },
+      "ok": true,
+      "plan": {
+        "kind": "execute",
+        "message": "요청한 이동을 시작할게요.",
+        "action": {
+          "type": "travel",
+          "direction": "forward",
+          "distance": 100,
+          "jumping": false
+        }
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "앞으로 백 칸 가",
+          "context": {},
+          "goal": {
+            "reason": "지속 이동 또는 동시 이동 목표",
+            "kind": "travel",
+            "utterance": "앞으로 백 칸 가",
+            "steps": [],
+            "target": "",
+            "message": "요청한 이동을 시작할게요.",
+            "direction": "forward",
+            "distance": 100,
+            "jumping": false
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "앞으로 백 칸 가",
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 이동을 시작할게요.",
+            "action": {
+              "type": "travel",
+              "direction": "forward",
+              "distance": 100,
+              "jumping": false
+            }
+          },
+          "review": {
+            "ok": true,
+            "reason": "요청된 이동 거리(100칸)와 방향(앞으로)이 실행 계획에 정확히 반영되었으며, 목표 블록과의 상대 위치도 일치합니다. 이동 중 점프는 요청되지 않았으므로 jumping=false로 설정되었습니다.",
+            "question": ""
+          }
+        }
+      ]
+    },
+    {
+      "text": "앞의 육지까지 가자",
+      "expected": {
+        "type": "land"
+      },
+      "ok": true,
+      "plan": {
+        "kind": "execute",
+        "message": "말씀하신 방향에서 올라설 수 있는 육지를 찾아 이동할게요.",
+        "action": {
+          "type": "land",
+          "direction": "forward"
+        }
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "앞의 육지까지 가자",
+          "context": {},
+          "goal": {
+            "reason": "지속 이동 또는 동시 이동 목표",
+            "kind": "land",
+            "utterance": "앞의 육지까지 가자",
+            "steps": [],
+            "target": "",
+            "message": "앞쪽에 있는 육지를 찾아 이동할게요.",
+            "direction": "forward",
+            "distance": null,
+            "jumping": false
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "앞의 육지까지 가자",
+          "plan": {
+            "kind": "execute",
+            "message": "말씀하신 방향에서 올라설 수 있는 육지를 찾아 이동할게요.",
+            "action": {
+              "type": "land",
+              "direction": "forward"
+            }
+          },
+          "review": {
+            "ok": true,
+            "reason": "목표로 지정된 앞쪽 육지(0,87,8)는 현재 위치에서 전방 8칸 거리에 있으며, 해당 방향에 마른 발판과 머리 공간이 존재하는 것으로 관찰되었습니다. land 동작을 통해 전방으로 수영 또는 보행을 통해 올라갈 수 있는 경로를 탐색하고, 이동을 수행할 수 있습니다. 이동 중 점프는 필요하지 않으며, 시선 방향을 유지한 채 전진만으로 목표 지점에 도달할 수 있습니다.",
+            "question": "전방 8칸 거리에 위치한 육지(0,87,8)로 이동하기 위해 land 동작을 수행할까요?"
+          }
+        }
+      ]
+    },
+    {
+      "text": "앞쪽 뭍으로 올라가줘",
+      "expected": {
+        "type": "land"
+      },
+      "ok": true,
+      "plan": {
+        "kind": "execute",
+        "message": "말씀하신 방향에서 올라설 수 있는 육지를 찾아 이동할게요.",
+        "action": {
+          "type": "land",
+          "direction": "forward"
+        }
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "앞쪽 뭍으로 올라가줘",
+          "context": {},
+          "goal": {
+            "reason": "지속 이동 또는 동시 이동 목표",
+            "kind": "land",
+            "utterance": "앞쪽 뭍으로 올라가줘",
+            "steps": [],
+            "target": "",
+            "message": "앞쪽 육지로 올라가는 길을 찾을게요.",
+            "direction": "forward",
+            "distance": null,
+            "jumping": false
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "앞쪽 뭍으로 올라가줘",
+          "plan": {
+            "kind": "execute",
+            "message": "말씀하신 방향에서 올라설 수 있는 육지를 찾아 이동할게요.",
+            "action": {
+              "type": "land",
+              "direction": "forward"
+            }
+          },
+          "review": {
+            "ok": true,
+            "reason": "원문의 '앞쪽 뭍으로 올라가줘'는 현재 시선 방향의 앞쪽에 있는 육지(발판)를 찾아 올라가는 것을 의미합니다. 'land' 동작은 관찰된 방향에서 마른 발판과 머리 공간을 실제 월드에서 찾아 수영/보행으로 올라가는 것으로, 이는 '앞쪽 뭍으로 올라가라'는 지시와 일치합니다. targets는 앞쪽 8칸 거리에 있는 흙 블록을 가리키며, 이는 육지의 존재를 시사합니다. 이동 방향은 'forward'이며, 시선 기준으로 앞쪽으로 이동하는 것이므로 방향 지시와 일치합니다. 추가적인 회전이나 점프 없이 바로 land를 수행하는 것이 원문의 의도를 가장 정확히 반영합니다.",
+            "question": "앞쪽에 있는 육지로 올라가는 데 필요한 발판과 머리 공간이 확보되어 있는지 확인해 주세요."
+          }
+        }
+      ]
+    },
+    {
+      "text": "앞쪽 물 밖으로 나가자",
+      "expected": {
+        "type": "land"
+      },
+      "ok": true,
+      "plan": {
+        "kind": "execute",
+        "message": "말씀하신 방향에서 올라설 수 있는 육지를 찾아 이동할게요.",
+        "action": {
+          "type": "land",
+          "direction": "forward"
+        }
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "앞쪽 물 밖으로 나가자",
+          "context": {},
+          "goal": {
+            "reason": "지속 이동 또는 동시 이동 목표",
+            "kind": "land",
+            "utterance": "앞쪽 물 밖으로 나가자",
+            "steps": [],
+            "target": "",
+            "message": "물 밖으로 나가기 위해 육지가 있는 방향으로 이동할게요.",
+            "direction": "forward",
+            "distance": null,
+            "jumping": false
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "앞쪽 물 밖으로 나가자",
+          "plan": {
+            "kind": "execute",
+            "message": "말씀하신 방향에서 올라설 수 있는 육지를 찾아 이동할게요.",
+            "action": {
+              "type": "land",
+              "direction": "forward"
+            }
+          },
+          "review": {
+            "ok": true,
+            "reason": "원문은 앞쪽 물 밖으로 나가라는 지시이며, 이는 물 밖의 육지로 이동하는 것을 의미합니다. plan은 'land' 동작을 통해 앞쪽 방향에서 마른 발판과 머리 공간을 찾아 올라가는 방식으로 물 밖 육지로 이동하는 것을 계획하고 있습니다. 이는 원문의 의도와 일치하며, targets에 제시된 dirt 블록은 물 밖 육지의 일부일 가능성이 높습니다. 따라서 실행 가능하고 목표를 충족합니다.",
+            "question": ""
+          }
+        }
+      ]
+    },
+    {
+      "text": "한 번 점프한 뒤 앞으로 10칸 가",
+      "expected": {
+        "type": "sequence"
+      },
+      "ok": true,
+      "plan": {
+        "kind": "execute",
+        "message": "요청을 처리할게요.",
+        "action": {
+          "type": "sequence",
+          "steps": [
+            {
+              "type": "jump",
+              "amount": 1
+            },
+            {
+              "type": "move",
+              "amount": 10,
+              "direction": "forward"
+            }
+          ]
+        }
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "한 번 점프한 뒤 앞으로 10칸 가",
+          "context": {},
+          "goal": {
+            "reason": "원문의 행동과 수량을 보존한다.",
+            "kind": "sequence",
+            "utterance": "한 번 점프한 뒤 앞으로 10칸 가",
+            "steps": [
+              "한 번 점프",
+              "앞으로 10칸 걸어"
+            ],
+            "target": "",
+            "message": "요청을 처리할게요.",
+            "direction": "forward",
+            "distance": 10,
+            "jumping": false
+          }
+        },
+        {
+          "stage": "motion_review",
+          "text": "한 번 점프",
+          "context": {
+            "pending": null
+          },
+          "raw": "한 번 점프할게요! !jump(1)",
+          "action": {
+            "type": "jump",
+            "amount": 1
+          },
+          "agrees": true
+        },
+        {
+          "stage": "interpret",
+          "text": "한 번 점프",
+          "context": {
+            "pending": null
+          },
+          "observation": {
+            "pos": {
+              "x": 0.5,
+              "y": 87,
+              "z": 0.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": null,
+            "targets": [
+              {
+                "key": "block:0:87:8",
+                "kind": "block",
+                "name": "dirt",
+                "pos": {
+                  "x": 0,
+                  "y": 87,
+                  "z": 8
+                },
+                "dist": 8,
+                "relative": {
+                  "forward": 8,
+                  "right": 0,
+                  "up": 0
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "한 번 점프합니다.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "jump",
+            "direction": "",
+            "amount": 1,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "jump",
+              "amount": 1
+            }
+          },
+          "usage": {
+            "prompt_tokens": 1367,
+            "total_tokens": 1413,
+            "completion_tokens": 46,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        },
+        {
+          "stage": "motion_review",
+          "text": "앞으로 10칸 걸어",
+          "context": {
+            "pending": null,
+            "lastAction": {
+              "type": "jump",
+              "amount": 1,
+              "completed": true
+            }
+          },
+          "raw": "앞으로 10칸 갈게요! !move(\"forward\", 10)",
+          "action": {
+            "type": "move",
+            "amount": 10,
+            "direction": "forward"
+          },
+          "agrees": true
+        },
+        {
+          "stage": "interpret",
+          "text": "앞으로 10칸 걸어",
+          "context": {
+            "pending": null,
+            "lastAction": {
+              "type": "jump",
+              "amount": 1,
+              "completed": true
+            }
+          },
+          "observation": {
+            "pos": {
+              "x": 0.5,
+              "y": 87,
+              "z": 0.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": null,
+            "targets": [
+              {
+                "key": "block:0:87:8",
+                "kind": "block",
+                "name": "dirt",
+                "pos": {
+                  "x": 0,
+                  "y": 87,
+                  "z": 8
+                },
+                "dist": 8,
+                "relative": {
+                  "forward": 8,
+                  "right": 0,
+                  "up": 0
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "앞으로 10칸 걷기",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "move",
+            "direction": "forward",
+            "amount": 10,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "move",
+              "amount": 10,
+              "direction": "forward"
+            }
+          },
+          "usage": {
+            "prompt_tokens": 1380,
+            "total_tokens": 1432,
+            "completion_tokens": 52,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "한 번 점프한 뒤 앞으로 10칸 가",
+          "plan": {
+            "kind": "execute",
+            "message": "요청을 처리할게요.",
+            "action": {
+              "type": "sequence",
+              "steps": [
+                {
+                  "type": "jump",
+                  "amount": 1
+                },
+                {
+                  "type": "move",
+                  "amount": 10,
+                  "direction": "forward"
+                }
+              ]
+            }
+          },
+          "review": {
+            "ok": true,
+            "reason": "원문의 지시는 한 번 점프한 뒤 앞으로 10칸 가는 것으로, 이는 점프 후 전진 이동을 의미합니다. 실행 계획은 jump.amount=1로 한 번 점프하고, move.amount=10, direction='forward'로 전진하여 원문의 의도를 정확히 반영하고 있습니다. target은 시작 위치로, 이동 방향과 거리에 영향을 주지 않으며, 계획은 목표를 포함하고 있습니다.",
+            "question": ""
+          }
+        }
+      ]
+    },
+    {
+      "text": "앞으로 10칸 간 다음 두 번 점프해",
+      "expected": {
+        "type": "sequence"
+      },
+      "ok": true,
+      "plan": {
+        "kind": "execute",
+        "message": "요청을 처리할게요.",
+        "action": {
+          "type": "sequence",
+          "steps": [
+            {
+              "type": "move",
+              "amount": 10,
+              "direction": "forward"
+            },
+            {
+              "type": "jump",
+              "amount": 2
+            }
+          ]
+        }
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "앞으로 10칸 간 다음 두 번 점프해",
+          "context": {},
+          "goal": {
+            "reason": "명확한 순서가 있는 여러 동작",
+            "kind": "sequence",
+            "utterance": "앞으로 10칸 간 다음 두 번 점프해",
+            "steps": [
+              "앞으로 10칸 걸어",
+              "두 번 점프"
+            ],
+            "target": "",
+            "message": "요청을 처리할게요.",
+            "direction": "",
+            "distance": null,
+            "jumping": false
+          }
+        },
+        {
+          "stage": "motion_review",
+          "text": "앞으로 10칸 걸어",
+          "context": {
+            "pending": null
+          },
+          "raw": "앞으로 10칸 갈게요! !move(\"forward\", 10)",
+          "action": {
+            "type": "move",
+            "amount": 10,
+            "direction": "forward"
+          },
+          "agrees": true
+        },
+        {
+          "stage": "interpret",
+          "text": "앞으로 10칸 걸어",
+          "context": {
+            "pending": null
+          },
+          "observation": {
+            "pos": {
+              "x": 0.5,
+              "y": 87,
+              "z": 0.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": null,
+            "targets": [
+              {
+                "key": "block:0:87:8",
+                "kind": "block",
+                "name": "dirt",
+                "pos": {
+                  "x": 0,
+                  "y": 87,
+                  "z": 8
+                },
+                "dist": 8,
+                "relative": {
+                  "forward": 8,
+                  "right": 0,
+                  "up": 0
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "앞으로 10칸 걷기",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "move",
+            "direction": "forward",
+            "amount": 10,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "move",
+              "amount": 10,
+              "direction": "forward"
+            }
+          },
+          "usage": {
+            "prompt_tokens": 1370,
+            "total_tokens": 1422,
+            "completion_tokens": 52,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        },
+        {
+          "stage": "motion_review",
+          "text": "두 번 점프",
+          "context": {
+            "pending": null,
+            "lastAction": {
+              "type": "move",
+              "amount": 10,
+              "direction": "forward",
+              "completed": true
+            }
+          },
+          "raw": "두 번 뛸게요! !jump(2)",
+          "action": {
+            "type": "jump",
+            "amount": 2
+          },
+          "agrees": true
+        },
+        {
+          "stage": "interpret",
+          "text": "두 번 점프",
+          "context": {
+            "pending": null,
+            "lastAction": {
+              "type": "move",
+              "amount": 10,
+              "direction": "forward",
+              "completed": true
+            }
+          },
+          "observation": {
+            "pos": {
+              "x": 0.5,
+              "y": 87,
+              "z": 0.5
+            },
+            "yaw": 180,
+            "pitch": 0,
+            "cursor": null,
+            "targets": [
+              {
+                "key": "block:0:87:8",
+                "kind": "block",
+                "name": "dirt",
+                "pos": {
+                  "x": 0,
+                  "y": 87,
+                  "z": 8
+                },
+                "dist": 8,
+                "relative": {
+                  "forward": 8,
+                  "right": 0,
+                  "up": 0
+                }
+              }
+            ]
+          },
+          "intent": {
+            "interpretation": "두 번 점프하라.",
+            "multiple_actions": false,
+            "ambiguous": false,
+            "action_type": "jump",
+            "direction": "",
+            "amount": 2,
+            "target_reference": "none",
+            "target_name": "",
+            "target_key": "",
+            "question": ""
+          },
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 행동을 시작할게요.",
+            "action": {
+              "type": "jump",
+              "amount": 2
+            }
+          },
+          "usage": {
+            "prompt_tokens": 1382,
+            "total_tokens": 1435,
+            "completion_tokens": 53,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": null
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "앞으로 10칸 간 다음 두 번 점프해",
+          "plan": {
+            "kind": "execute",
+            "message": "요청을 처리할게요.",
+            "action": {
+              "type": "sequence",
+              "steps": [
+                {
+                  "type": "move",
+                  "amount": 10,
+                  "direction": "forward"
+                },
+                {
+                  "type": "jump",
+                  "amount": 2
+                }
+              ]
+            }
+          },
+          "review": {
+            "ok": true,
+            "reason": "요청된 동작은 앞쪽으로 10칸 이동한 후 두 번 점프하는 것으로, 계획에 정확히 포함되어 있습니다. 이동 방향은 시선 기준 전방이며, 점프는 제자리에서 두 번 수행되며, 목표 블록과의 상대 위치도 일치합니다. 추가적인 접근성이나 물리적 제약은 고려하지 않으며, 요청된 작업이 계획에 빠짐없이 수행됩니다.",
+            "question": ""
+          }
+        }
+      ]
+    },
+    {
+      "text": "점프하지 말고 앞으로 10칸 걸어",
+      "expected": {
+        "type": "move"
+      },
+      "ok": true,
+      "plan": {
+        "kind": "execute",
+        "message": "요청한 이동을 시작할게요.",
+        "action": {
+          "type": "travel",
+          "direction": "forward",
+          "distance": 10,
+          "jumping": false
+        }
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "점프하지 말고 앞으로 10칸 걸어",
+          "context": {},
+          "goal": {
+            "reason": "지속 이동 또는 동시 이동 목표",
+            "kind": "travel",
+            "utterance": "점프하지 말고 앞으로 10칸 걸어",
+            "steps": [],
+            "target": "",
+            "message": "요청한 이동을 시작할게요.",
+            "direction": "forward",
+            "distance": 10,
+            "jumping": false
+          }
+        },
+        {
+          "stage": "goal_review",
+          "text": "점프하지 말고 앞으로 10칸 걸어",
+          "plan": {
+            "kind": "execute",
+            "message": "요청한 이동을 시작할게요.",
+            "action": {
+              "type": "travel",
+              "direction": "forward",
+              "distance": 10,
+              "jumping": false
+            }
+          },
+          "review": {
+            "ok": true,
+            "reason": "요청된 이동은 점프 없이 앞으로 10칸 걷는 것으로, plan의 travel.direction='forward'와 distance=10, jumping=false와 일치합니다. targets는 시작 블록을 나타내며, 이동 방향과 거리에 영향을 주지 않습니다. 모든 조건이 원문과 일치합니다.",
+            "question": ""
+          }
+        }
+      ]
+    },
+    {
+      "text": "앞으로 천 칸 가",
+      "expected": {
+        "type": "nonaction"
+      },
+      "ok": true,
+      "plan": {
+        "kind": "unavailable",
+        "message": "대상이나 작업 범위를 확인하지 못했어요. 이동은 한 요청에 최대 100칸까지 지원해요.",
+        "action": null
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "앞으로 천 칸 가",
+          "context": {},
+          "goal": {
+            "reason": "지속 이동 또는 동시 이동 목표",
+            "kind": "travel",
+            "utterance": "앞으로 천 칸 가",
+            "steps": [],
+            "target": "",
+            "message": "요청한 이동을 시작할게요. 최대 75초 후에 자동으로 멈춥니다.",
+            "direction": "forward",
+            "distance": 1000,
+            "jumping": false
+          }
+        }
+      ]
+    },
+    {
+      "text": "잠수해서 바닥을 탐험해",
+      "expected": {
+        "type": "nonaction"
+      },
+      "ok": true,
+      "plan": {
+        "kind": "unavailable",
+        "message": "수중 탐험은 현재 지원하지 않습니다. 육지나 물 위에서의 행동만 가능해요.",
+        "action": null
+      },
+      "audit": [
+        {
+          "stage": "goal",
+          "text": "잠수해서 바닥을 탐험해",
+          "context": {},
+          "goal": {
+            "reason": "수중 탐험은 지원하지 않음",
+            "kind": "unsupported",
+            "utterance": "잠수해서 바닥을 탐험해",
+            "steps": [],
+            "target": "",
+            "message": "수중 탐험은 현재 지원하지 않습니다. 육지나 물 위에서의 행동만 가능해요.",
+            "direction": "",
+            "distance": null,
+            "jumping": false
+          }
+        }
+      ]
+    }
+  ]
+}

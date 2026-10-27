@@ -1,0 +1,224 @@
+[
+  {
+    "case": "sequential execution",
+    "ok": true,
+    "state": {
+      "phase": "done",
+      "korean": "점프 한 번 하고 위로 30도 봐",
+      "english": "",
+      "message": "목표를 완료했어요.",
+      "active_since": 1791000545.04,
+      "run_seconds": 120,
+      "mode": "mindcraft",
+      "translation_model": "Qwen3-30B + verified actions",
+      "chat": [
+        {
+          "id": "e65b9723-2391-41d2-a8e9-6131cd86b912",
+          "role": "user",
+          "text": "점프 한 번 하고 위로 30도 봐"
+        },
+        {
+          "id": "2ecd7641-3dcb-4674-ac52-4f470e042d47",
+          "role": "assistant",
+          "text": "1/1 단계 실행 중",
+          "status": "completed"
+        },
+        {
+          "id": "f72e5072-1c25-48bd-b19a-5e43e4cf6e69",
+          "role": "assistant",
+          "text": "목표를 완료했어요.",
+          "status": "done"
+        }
+      ],
+      "agent_in_game": true
+    }
+  },
+  {
+    "case": "ambiguous input does not move",
+    "ok": true,
+    "state": {
+      "phase": "clarify",
+      "korean": "저거",
+      "english": "",
+      "message": "어떤 것을 가리키고 계신가요?",
+      "active_since": 1791000551.018,
+      "run_seconds": 120,
+      "mode": "mindcraft",
+      "translation_model": "Qwen3-30B + verified actions",
+      "chat": [
+        {
+          "id": "e65b9723-2391-41d2-a8e9-6131cd86b912",
+          "role": "user",
+          "text": "점프 한 번 하고 위로 30도 봐"
+        },
+        {
+          "id": "2ecd7641-3dcb-4674-ac52-4f470e042d47",
+          "role": "assistant",
+          "text": "1/1 단계 실행 중",
+          "status": "completed"
+        },
+        {
+          "id": "f72e5072-1c25-48bd-b19a-5e43e4cf6e69",
+          "role": "assistant",
+          "text": "목표를 완료했어요.",
+          "status": "done"
+        },
+        {
+          "id": "24fbcef2-6b7d-4d31-9776-b096ce2714f2",
+          "role": "user",
+          "text": "저거"
+        },
+        {
+          "id": "21d438a0-93d8-4e0d-92f3-a60704074ea9",
+          "role": "assistant",
+          "text": "어떤 것을 가리키고 계신가요?",
+          "status": "clarify"
+        }
+      ],
+      "agent_in_game": true
+    }
+  },
+  {
+    "case": "new command supersedes pending question",
+    "ok": true,
+    "state": {
+      "phase": "done",
+      "korean": "위로 30도 봐",
+      "english": "",
+      "message": "목표를 완료했어요.",
+      "active_since": 1791000551.629,
+      "run_seconds": 120,
+      "mode": "mindcraft",
+      "translation_model": "Qwen3-30B + verified actions",
+      "chat": [
+        {
+          "id": "e65b9723-2391-41d2-a8e9-6131cd86b912",
+          "role": "user",
+          "text": "점프 한 번 하고 위로 30도 봐"
+        },
+        {
+          "id": "2ecd7641-3dcb-4674-ac52-4f470e042d47",
+          "role": "assistant",
+          "text": "1/1 단계 실행 중",
+          "status": "completed"
+        },
+        {
+          "id": "f72e5072-1c25-48bd-b19a-5e43e4cf6e69",
+          "role": "assistant",
+          "text": "목표를 완료했어요.",
+          "status": "done"
+        },
+        {
+          "id": "24fbcef2-6b7d-4d31-9776-b096ce2714f2",
+          "role": "user",
+          "text": "저거"
+        },
+        {
+          "id": "21d438a0-93d8-4e0d-92f3-a60704074ea9",
+          "role": "assistant",
+          "text": "어떤 것을 가리키고 계신가요?",
+          "status": "clarify"
+        },
+        {
+          "id": "7bc7c23c-04f3-447a-a6f8-0285074a7a85",
+          "role": "user",
+          "text": "위로 30도 봐"
+        },
+        {
+          "id": "9e734108-d129-4f40-8f80-aedeb7a59a8a",
+          "role": "assistant",
+          "text": "1/1 단계 실행 중",
+          "status": "completed"
+        },
+        {
+          "id": "cafbd356-e6d0-4bb1-8835-482cd76ffd06",
+          "role": "assistant",
+          "text": "목표를 완료했어요.",
+          "status": "done"
+        }
+      ],
+      "agent_in_game": true
+    }
+  },
+  {
+    "case": "targeted observation bridge",
+    "ok": true,
+    "coverage": {
+      "radius": 16,
+      "truncated": true,
+      "query": "named_type",
+      "visible": 1,
+      "occluded": 255
+    }
+  },
+  {
+    "case": "stop",
+    "state": {
+      "phase": "stopping",
+      "korean": "위로 30도 봐",
+      "english": "",
+      "message": "행동을 멈추고 있어요.",
+      "active_since": 1791000551.629,
+      "run_seconds": 120,
+      "mode": "mindcraft",
+      "translation_model": "Qwen3-30B + verified actions",
+      "chat": [
+        {
+          "id": "e65b9723-2391-41d2-a8e9-6131cd86b912",
+          "role": "user",
+          "text": "점프 한 번 하고 위로 30도 봐"
+        },
+        {
+          "id": "2ecd7641-3dcb-4674-ac52-4f470e042d47",
+          "role": "assistant",
+          "text": "1/1 단계 실행 중",
+          "status": "completed"
+        },
+        {
+          "id": "f72e5072-1c25-48bd-b19a-5e43e4cf6e69",
+          "role": "assistant",
+          "text": "목표를 완료했어요.",
+          "status": "done"
+        },
+        {
+          "id": "24fbcef2-6b7d-4d31-9776-b096ce2714f2",
+          "role": "user",
+          "text": "저거"
+        },
+        {
+          "id": "21d438a0-93d8-4e0d-92f3-a60704074ea9",
+          "role": "assistant",
+          "text": "어떤 것을 가리키고 계신가요?",
+          "status": "clarify"
+        },
+        {
+          "id": "7bc7c23c-04f3-447a-a6f8-0285074a7a85",
+          "role": "user",
+          "text": "위로 30도 봐"
+        },
+        {
+          "id": "9e734108-d129-4f40-8f80-aedeb7a59a8a",
+          "role": "assistant",
+          "text": "1/1 단계 실행 중",
+          "status": "completed"
+        },
+        {
+          "id": "cafbd356-e6d0-4bb1-8835-482cd76ffd06",
+          "role": "assistant",
+          "text": "목표를 완료했어요.",
+          "status": "done"
+        }
+      ],
+      "agent_in_game": true
+    }
+  },
+  {
+    "case": "manual takeover",
+    "ok": true
+  },
+  {
+    "case": "reset and video frames",
+    "ok": true,
+    "frames": 360
+  }
+]

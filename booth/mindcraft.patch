@@ -1,0 +1,132 @@
+diff --git a/src/agent/commands/index.js b/src/agent/commands/index.js
+index 7ada040..acf2f9f 100644
+--- a/src/agent/commands/index.js
++++ b/src/agent/commands/index.js
+@@ -1,10 +1,11 @@
+ import { getBlockId, getItemId } from "../../utils/mcdata.js";
+ import { actionsList } from './actions.js';
+ import { queryList } from './queries.js';
++import { boothActionsList } from './booth_actions.js';
+ 
+ let suppressNoDomainWarning = true;
+ 
+-const commandList = queryList.concat(actionsList);
++const commandList = queryList.concat(actionsList).concat(boothActionsList);
+ const commandMap = {};
+ for (let command of commandList) {
+     commandMap[command.name] = command;
+@@ -15,7 +16,7 @@ export function getCommand(name) {
+ }
+ 
+ export function blacklistCommands(commands) {
+-    const unblockable = ['!stop', '!stats', '!inventory', '!goal'];
++    const unblockable = ['!stop', '!stats', '!inventory', '!entities', '!nearbyBlocks'];
+     for (let command_name of commands) {
+         if (unblockable.includes(command_name)){
+             console.warn(`Command ${command_name} is unblockable`);
+diff --git a/src/agent/library/skills.js b/src/agent/library/skills.js
+index a875ce7..cf378b6 100644
+--- a/src/agent/library/skills.js
++++ b/src/agent/library/skills.js
+@@ -441,6 +441,7 @@ export async function collectBlock(bot, blockType, num=1, exclude=null) {
+     const isLiquid = blockType === 'lava' || blockType === 'water';
+ 
+     let collected = 0;
++    let failures = 0;
+ 
+     const movements = new pf.Movements(bot);
+     movements.dontMineUnderFallingBlock = false;
+@@ -517,6 +518,10 @@ export async function collectBlock(bot, blockType, num=1, exclude=null) {
+             }
+             else {
+                 log(bot, `Failed to collect ${blockType}: ${err}.`);
++                if (bot.interrupt_code) break;
++                // Skip an unreachable block and try the next nearest one instead.
++                exclude = (exclude || []).concat([block.position]);
++                if (++failures < 3) i--;
+                 continue;
+             }
+         }
+diff --git a/src/agent/mindserver_proxy.js b/src/agent/mindserver_proxy.js
+index d0b9be8..49182c4 100644
+--- a/src/agent/mindserver_proxy.js
++++ b/src/agent/mindserver_proxy.js
+@@ -2,6 +2,7 @@ import { io } from 'socket.io-client';
+ import convoManager from './conversation.js';
+ import { setSettings } from './settings.js';
+ import { getFullState } from './library/full_state.js';
++import { getBoothState, boothControl, boothManual } from './booth_control.js';
+ 
+ // agent's individual connection to the mindserver
+ // always connect to localhost
+@@ -69,6 +70,20 @@ class MindServerProxy {
+             }
+         });
+ 
++        this.socket.on('booth-state', (callback) => {
++            try { callback(getBoothState(this.agent)); }
++            catch (error) { console.error('booth-state failed:', error); callback(null); }
++        });
++
++        this.socket.on('booth-control', async (data, callback) => {
++            try { callback?.(await boothControl(this.agent, data)); }
++            catch (error) { console.error('booth-control failed:', error); callback?.(false); }
++        });
++
++        this.socket.on('booth-manual', (data) => {
++            boothManual(this.agent, data).catch(error => console.error('booth-manual failed:', error));
++        });
++
+         this.socket.on('get-full-state', (callback) => {
+             try {
+                 const state = getFullState(this.agent);
+diff --git a/src/mindcraft/mindserver.js b/src/mindcraft/mindserver.js
+index da2560a..3967404 100644
+--- a/src/mindcraft/mindserver.js
++++ b/src/mindcraft/mindserver.js
+@@ -267,6 +267,22 @@ export function createMindServer(host_public = false, port = 8080) {
+ 			}
+ 		});
+ 
++        socket.on('booth-state', (agentName, callback) => {
++            const conn = agent_connections[agentName];
++            if (!conn?.socket) return callback(null);
++            conn.socket.timeout(2000).emit('booth-state', (err, state) => callback(err ? null : state));
++        });
++
++        socket.on('booth-control', (agentName, data, callback) => {
++            const conn = agent_connections[agentName];
++            if (!conn?.socket) return callback?.(false);
++            conn.socket.timeout(15000).emit('booth-control', data, (err, ok) => callback?.(err ? false : ok));
++        });
++
++        socket.on('booth-manual', (agentName, data) => {
++            agent_connections[agentName]?.socket?.emit('booth-manual', data);
++        });
++
+         socket.on('bot-output', (agentName, message) => {
+             io.emit('bot-output', agentName, message);
+         });
+diff --git a/src/models/vllm.js b/src/models/vllm.js
+index d821983..ccdfa88 100644
+--- a/src/models/vllm.js
++++ b/src/models/vllm.js
+@@ -7,8 +7,9 @@ import { strictFormat } from '../utils/text.js';
+ 
+ export class VLLM {
+     static prefix = 'vllm';
+-    constructor(model_name, url) {
++    constructor(model_name, url, params) {
+         this.model_name = model_name;
++        this.params = params || {};
+ 
+         // Currently use self-hosted SGLang API for text generation; use OpenAI text-embedding-3-small model for simple embedding.
+         let vllm_config = {};
+@@ -34,6 +35,7 @@ export class VLLM {
+             model: model,
+             messages,
+             stop: stop_seq,
++            ...this.params,
+         };
+ 
+         let res = null;

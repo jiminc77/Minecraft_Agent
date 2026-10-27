@@ -1,0 +1,353 @@
+[
+  {
+    "text": "하늘을 봐",
+    "success": true,
+    "reply": "하늘을 볼게요. !lookVertical(90)",
+    "replyMs": 286,
+    "firstMotionMs": 303,
+    "totalMs": 2322,
+    "timedOut": false,
+    "stillActing": false,
+    "motion": {
+      "forward": 0,
+      "right": 0,
+      "dist": 0,
+      "turnRight": 0,
+      "pitch": 90,
+      "swing": 0,
+      "attack": 0,
+      "dig": 0
+    },
+    "world": {
+      "pigsBefore": 3,
+      "pigsAfter": 3,
+      "logsBefore": 0,
+      "logsAfter": 0,
+      "cowDistAfter": 8.6
+    }
+  },
+  {
+    "text": "앞으로 조금 이동해",
+    "success": true,
+    "reply": "앞으로 조금 갈게요! !move(\"forward\", 2)",
+    "replyMs": 220,
+    "firstMotionMs": 302,
+    "totalMs": 2316,
+    "timedOut": false,
+    "stillActing": false,
+    "motion": {
+      "forward": 2.15,
+      "right": 0,
+      "dist": 2.15,
+      "turnRight": 0,
+      "pitch": 0,
+      "swing": 0,
+      "attack": 0,
+      "dig": 0
+    },
+    "world": {
+      "pigsBefore": 3,
+      "pigsAfter": 3,
+      "logsBefore": 0,
+      "logsAfter": 0,
+      "cowDistAfter": 8.1
+    }
+  },
+  {
+    "text": "뒤로 돌아",
+    "success": false,
+    "reply": "뒤로 돌아갈게요! !move(\"back\", 3)",
+    "replyMs": 210,
+    "firstMotionMs": 303,
+    "totalMs": 2924,
+    "timedOut": false,
+    "stillActing": false,
+    "motion": {
+      "forward": -3.08,
+      "right": 0,
+      "dist": 3.08,
+      "turnRight": 0,
+      "pitch": 0,
+      "swing": 0,
+      "attack": 0,
+      "dig": 0
+    },
+    "world": {
+      "pigsBefore": 3,
+      "pigsAfter": 3,
+      "logsBefore": 0,
+      "logsAfter": 0,
+      "cowDistAfter": 10.2
+    }
+  },
+  {
+    "text": "돼지 죽여줘",
+    "success": true,
+    "reply": "돼지를 잡으러 가볼게요! !attack(\"pig\")",
+    "replyMs": 218,
+    "firstMotionMs": 303,
+    "totalMs": 10279,
+    "timedOut": false,
+    "stillActing": false,
+    "motion": {
+      "forward": 0.01,
+      "right": 20.12,
+      "dist": 20.12,
+      "turnRight": 86.5,
+      "pitch": 0,
+      "swing": 25,
+      "attack": 25,
+      "dig": 0
+    },
+    "world": {
+      "pigsBefore": 3,
+      "pigsAfter": 2,
+      "logsBefore": 0,
+      "logsAfter": 0,
+      "cowDistAfter": null
+    }
+  },
+  {
+    "text": "나무를 캐 줘",
+    "success": false,
+    "reply": "나무를 캐러 가볼게요! !searchForBlock(\"log\", 32)",
+    "replyMs": 296,
+    "firstMotionMs": null,
+    "totalMs": 4131,
+    "timedOut": false,
+    "stillActing": false,
+    "motion": {
+      "forward": 0,
+      "right": 0,
+      "dist": 0,
+      "turnRight": 0,
+      "pitch": 0,
+      "swing": 0,
+      "attack": 0,
+      "dig": 0
+    },
+    "world": {
+      "pigsBefore": 3,
+      "pigsAfter": 3,
+      "logsBefore": 0,
+      "logsAfter": 0,
+      "cowDistAfter": 8.8
+    }
+  },
+  {
+    "text": "블록을 부수지 말고 앞으로 걸어가",
+    "success": true,
+    "reply": "앞으로 걸어갈게요! !move(\"forward\", 2)",
+    "replyMs": 225,
+    "firstMotionMs": 303,
+    "totalMs": 2317,
+    "timedOut": false,
+    "stillActing": false,
+    "motion": {
+      "forward": 2.15,
+      "right": 0,
+      "dist": 2.15,
+      "turnRight": 0,
+      "pitch": 0,
+      "swing": 0,
+      "attack": 0,
+      "dig": 0
+    },
+    "world": {
+      "pigsBefore": 3,
+      "pigsAfter": 3,
+      "logsBefore": 0,
+      "logsAfter": 0,
+      "cowDistAfter": 9.4
+    }
+  },
+  {
+    "text": "오른쪽으로 돌아",
+    "success": true,
+    "reply": "오른쪽을 보겠습니다! !turn(90)",
+    "replyMs": 192,
+    "firstMotionMs": 202,
+    "totalMs": 2418,
+    "timedOut": false,
+    "stillActing": false,
+    "motion": {
+      "forward": 0,
+      "right": 0,
+      "dist": 0,
+      "turnRight": 90,
+      "pitch": 0,
+      "swing": 0,
+      "attack": 0,
+      "dig": 0
+    },
+    "world": {
+      "pigsBefore": 3,
+      "pigsAfter": 3,
+      "logsBefore": 0,
+      "logsAfter": 0,
+      "cowDistAfter": 8.6
+    }
+  },
+  {
+    "text": "땅을 봐",
+    "success": false,
+    "reply": "땅을 볼게요. !lookVertical(0)",
+    "replyMs": 192,
+    "firstMotionMs": null,
+    "totalMs": 2216,
+    "timedOut": false,
+    "stillActing": false,
+    "motion": {
+      "forward": 0,
+      "right": 0,
+      "dist": 0,
+      "turnRight": 0,
+      "pitch": 0,
+      "swing": 0,
+      "attack": 0,
+      "dig": 0
+    },
+    "world": {
+      "pigsBefore": 3,
+      "pigsAfter": 3,
+      "logsBefore": 0,
+      "logsAfter": 0,
+      "cowDistAfter": 8.5
+    }
+  },
+  {
+    "text": "왼쪽으로 세 칸 가",
+    "success": true,
+    "reply": "왼쪽으로 세 칸 갈게요! !move(\"left\", 3)",
+    "replyMs": 253,
+    "firstMotionMs": 302,
+    "totalMs": 2516,
+    "timedOut": false,
+    "stillActing": false,
+    "motion": {
+      "forward": 0,
+      "right": -3.23,
+      "dist": 3.23,
+      "turnRight": 0,
+      "pitch": 0,
+      "swing": 0,
+      "attack": 0,
+      "dig": 0
+    },
+    "world": {
+      "pigsBefore": 3,
+      "pigsAfter": 3,
+      "logsBefore": 0,
+      "logsAfter": 0,
+      "cowDistAfter": 5.4
+    }
+  },
+  {
+    "text": "두 번 점프해",
+    "success": true,
+    "reply": "세 번 뛸게요! !jump(2)",
+    "replyMs": 190,
+    "firstMotionMs": null,
+    "totalMs": 3126,
+    "timedOut": false,
+    "stillActing": false,
+    "motion": {
+      "forward": 0,
+      "right": 0,
+      "dist": 0,
+      "turnRight": 0,
+      "pitch": 0,
+      "swing": 0,
+      "attack": 0,
+      "dig": 0
+    },
+    "world": {
+      "pigsBefore": 3,
+      "pigsAfter": 3,
+      "logsBefore": 0,
+      "logsAfter": 0,
+      "cowDistAfter": 8.6
+    }
+  },
+  {
+    "text": "소한테 가 봐",
+    "success": true,
+    "reply": "소를 찾아갈게요! !searchForEntity(\"cow\", 64)",
+    "replyMs": 244,
+    "firstMotionMs": 302,
+    "totalMs": 2922,
+    "timedOut": false,
+    "stillActing": false,
+    "motion": {
+      "forward": 3.11,
+      "right": -4.11,
+      "dist": 5.15,
+      "turnRight": -45.6,
+      "pitch": 0,
+      "swing": 0,
+      "attack": 0,
+      "dig": 0
+    },
+    "world": {
+      "pigsBefore": 3,
+      "pigsAfter": 3,
+      "logsBefore": 0,
+      "logsAfter": 0,
+      "cowDistAfter": 3.9
+    }
+  },
+  {
+    "text": "앞으로 스무 칸 가 → 하늘을 봐",
+    "success": true,
+    "reply": "앞으로 스무 칸 갈게요! !move(\"forward\", 20) / 하늘을 볼게요! !lookVertical(90)",
+    "replyMs": 300,
+    "firstMotionMs": 403,
+    "totalMs": 4130,
+    "timedOut": false,
+    "stillActing": false,
+    "motion": {
+      "forward": 6.16,
+      "right": 0,
+      "dist": 6.16,
+      "turnRight": 0,
+      "pitch": 90,
+      "swing": 0,
+      "attack": 0,
+      "dig": 0
+    },
+    "world": {
+      "pigsBefore": 3,
+      "pigsAfter": 3,
+      "logsBefore": 0,
+      "logsAfter": 0,
+      "cowDistAfter": 17.5
+    }
+  },
+  {
+    "text": "앞으로 스무 칸 가 → 멈춰",
+    "success": true,
+    "reply": "앞으로 스무 칸 갈게요! !move(\"forward\", 20) / 멈춰. !stop",
+    "replyMs": 265,
+    "firstMotionMs": 302,
+    "totalMs": 3222,
+    "timedOut": false,
+    "stillActing": false,
+    "motion": {
+      "forward": 5.96,
+      "right": 0,
+      "dist": 5.96,
+      "turnRight": 0,
+      "pitch": 0,
+      "swing": 0,
+      "attack": 0,
+      "dig": 0
+    },
+    "world": {
+      "pigsBefore": 3,
+      "pigsAfter": 3,
+      "logsBefore": 0,
+      "logsAfter": 0,
+      "cowDistAfter": 8.8
+    }
+  }
+]

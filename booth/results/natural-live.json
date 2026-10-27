@@ -1,0 +1,2595 @@
+[
+  {
+    "name": "100 blocks is executed without truncating to 30",
+    "ok": true,
+    "details": {
+      "message": "100.2칸 이동했어요.",
+      "distance": 100.15000000000009
+    },
+    "ms": 30997,
+    "before": {
+      "progress": null,
+      "targets": [
+        {
+          "name": "pig",
+          "id": 8867,
+          "pos": {
+            "x": 336.5,
+            "y": 87,
+            "z": -352.5
+          },
+          "dist": 6.7,
+          "key": "entity:8867",
+          "kind": "entity",
+          "relative": {
+            "forward": -3,
+            "right": -6,
+            "up": 0
+          }
+        },
+        {
+          "name": "pig",
+          "id": 8866,
+          "pos": {
+            "x": 326.5,
+            "y": 87,
+            "z": -355.5
+          },
+          "dist": 7.2,
+          "key": "entity:8866",
+          "kind": "entity",
+          "relative": {
+            "forward": -6,
+            "right": 4,
+            "up": 0
+          }
+        },
+        {
+          "name": "pig",
+          "id": 8865,
+          "pos": {
+            "x": 333.5,
+            "y": 87,
+            "z": -357.5
+          },
+          "dist": 8.5,
+          "key": "entity:8865",
+          "kind": "entity",
+          "relative": {
+            "forward": -8,
+            "right": -3,
+            "up": 0
+          }
+        },
+        {
+          "name": "cow",
+          "id": 8868,
+          "pos": {
+            "x": 322.5,
+            "y": 87,
+            "z": -352.5
+          },
+          "dist": 8.5,
+          "key": "entity:8868",
+          "kind": "entity",
+          "relative": {
+            "forward": -3,
+            "right": 8,
+            "up": 0
+          }
+        },
+        {
+          "name": "sheep",
+          "id": 8869,
+          "pos": {
+            "x": 340.445556640625,
+            "y": 87,
+            "z": -347.41015625
+          },
+          "dist": 10.2,
+          "key": "entity:8869",
+          "kind": "entity",
+          "relative": {
+            "forward": 2.1,
+            "right": -9.9,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:330:86:-350",
+          "kind": "block",
+          "name": "grass_block",
+          "pos": {
+            "x": 330,
+            "y": 86,
+            "z": -350
+          },
+          "dist": 1.2,
+          "relative": {
+            "forward": -0.5,
+            "right": 0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:329:86:-350",
+          "kind": "block",
+          "name": "grass_block",
+          "pos": {
+            "x": 329,
+            "y": 86,
+            "z": -350
+          },
+          "dist": 1.9,
+          "relative": {
+            "forward": -0.5,
+            "right": 1.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:330:86:-351",
+          "kind": "block",
+          "name": "grass_block",
+          "pos": {
+            "x": 330,
+            "y": 86,
+            "z": -351
+          },
+          "dist": 1.9,
+          "relative": {
+            "forward": -1.5,
+            "right": 0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:330:86:-349",
+          "kind": "block",
+          "name": "grass_block",
+          "pos": {
+            "x": 330,
+            "y": 86,
+            "z": -349
+          },
+          "dist": 1.2,
+          "relative": {
+            "forward": 0.5,
+            "right": 0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:330:87:-342",
+          "kind": "block",
+          "name": "oak_log",
+          "pos": {
+            "x": 330,
+            "y": 87,
+            "z": -342
+          },
+          "dist": 7.5,
+          "relative": {
+            "forward": 7.5,
+            "right": 0.5,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:334:87:-349",
+          "kind": "block",
+          "name": "dirt",
+          "pos": {
+            "x": 334,
+            "y": 87,
+            "z": -349
+          },
+          "dist": 3.5,
+          "relative": {
+            "forward": 0.5,
+            "right": -3.5,
+            "up": 0
+          }
+        }
+      ],
+      "cursor": null,
+      "jumps": 1,
+      "controls": {
+        "forward": false,
+        "back": false,
+        "left": false,
+        "right": false,
+        "jump": false,
+        "sprint": false
+      },
+      "pos": {
+        "x": 330.5,
+        "y": 87,
+        "z": -349.5
+      },
+      "yaw": 180,
+      "pitch": 0,
+      "health": 20,
+      "inventory": {},
+      "entities": [
+        {
+          "name": "pig",
+          "id": 8867,
+          "pos": {
+            "x": 336.5,
+            "y": 87,
+            "z": -352.5
+          },
+          "dist": 6.7
+        },
+        {
+          "name": "pig",
+          "id": 8866,
+          "pos": {
+            "x": 326.5,
+            "y": 87,
+            "z": -355.5
+          },
+          "dist": 7.2
+        },
+        {
+          "name": "pig",
+          "id": 8865,
+          "pos": {
+            "x": 333.5,
+            "y": 87,
+            "z": -357.5
+          },
+          "dist": 8.5
+        },
+        {
+          "name": "cow",
+          "id": 8868,
+          "pos": {
+            "x": 322.5,
+            "y": 87,
+            "z": -352.5
+          },
+          "dist": 8.5
+        },
+        {
+          "name": "sheep",
+          "id": 8869,
+          "pos": {
+            "x": 340.445556640625,
+            "y": 87,
+            "z": -347.41015625
+          },
+          "dist": 10.2
+        }
+      ],
+      "acting": false,
+      "action": "",
+      "counters": {
+        "swing": 0,
+        "attack": 0,
+        "dig": 0
+      }
+    },
+    "after": {
+      "progress": null,
+      "targets": [
+        {
+          "key": "block:1100:86:1000",
+          "kind": "block",
+          "name": "stone",
+          "pos": {
+            "x": 1100,
+            "y": 86,
+            "z": 1000
+          },
+          "dist": 1.3,
+          "relative": {
+            "forward": -0.7,
+            "right": -0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:1099:86:1000",
+          "kind": "block",
+          "name": "stone",
+          "pos": {
+            "x": 1099,
+            "y": 86,
+            "z": 1000
+          },
+          "dist": 2,
+          "relative": {
+            "forward": -1.7,
+            "right": -0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:1100:86:999",
+          "kind": "block",
+          "name": "stone",
+          "pos": {
+            "x": 1100,
+            "y": 86,
+            "z": 999
+          },
+          "dist": 1.9,
+          "relative": {
+            "forward": -0.7,
+            "right": -1.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:1100:86:1001",
+          "kind": "block",
+          "name": "stone",
+          "pos": {
+            "x": 1100,
+            "y": 86,
+            "z": 1001
+          },
+          "dist": 1.3,
+          "relative": {
+            "forward": -0.7,
+            "right": 0.5,
+            "up": -1
+          }
+        }
+      ],
+      "cursor": null,
+      "jumps": 1,
+      "controls": {
+        "forward": false,
+        "back": false,
+        "left": false,
+        "right": false,
+        "jump": false,
+        "sprint": false
+      },
+      "pos": {
+        "x": 1100.65,
+        "y": 87,
+        "z": 1000.5
+      },
+      "yaw": 270,
+      "pitch": 0,
+      "health": 20,
+      "inventory": {},
+      "entities": [],
+      "acting": false,
+      "action": "",
+      "counters": {
+        "swing": 0,
+        "attack": 0,
+        "dig": 0
+      }
+    }
+  },
+  {
+    "name": "jumping overlaps with forward motion",
+    "ok": true,
+    "details": {
+      "message": "10.0칸 이동했어요.",
+      "jumps": 1,
+      "ascents": 7,
+      "overlap": true
+    },
+    "ms": 7583,
+    "before": {
+      "progress": null,
+      "targets": [
+        {
+          "name": "pig",
+          "id": 8890,
+          "pos": {
+            "x": 326.5,
+            "y": 87,
+            "z": -350.8054492175579
+          },
+          "dist": 4.2,
+          "key": "entity:8890",
+          "kind": "entity",
+          "relative": {
+            "forward": -1.3,
+            "right": 4,
+            "up": 0
+          }
+        },
+        {
+          "name": "pig",
+          "id": 8891,
+          "pos": {
+            "x": 337.49951171875,
+            "y": 87,
+            "z": -353.2626953125
+          },
+          "dist": 7.9,
+          "key": "entity:8891",
+          "kind": "entity",
+          "relative": {
+            "forward": -3.8,
+            "right": -7,
+            "up": 0
+          }
+        },
+        {
+          "name": "pig",
+          "id": 8889,
+          "pos": {
+            "x": 333.5,
+            "y": 87,
+            "z": -357.5
+          },
+          "dist": 8.5,
+          "key": "entity:8889",
+          "kind": "entity",
+          "relative": {
+            "forward": -8,
+            "right": -3,
+            "up": 0
+          }
+        },
+        {
+          "name": "sheep",
+          "id": 8893,
+          "pos": {
+            "x": 339.5,
+            "y": 87,
+            "z": -346.5
+          },
+          "dist": 9.5,
+          "key": "entity:8893",
+          "kind": "entity",
+          "relative": {
+            "forward": 3,
+            "right": -9,
+            "up": 0
+          }
+        },
+        {
+          "name": "cow",
+          "id": 8892,
+          "pos": {
+            "x": 321.108154296875,
+            "y": 87,
+            "z": -351.108154296875
+          },
+          "dist": 9.5,
+          "key": "entity:8892",
+          "kind": "entity",
+          "relative": {
+            "forward": -1.6,
+            "right": 9.4,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:330:86:-350",
+          "kind": "block",
+          "name": "grass_block",
+          "pos": {
+            "x": 330,
+            "y": 86,
+            "z": -350
+          },
+          "dist": 1.2,
+          "relative": {
+            "forward": -0.5,
+            "right": 0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:329:86:-350",
+          "kind": "block",
+          "name": "grass_block",
+          "pos": {
+            "x": 329,
+            "y": 86,
+            "z": -350
+          },
+          "dist": 1.9,
+          "relative": {
+            "forward": -0.5,
+            "right": 1.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:330:86:-351",
+          "kind": "block",
+          "name": "grass_block",
+          "pos": {
+            "x": 330,
+            "y": 86,
+            "z": -351
+          },
+          "dist": 1.9,
+          "relative": {
+            "forward": -1.5,
+            "right": 0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:330:86:-349",
+          "kind": "block",
+          "name": "grass_block",
+          "pos": {
+            "x": 330,
+            "y": 86,
+            "z": -349
+          },
+          "dist": 1.2,
+          "relative": {
+            "forward": 0.5,
+            "right": 0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:330:87:-342",
+          "kind": "block",
+          "name": "oak_log",
+          "pos": {
+            "x": 330,
+            "y": 87,
+            "z": -342
+          },
+          "dist": 7.5,
+          "relative": {
+            "forward": 7.5,
+            "right": 0.5,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:334:87:-349",
+          "kind": "block",
+          "name": "dirt",
+          "pos": {
+            "x": 334,
+            "y": 87,
+            "z": -349
+          },
+          "dist": 3.5,
+          "relative": {
+            "forward": 0.5,
+            "right": -3.5,
+            "up": 0
+          }
+        }
+      ],
+      "cursor": null,
+      "jumps": 1,
+      "controls": {
+        "forward": false,
+        "back": false,
+        "left": false,
+        "right": false,
+        "jump": false,
+        "sprint": false
+      },
+      "pos": {
+        "x": 330.5,
+        "y": 87,
+        "z": -349.5
+      },
+      "yaw": 180,
+      "pitch": 0,
+      "health": 20,
+      "inventory": {},
+      "entities": [
+        {
+          "name": "pig",
+          "id": 8890,
+          "pos": {
+            "x": 326.5,
+            "y": 87,
+            "z": -350.8054492175579
+          },
+          "dist": 4.2
+        },
+        {
+          "name": "pig",
+          "id": 8891,
+          "pos": {
+            "x": 337.49951171875,
+            "y": 87,
+            "z": -353.2626953125
+          },
+          "dist": 7.9
+        },
+        {
+          "name": "pig",
+          "id": 8889,
+          "pos": {
+            "x": 333.5,
+            "y": 87,
+            "z": -357.5
+          },
+          "dist": 8.5
+        },
+        {
+          "name": "sheep",
+          "id": 8893,
+          "pos": {
+            "x": 339.5,
+            "y": 87,
+            "z": -346.5
+          },
+          "dist": 9.5
+        },
+        {
+          "name": "cow",
+          "id": 8892,
+          "pos": {
+            "x": 321.108154296875,
+            "y": 87,
+            "z": -351.108154296875
+          },
+          "dist": 9.5
+        }
+      ],
+      "acting": false,
+      "action": "",
+      "counters": {
+        "swing": 0,
+        "attack": 0,
+        "dig": 0
+      }
+    },
+    "after": {
+      "progress": null,
+      "targets": [
+        {
+          "key": "block:1010:86:1000",
+          "kind": "block",
+          "name": "stone",
+          "pos": {
+            "x": 1010,
+            "y": 86,
+            "z": 1000
+          },
+          "dist": 1.2,
+          "relative": {
+            "forward": -0.5,
+            "right": -0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:1009:86:1000",
+          "kind": "block",
+          "name": "stone",
+          "pos": {
+            "x": 1009,
+            "y": 86,
+            "z": 1000
+          },
+          "dist": 1.9,
+          "relative": {
+            "forward": -1.5,
+            "right": -0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:1010:86:999",
+          "kind": "block",
+          "name": "stone",
+          "pos": {
+            "x": 1010,
+            "y": 86,
+            "z": 999
+          },
+          "dist": 1.9,
+          "relative": {
+            "forward": -0.5,
+            "right": -1.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:1010:86:1001",
+          "kind": "block",
+          "name": "stone",
+          "pos": {
+            "x": 1010,
+            "y": 86,
+            "z": 1001
+          },
+          "dist": 1.2,
+          "relative": {
+            "forward": -0.5,
+            "right": 0.5,
+            "up": -1
+          }
+        }
+      ],
+      "cursor": null,
+      "jumps": 2,
+      "controls": {
+        "forward": false,
+        "back": false,
+        "left": false,
+        "right": false,
+        "jump": false,
+        "sprint": false
+      },
+      "pos": {
+        "x": 1010.5,
+        "y": 87,
+        "z": 1000.5
+      },
+      "yaw": 270,
+      "pitch": 0,
+      "health": 20,
+      "inventory": {},
+      "entities": [],
+      "acting": false,
+      "action": "",
+      "counters": {
+        "swing": 0,
+        "attack": 0,
+        "dig": 0
+      }
+    }
+  },
+  {
+    "name": "continuous walking proceeds beyond old default until button stop",
+    "ok": true,
+    "details": {
+      "distance": 8.539999999999964,
+      "message": "행동을 멈췄어요."
+    },
+    "ms": 6757,
+    "before": {
+      "progress": null,
+      "targets": [
+        {
+          "name": "pig",
+          "id": 8914,
+          "pos": {
+            "x": 336.5,
+            "y": 87,
+            "z": -352.343994140625
+          },
+          "dist": 6.6,
+          "key": "entity:8914",
+          "kind": "entity",
+          "relative": {
+            "forward": -2.8,
+            "right": -6,
+            "up": 0
+          }
+        },
+        {
+          "name": "pig",
+          "id": 8913,
+          "pos": {
+            "x": 326.231201171875,
+            "y": 87,
+            "z": -355.5
+          },
+          "dist": 7.4,
+          "key": "entity:8913",
+          "kind": "entity",
+          "relative": {
+            "forward": -6,
+            "right": 4.3,
+            "up": 0
+          }
+        },
+        {
+          "name": "cow",
+          "id": 8915,
+          "pos": {
+            "x": 322.5,
+            "y": 87,
+            "z": -352.5
+          },
+          "dist": 8.5,
+          "key": "entity:8915",
+          "kind": "entity",
+          "relative": {
+            "forward": -3,
+            "right": 8,
+            "up": 0
+          }
+        },
+        {
+          "name": "sheep",
+          "id": 8916,
+          "pos": {
+            "x": 339.5,
+            "y": 87,
+            "z": -346.5
+          },
+          "dist": 9.5,
+          "key": "entity:8916",
+          "kind": "entity",
+          "relative": {
+            "forward": 3,
+            "right": -9,
+            "up": 0
+          }
+        },
+        {
+          "name": "pig",
+          "id": 8912,
+          "pos": {
+            "x": 335.5824902355671,
+            "y": 87,
+            "z": -361.384765625
+          },
+          "dist": 12.9,
+          "key": "entity:8912",
+          "kind": "entity",
+          "relative": {
+            "forward": -11.9,
+            "right": -5.1,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:330:86:-350",
+          "kind": "block",
+          "name": "grass_block",
+          "pos": {
+            "x": 330,
+            "y": 86,
+            "z": -350
+          },
+          "dist": 1.2,
+          "relative": {
+            "forward": -0.5,
+            "right": 0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:329:86:-350",
+          "kind": "block",
+          "name": "grass_block",
+          "pos": {
+            "x": 329,
+            "y": 86,
+            "z": -350
+          },
+          "dist": 1.9,
+          "relative": {
+            "forward": -0.5,
+            "right": 1.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:330:86:-351",
+          "kind": "block",
+          "name": "grass_block",
+          "pos": {
+            "x": 330,
+            "y": 86,
+            "z": -351
+          },
+          "dist": 1.9,
+          "relative": {
+            "forward": -1.5,
+            "right": 0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:330:86:-349",
+          "kind": "block",
+          "name": "grass_block",
+          "pos": {
+            "x": 330,
+            "y": 86,
+            "z": -349
+          },
+          "dist": 1.2,
+          "relative": {
+            "forward": 0.5,
+            "right": 0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:330:87:-342",
+          "kind": "block",
+          "name": "oak_log",
+          "pos": {
+            "x": 330,
+            "y": 87,
+            "z": -342
+          },
+          "dist": 7.5,
+          "relative": {
+            "forward": 7.5,
+            "right": 0.5,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:334:87:-349",
+          "kind": "block",
+          "name": "dirt",
+          "pos": {
+            "x": 334,
+            "y": 87,
+            "z": -349
+          },
+          "dist": 3.5,
+          "relative": {
+            "forward": 0.5,
+            "right": -3.5,
+            "up": 0
+          }
+        }
+      ],
+      "cursor": null,
+      "jumps": 2,
+      "controls": {
+        "forward": false,
+        "back": false,
+        "left": false,
+        "right": false,
+        "jump": false,
+        "sprint": false
+      },
+      "pos": {
+        "x": 330.5,
+        "y": 87,
+        "z": -349.5
+      },
+      "yaw": 180,
+      "pitch": 0,
+      "health": 20,
+      "inventory": {},
+      "entities": [
+        {
+          "name": "pig",
+          "id": 8914,
+          "pos": {
+            "x": 336.5,
+            "y": 87,
+            "z": -352.343994140625
+          },
+          "dist": 6.6
+        },
+        {
+          "name": "pig",
+          "id": 8913,
+          "pos": {
+            "x": 326.231201171875,
+            "y": 87,
+            "z": -355.5
+          },
+          "dist": 7.4
+        },
+        {
+          "name": "cow",
+          "id": 8915,
+          "pos": {
+            "x": 322.5,
+            "y": 87,
+            "z": -352.5
+          },
+          "dist": 8.5
+        },
+        {
+          "name": "sheep",
+          "id": 8916,
+          "pos": {
+            "x": 339.5,
+            "y": 87,
+            "z": -346.5
+          },
+          "dist": 9.5
+        },
+        {
+          "name": "pig",
+          "id": 8912,
+          "pos": {
+            "x": 335.5824902355671,
+            "y": 87,
+            "z": -361.384765625
+          },
+          "dist": 12.9
+        }
+      ],
+      "acting": false,
+      "action": "",
+      "counters": {
+        "swing": 0,
+        "attack": 0,
+        "dig": 0
+      }
+    },
+    "after": {
+      "progress": {
+        "session": "2b06186a-4b63-4d66-b4bf-e7e28870a696",
+        "epoch": 24,
+        "message": "8.1칸 이동 중"
+      },
+      "targets": [
+        {
+          "key": "block:1009:86:1000",
+          "kind": "block",
+          "name": "stone",
+          "pos": {
+            "x": 1009,
+            "y": 86,
+            "z": 1000
+          },
+          "dist": 1.1,
+          "relative": {
+            "forward": -0.1,
+            "right": -0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:1008:86:1000",
+          "kind": "block",
+          "name": "stone",
+          "pos": {
+            "x": 1008,
+            "y": 86,
+            "z": 1000
+          },
+          "dist": 1.6,
+          "relative": {
+            "forward": -1.1,
+            "right": -0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:1009:86:999",
+          "kind": "block",
+          "name": "stone",
+          "pos": {
+            "x": 1009,
+            "y": 86,
+            "z": 999
+          },
+          "dist": 1.8,
+          "relative": {
+            "forward": -0.1,
+            "right": -1.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:1009:86:1001",
+          "kind": "block",
+          "name": "stone",
+          "pos": {
+            "x": 1009,
+            "y": 86,
+            "z": 1001
+          },
+          "dist": 1.1,
+          "relative": {
+            "forward": -0.1,
+            "right": 0.5,
+            "up": -1
+          }
+        }
+      ],
+      "cursor": null,
+      "jumps": 2,
+      "controls": {
+        "forward": false,
+        "back": false,
+        "left": false,
+        "right": false,
+        "jump": false,
+        "sprint": false
+      },
+      "pos": {
+        "x": 1009.14,
+        "y": 87,
+        "z": 1000.5
+      },
+      "yaw": 270,
+      "pitch": 0,
+      "health": 20,
+      "inventory": {},
+      "entities": [],
+      "acting": false,
+      "action": "",
+      "counters": {
+        "swing": 0,
+        "attack": 0,
+        "dig": 0
+      }
+    }
+  },
+  {
+    "name": "new utterance cancels continuous walking",
+    "ok": true,
+    "details": {
+      "message": "시점을 바꿨어요."
+    },
+    "ms": 5816,
+    "before": {
+      "progress": {
+        "session": "2b06186a-4b63-4d66-b4bf-e7e28870a696",
+        "epoch": 24,
+        "message": "8.1칸 이동 중"
+      },
+      "targets": [
+        {
+          "name": "pig",
+          "id": 8938,
+          "pos": {
+            "x": 336.5,
+            "y": 87,
+            "z": -352.5
+          },
+          "dist": 6.7,
+          "key": "entity:8938",
+          "kind": "entity",
+          "relative": {
+            "forward": -3,
+            "right": -6,
+            "up": 0
+          }
+        },
+        {
+          "name": "pig",
+          "id": 8936,
+          "pos": {
+            "x": 332.08837890625,
+            "y": 87,
+            "z": -356.08837890625
+          },
+          "dist": 6.8,
+          "key": "entity:8936",
+          "kind": "entity",
+          "relative": {
+            "forward": -6.6,
+            "right": -1.6,
+            "up": 0
+          }
+        },
+        {
+          "name": "pig",
+          "id": 8937,
+          "pos": {
+            "x": 326.5,
+            "y": 87,
+            "z": -355.5
+          },
+          "dist": 7.2,
+          "key": "entity:8937",
+          "kind": "entity",
+          "relative": {
+            "forward": -6,
+            "right": 4,
+            "up": 0
+          }
+        },
+        {
+          "name": "sheep",
+          "id": 8940,
+          "pos": {
+            "x": 338.266845703125,
+            "y": 87,
+            "z": -346.5
+          },
+          "dist": 8.3,
+          "key": "entity:8940",
+          "kind": "entity",
+          "relative": {
+            "forward": 3,
+            "right": -7.8,
+            "up": 0
+          }
+        },
+        {
+          "name": "cow",
+          "id": 8939,
+          "pos": {
+            "x": 322.5,
+            "y": 87,
+            "z": -352.5
+          },
+          "dist": 8.5,
+          "key": "entity:8939",
+          "kind": "entity",
+          "relative": {
+            "forward": -3,
+            "right": 8,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:330:86:-350",
+          "kind": "block",
+          "name": "grass_block",
+          "pos": {
+            "x": 330,
+            "y": 86,
+            "z": -350
+          },
+          "dist": 1.2,
+          "relative": {
+            "forward": -0.5,
+            "right": 0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:329:86:-350",
+          "kind": "block",
+          "name": "grass_block",
+          "pos": {
+            "x": 329,
+            "y": 86,
+            "z": -350
+          },
+          "dist": 1.9,
+          "relative": {
+            "forward": -0.5,
+            "right": 1.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:330:86:-351",
+          "kind": "block",
+          "name": "grass_block",
+          "pos": {
+            "x": 330,
+            "y": 86,
+            "z": -351
+          },
+          "dist": 1.9,
+          "relative": {
+            "forward": -1.5,
+            "right": 0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:330:86:-349",
+          "kind": "block",
+          "name": "grass_block",
+          "pos": {
+            "x": 330,
+            "y": 86,
+            "z": -349
+          },
+          "dist": 1.2,
+          "relative": {
+            "forward": 0.5,
+            "right": 0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:330:87:-342",
+          "kind": "block",
+          "name": "oak_log",
+          "pos": {
+            "x": 330,
+            "y": 87,
+            "z": -342
+          },
+          "dist": 7.5,
+          "relative": {
+            "forward": 7.5,
+            "right": 0.5,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:334:87:-349",
+          "kind": "block",
+          "name": "dirt",
+          "pos": {
+            "x": 334,
+            "y": 87,
+            "z": -349
+          },
+          "dist": 3.5,
+          "relative": {
+            "forward": 0.5,
+            "right": -3.5,
+            "up": 0
+          }
+        }
+      ],
+      "cursor": null,
+      "jumps": 2,
+      "controls": {
+        "forward": false,
+        "back": false,
+        "left": false,
+        "right": false,
+        "jump": false,
+        "sprint": false
+      },
+      "pos": {
+        "x": 330.5,
+        "y": 87,
+        "z": -349.5
+      },
+      "yaw": 180,
+      "pitch": 0,
+      "health": 20,
+      "inventory": {},
+      "entities": [
+        {
+          "name": "pig",
+          "id": 8938,
+          "pos": {
+            "x": 336.5,
+            "y": 87,
+            "z": -352.5
+          },
+          "dist": 6.7
+        },
+        {
+          "name": "pig",
+          "id": 8936,
+          "pos": {
+            "x": 332.08837890625,
+            "y": 87,
+            "z": -356.08837890625
+          },
+          "dist": 6.8
+        },
+        {
+          "name": "pig",
+          "id": 8937,
+          "pos": {
+            "x": 326.5,
+            "y": 87,
+            "z": -355.5
+          },
+          "dist": 7.2
+        },
+        {
+          "name": "sheep",
+          "id": 8940,
+          "pos": {
+            "x": 338.266845703125,
+            "y": 87,
+            "z": -346.5
+          },
+          "dist": 8.3
+        },
+        {
+          "name": "cow",
+          "id": 8939,
+          "pos": {
+            "x": 322.5,
+            "y": 87,
+            "z": -352.5
+          },
+          "dist": 8.5
+        }
+      ],
+      "acting": false,
+      "action": "",
+      "counters": {
+        "swing": 0,
+        "attack": 0,
+        "dig": 0
+      }
+    },
+    "after": {
+      "progress": null,
+      "targets": [
+        {
+          "key": "block:1000:86:1000",
+          "kind": "block",
+          "name": "stone",
+          "pos": {
+            "x": 1000,
+            "y": 86,
+            "z": 1000
+          },
+          "dist": 1.2,
+          "relative": {
+            "forward": -0.5,
+            "right": -0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:999:86:1000",
+          "kind": "block",
+          "name": "stone",
+          "pos": {
+            "x": 999,
+            "y": 86,
+            "z": 1000
+          },
+          "dist": 1.9,
+          "relative": {
+            "forward": -1.5,
+            "right": -0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:1000:86:999",
+          "kind": "block",
+          "name": "stone",
+          "pos": {
+            "x": 1000,
+            "y": 86,
+            "z": 999
+          },
+          "dist": 1.9,
+          "relative": {
+            "forward": -0.5,
+            "right": -1.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:1000:86:1001",
+          "kind": "block",
+          "name": "stone",
+          "pos": {
+            "x": 1000,
+            "y": 86,
+            "z": 1001
+          },
+          "dist": 1.2,
+          "relative": {
+            "forward": -0.5,
+            "right": 0.5,
+            "up": -1
+          }
+        }
+      ],
+      "cursor": null,
+      "jumps": 2,
+      "controls": {
+        "forward": false,
+        "back": false,
+        "left": false,
+        "right": false,
+        "jump": false,
+        "sprint": false
+      },
+      "pos": {
+        "x": 1000.55,
+        "y": 87,
+        "z": 1000.5
+      },
+      "yaw": 270,
+      "pitch": 90,
+      "health": 20,
+      "inventory": {},
+      "entities": [],
+      "acting": false,
+      "action": "",
+      "counters": {
+        "swing": 0,
+        "attack": 0,
+        "dig": 0
+      }
+    }
+  },
+  {
+    "name": "swim to forward dry land",
+    "ok": true,
+    "details": {
+      "message": "물 밖의 육지에 올라왔어요.",
+      "pos": {
+        "x": 1007.41,
+        "y": 88,
+        "z": 1000.5
+      }
+    },
+    "ms": 8291,
+    "before": {
+      "progress": null,
+      "targets": [
+        {
+          "name": "pig",
+          "id": 8962,
+          "pos": {
+            "x": 336.80419921875,
+            "y": 87,
+            "z": -352.698486328125
+          },
+          "dist": 7.1,
+          "key": "entity:8962",
+          "kind": "entity",
+          "relative": {
+            "forward": -3.2,
+            "right": -6.3,
+            "up": 0
+          }
+        },
+        {
+          "name": "pig",
+          "id": 8961,
+          "pos": {
+            "x": 326.5,
+            "y": 87,
+            "z": -355.5
+          },
+          "dist": 7.2,
+          "key": "entity:8961",
+          "kind": "entity",
+          "relative": {
+            "forward": -6,
+            "right": 4,
+            "up": 0
+          }
+        },
+        {
+          "name": "pig",
+          "id": 8960,
+          "pos": {
+            "x": 333.5,
+            "y": 87,
+            "z": -357.5
+          },
+          "dist": 8.5,
+          "key": "entity:8960",
+          "kind": "entity",
+          "relative": {
+            "forward": -8,
+            "right": -3,
+            "up": 0
+          }
+        },
+        {
+          "name": "cow",
+          "id": 8963,
+          "pos": {
+            "x": 322.24609375,
+            "y": 87,
+            "z": -352.682861328125
+          },
+          "dist": 8.8,
+          "key": "entity:8963",
+          "kind": "entity",
+          "relative": {
+            "forward": -3.2,
+            "right": 8.3,
+            "up": 0
+          }
+        },
+        {
+          "name": "sheep",
+          "id": 8964,
+          "pos": {
+            "x": 339.5,
+            "y": 87,
+            "z": -346.5
+          },
+          "dist": 9.5,
+          "key": "entity:8964",
+          "kind": "entity",
+          "relative": {
+            "forward": 3,
+            "right": -9,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:330:86:-350",
+          "kind": "block",
+          "name": "grass_block",
+          "pos": {
+            "x": 330,
+            "y": 86,
+            "z": -350
+          },
+          "dist": 1.2,
+          "relative": {
+            "forward": -0.5,
+            "right": 0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:329:86:-350",
+          "kind": "block",
+          "name": "grass_block",
+          "pos": {
+            "x": 329,
+            "y": 86,
+            "z": -350
+          },
+          "dist": 1.9,
+          "relative": {
+            "forward": -0.5,
+            "right": 1.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:330:86:-351",
+          "kind": "block",
+          "name": "grass_block",
+          "pos": {
+            "x": 330,
+            "y": 86,
+            "z": -351
+          },
+          "dist": 1.9,
+          "relative": {
+            "forward": -1.5,
+            "right": 0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:330:86:-349",
+          "kind": "block",
+          "name": "grass_block",
+          "pos": {
+            "x": 330,
+            "y": 86,
+            "z": -349
+          },
+          "dist": 1.2,
+          "relative": {
+            "forward": 0.5,
+            "right": 0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:330:87:-342",
+          "kind": "block",
+          "name": "oak_log",
+          "pos": {
+            "x": 330,
+            "y": 87,
+            "z": -342
+          },
+          "dist": 7.5,
+          "relative": {
+            "forward": 7.5,
+            "right": 0.5,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:334:87:-349",
+          "kind": "block",
+          "name": "dirt",
+          "pos": {
+            "x": 334,
+            "y": 87,
+            "z": -349
+          },
+          "dist": 3.5,
+          "relative": {
+            "forward": 0.5,
+            "right": -3.5,
+            "up": 0
+          }
+        }
+      ],
+      "cursor": null,
+      "jumps": 2,
+      "controls": {
+        "forward": false,
+        "back": false,
+        "left": false,
+        "right": false,
+        "jump": false,
+        "sprint": false
+      },
+      "pos": {
+        "x": 330.5,
+        "y": 87,
+        "z": -349.5
+      },
+      "yaw": 180,
+      "pitch": 0,
+      "health": 20,
+      "inventory": {},
+      "entities": [
+        {
+          "name": "pig",
+          "id": 8962,
+          "pos": {
+            "x": 336.80419921875,
+            "y": 87,
+            "z": -352.698486328125
+          },
+          "dist": 7.1
+        },
+        {
+          "name": "pig",
+          "id": 8961,
+          "pos": {
+            "x": 326.5,
+            "y": 87,
+            "z": -355.5
+          },
+          "dist": 7.2
+        },
+        {
+          "name": "pig",
+          "id": 8960,
+          "pos": {
+            "x": 333.5,
+            "y": 87,
+            "z": -357.5
+          },
+          "dist": 8.5
+        },
+        {
+          "name": "cow",
+          "id": 8963,
+          "pos": {
+            "x": 322.24609375,
+            "y": 87,
+            "z": -352.682861328125
+          },
+          "dist": 8.8
+        },
+        {
+          "name": "sheep",
+          "id": 8964,
+          "pos": {
+            "x": 339.5,
+            "y": 87,
+            "z": -346.5
+          },
+          "dist": 9.5
+        }
+      ],
+      "acting": false,
+      "action": "",
+      "counters": {
+        "swing": 0,
+        "attack": 0,
+        "dig": 0
+      }
+    },
+    "after": {
+      "progress": null,
+      "targets": [
+        {
+          "key": "block:1007:87:1000",
+          "kind": "block",
+          "name": "dirt",
+          "pos": {
+            "x": 1007,
+            "y": 87,
+            "z": 1000
+          },
+          "dist": 1.2,
+          "relative": {
+            "forward": -0.4,
+            "right": -0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:1007:87:999",
+          "kind": "block",
+          "name": "dirt",
+          "pos": {
+            "x": 1007,
+            "y": 87,
+            "z": 999
+          },
+          "dist": 1.8,
+          "relative": {
+            "forward": -0.4,
+            "right": -1.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:1007:87:1001",
+          "kind": "block",
+          "name": "dirt",
+          "pos": {
+            "x": 1007,
+            "y": 87,
+            "z": 1001
+          },
+          "dist": 1.2,
+          "relative": {
+            "forward": -0.4,
+            "right": 0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:1006:86:1000",
+          "kind": "block",
+          "name": "stone",
+          "pos": {
+            "x": 1006,
+            "y": 86,
+            "z": 1000
+          },
+          "dist": 2.5,
+          "relative": {
+            "forward": -1.4,
+            "right": -0.5,
+            "up": -2
+          }
+        },
+        {
+          "key": "block:1007:87:998",
+          "kind": "block",
+          "name": "dirt",
+          "pos": {
+            "x": 1007,
+            "y": 87,
+            "z": 998
+          },
+          "dist": 2.7,
+          "relative": {
+            "forward": -0.4,
+            "right": -2.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:1006:86:999",
+          "kind": "block",
+          "name": "stone",
+          "pos": {
+            "x": 1006,
+            "y": 86,
+            "z": 999
+          },
+          "dist": 2.9,
+          "relative": {
+            "forward": -1.4,
+            "right": -1.5,
+            "up": -2
+          }
+        },
+        {
+          "key": "block:1006:86:1001",
+          "kind": "block",
+          "name": "stone",
+          "pos": {
+            "x": 1006,
+            "y": 86,
+            "z": 1001
+          },
+          "dist": 2.5,
+          "relative": {
+            "forward": -1.4,
+            "right": 0.5,
+            "up": -2
+          }
+        },
+        {
+          "key": "block:1005:86:1000",
+          "kind": "block",
+          "name": "stone",
+          "pos": {
+            "x": 1005,
+            "y": 86,
+            "z": 1000
+          },
+          "dist": 3.2,
+          "relative": {
+            "forward": -2.4,
+            "right": -0.5,
+            "up": -2
+          }
+        }
+      ],
+      "cursor": null,
+      "jumps": 2,
+      "controls": {
+        "forward": false,
+        "back": false,
+        "left": false,
+        "right": false,
+        "jump": false,
+        "sprint": false
+      },
+      "pos": {
+        "x": 1007.41,
+        "y": 88,
+        "z": 1000.5
+      },
+      "yaw": -90,
+      "pitch": 0,
+      "health": 20,
+      "inventory": {},
+      "entities": [],
+      "acting": false,
+      "action": "",
+      "counters": {
+        "swing": 0,
+        "attack": 0,
+        "dig": 0
+      }
+    }
+  },
+  {
+    "name": "no land found does not invent a destination",
+    "ok": true,
+    "details": {
+      "message": "말씀하신 방향에서 올라설 수 있는 육지를 찾지 못했어요."
+    },
+    "ms": 6033,
+    "before": {
+      "progress": null,
+      "targets": [
+        {
+          "name": "pig",
+          "id": 8983,
+          "pos": {
+            "x": 330.84814453125,
+            "y": 87,
+            "z": -354.84814453125
+          },
+          "dist": 5.4,
+          "key": "entity:8983",
+          "kind": "entity",
+          "relative": {
+            "forward": -5.3,
+            "right": -0.3,
+            "up": 0
+          }
+        },
+        {
+          "name": "pig",
+          "id": 8985,
+          "pos": {
+            "x": 336.5,
+            "y": 87,
+            "z": -352.5
+          },
+          "dist": 6.7,
+          "key": "entity:8985",
+          "kind": "entity",
+          "relative": {
+            "forward": -3,
+            "right": -6,
+            "up": 0
+          }
+        },
+        {
+          "name": "pig",
+          "id": 8984,
+          "pos": {
+            "x": 326.5,
+            "y": 87,
+            "z": -355.5
+          },
+          "dist": 7.2,
+          "key": "entity:8984",
+          "kind": "entity",
+          "relative": {
+            "forward": -6,
+            "right": 4,
+            "up": 0
+          }
+        },
+        {
+          "name": "cow",
+          "id": 8986,
+          "pos": {
+            "x": 322.5,
+            "y": 87,
+            "z": -352.5
+          },
+          "dist": 8.5,
+          "key": "entity:8986",
+          "kind": "entity",
+          "relative": {
+            "forward": -3,
+            "right": 8,
+            "up": 0
+          }
+        },
+        {
+          "name": "sheep",
+          "id": 8987,
+          "pos": {
+            "x": 339.5,
+            "y": 87,
+            "z": -346.5
+          },
+          "dist": 9.5,
+          "key": "entity:8987",
+          "kind": "entity",
+          "relative": {
+            "forward": 3,
+            "right": -9,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:330:86:-350",
+          "kind": "block",
+          "name": "grass_block",
+          "pos": {
+            "x": 330,
+            "y": 86,
+            "z": -350
+          },
+          "dist": 1.2,
+          "relative": {
+            "forward": -0.5,
+            "right": 0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:329:86:-350",
+          "kind": "block",
+          "name": "grass_block",
+          "pos": {
+            "x": 329,
+            "y": 86,
+            "z": -350
+          },
+          "dist": 1.9,
+          "relative": {
+            "forward": -0.5,
+            "right": 1.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:330:86:-351",
+          "kind": "block",
+          "name": "grass_block",
+          "pos": {
+            "x": 330,
+            "y": 86,
+            "z": -351
+          },
+          "dist": 1.9,
+          "relative": {
+            "forward": -1.5,
+            "right": 0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:330:86:-349",
+          "kind": "block",
+          "name": "grass_block",
+          "pos": {
+            "x": 330,
+            "y": 86,
+            "z": -349
+          },
+          "dist": 1.2,
+          "relative": {
+            "forward": 0.5,
+            "right": 0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:330:87:-342",
+          "kind": "block",
+          "name": "oak_log",
+          "pos": {
+            "x": 330,
+            "y": 87,
+            "z": -342
+          },
+          "dist": 7.5,
+          "relative": {
+            "forward": 7.5,
+            "right": 0.5,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:334:87:-349",
+          "kind": "block",
+          "name": "dirt",
+          "pos": {
+            "x": 334,
+            "y": 87,
+            "z": -349
+          },
+          "dist": 3.5,
+          "relative": {
+            "forward": 0.5,
+            "right": -3.5,
+            "up": 0
+          }
+        }
+      ],
+      "cursor": null,
+      "jumps": 2,
+      "controls": {
+        "forward": false,
+        "back": false,
+        "left": false,
+        "right": false,
+        "jump": false,
+        "sprint": false
+      },
+      "pos": {
+        "x": 330.5,
+        "y": 87,
+        "z": -349.5
+      },
+      "yaw": 180,
+      "pitch": 0,
+      "health": 20,
+      "inventory": {},
+      "entities": [
+        {
+          "name": "pig",
+          "id": 8983,
+          "pos": {
+            "x": 330.84814453125,
+            "y": 87,
+            "z": -354.84814453125
+          },
+          "dist": 5.4
+        },
+        {
+          "name": "pig",
+          "id": 8985,
+          "pos": {
+            "x": 336.5,
+            "y": 87,
+            "z": -352.5
+          },
+          "dist": 6.7
+        },
+        {
+          "name": "pig",
+          "id": 8984,
+          "pos": {
+            "x": 326.5,
+            "y": 87,
+            "z": -355.5
+          },
+          "dist": 7.2
+        },
+        {
+          "name": "cow",
+          "id": 8986,
+          "pos": {
+            "x": 322.5,
+            "y": 87,
+            "z": -352.5
+          },
+          "dist": 8.5
+        },
+        {
+          "name": "sheep",
+          "id": 8987,
+          "pos": {
+            "x": 339.5,
+            "y": 87,
+            "z": -346.5
+          },
+          "dist": 9.5
+        }
+      ],
+      "acting": false,
+      "action": "",
+      "counters": {
+        "swing": 0,
+        "attack": 0,
+        "dig": 0
+      }
+    },
+    "after": {
+      "progress": null,
+      "targets": [
+        {
+          "key": "block:1001:86:1000",
+          "kind": "block",
+          "name": "stone",
+          "pos": {
+            "x": 1001,
+            "y": 86,
+            "z": 1000
+          },
+          "dist": 1.2,
+          "relative": {
+            "forward": -0.5,
+            "right": -0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:1000:86:1000",
+          "kind": "block",
+          "name": "stone",
+          "pos": {
+            "x": 1000,
+            "y": 86,
+            "z": 1000
+          },
+          "dist": 1.9,
+          "relative": {
+            "forward": -1.5,
+            "right": -0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:1001:86:999",
+          "kind": "block",
+          "name": "stone",
+          "pos": {
+            "x": 1001,
+            "y": 86,
+            "z": 999
+          },
+          "dist": 1.9,
+          "relative": {
+            "forward": -0.5,
+            "right": -1.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:1001:86:1001",
+          "kind": "block",
+          "name": "stone",
+          "pos": {
+            "x": 1001,
+            "y": 86,
+            "z": 1001
+          },
+          "dist": 1.2,
+          "relative": {
+            "forward": -0.5,
+            "right": 0.5,
+            "up": -1
+          }
+        }
+      ],
+      "cursor": null,
+      "jumps": 2,
+      "controls": {
+        "forward": false,
+        "back": false,
+        "left": false,
+        "right": false,
+        "jump": false,
+        "sprint": false
+      },
+      "pos": {
+        "x": 1001.5,
+        "y": 87,
+        "z": 1000.5
+      },
+      "yaw": 270,
+      "pitch": 0,
+      "health": 20,
+      "inventory": {},
+      "entities": [],
+      "acting": false,
+      "action": "",
+      "counters": {
+        "swing": 0,
+        "attack": 0,
+        "dig": 0
+      }
+    }
+  },
+  {
+    "name": "oversized travel is rejected without clamping",
+    "ok": true,
+    "details": {
+      "message": "대상이나 작업 범위를 확인하지 못했어요. 이동은 한 요청에 최대 100칸까지 지원해요."
+    },
+    "ms": 929,
+    "before": {
+      "progress": null,
+      "targets": [
+        {
+          "name": "pig",
+          "id": 9009,
+          "pos": {
+            "x": 335.979736328125,
+            "y": 87,
+            "z": -352.5
+          },
+          "dist": 6.2,
+          "key": "entity:9009",
+          "kind": "entity",
+          "relative": {
+            "forward": -3,
+            "right": -5.5,
+            "up": 0
+          }
+        },
+        {
+          "name": "pig",
+          "id": 9008,
+          "pos": {
+            "x": 326.5,
+            "y": 87,
+            "z": -355.5
+          },
+          "dist": 7.2,
+          "key": "entity:9008",
+          "kind": "entity",
+          "relative": {
+            "forward": -6,
+            "right": 4,
+            "up": 0
+          }
+        },
+        {
+          "name": "cow",
+          "id": 9010,
+          "pos": {
+            "x": 322.08447265625,
+            "y": 87,
+            "z": -352.08447265625
+          },
+          "dist": 8.8,
+          "key": "entity:9010",
+          "kind": "entity",
+          "relative": {
+            "forward": -2.6,
+            "right": 8.4,
+            "up": 0
+          }
+        },
+        {
+          "name": "sheep",
+          "id": 9011,
+          "pos": {
+            "x": 339.509765625,
+            "y": 87,
+            "z": -347.261962890625
+          },
+          "dist": 9.3,
+          "key": "entity:9011",
+          "kind": "entity",
+          "relative": {
+            "forward": 2.2,
+            "right": -9,
+            "up": 0
+          }
+        },
+        {
+          "name": "pig",
+          "id": 9007,
+          "pos": {
+            "x": 337.8637402355671,
+            "y": 87,
+            "z": -356.029541015625
+          },
+          "dist": 9.8,
+          "key": "entity:9007",
+          "kind": "entity",
+          "relative": {
+            "forward": -6.5,
+            "right": -7.4,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:330:86:-350",
+          "kind": "block",
+          "name": "grass_block",
+          "pos": {
+            "x": 330,
+            "y": 86,
+            "z": -350
+          },
+          "dist": 1.2,
+          "relative": {
+            "forward": -0.5,
+            "right": 0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:329:86:-350",
+          "kind": "block",
+          "name": "grass_block",
+          "pos": {
+            "x": 329,
+            "y": 86,
+            "z": -350
+          },
+          "dist": 1.9,
+          "relative": {
+            "forward": -0.5,
+            "right": 1.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:330:86:-351",
+          "kind": "block",
+          "name": "grass_block",
+          "pos": {
+            "x": 330,
+            "y": 86,
+            "z": -351
+          },
+          "dist": 1.9,
+          "relative": {
+            "forward": -1.5,
+            "right": 0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:330:86:-349",
+          "kind": "block",
+          "name": "grass_block",
+          "pos": {
+            "x": 330,
+            "y": 86,
+            "z": -349
+          },
+          "dist": 1.2,
+          "relative": {
+            "forward": 0.5,
+            "right": 0.5,
+            "up": -1
+          }
+        },
+        {
+          "key": "block:330:87:-342",
+          "kind": "block",
+          "name": "oak_log",
+          "pos": {
+            "x": 330,
+            "y": 87,
+            "z": -342
+          },
+          "dist": 7.5,
+          "relative": {
+            "forward": 7.5,
+            "right": 0.5,
+            "up": 0
+          }
+        },
+        {
+          "key": "block:334:87:-349",
+          "kind": "block",
+          "name": "dirt",
+          "pos": {
+            "x": 334,
+            "y": 87,
+            "z": -349
+          },
+          "dist": 3.5,
+          "relative": {
+            "forward": 0.5,
+            "right": -3.5,
+            "up": 0
+          }
+        }
+      ],
+      "cursor": null,
+      "jumps": 2,
+      "controls": {
+        "forward": false,
+        "back": false,
+        "left": false,
+        "right": false,
+        "jump": false,
+        "sprint": false
+      },
+      "pos": {
+        "x": 330.5,
+        "y": 87,
+        "z": -349.5
+      },
+      "yaw": 180,
+      "pitch": 0,
+      "health": 20,
+      "inventory": {},
+      "entities": [
+        {
+          "name": "pig",
+          "id": 9009,
+          "pos": {
+            "x": 335.979736328125,
+            "y": 87,
+            "z": -352.5
+          },
+          "dist": 6.2
+        },
+        {
+          "name": "pig",
+          "id": 9008,
+          "pos": {
+            "x": 326.5,
+            "y": 87,
+            "z": -355.5
+          },
+          "dist": 7.2
+        },
+        {
+          "name": "cow",
+          "id": 9010,
+          "pos": {
+            "x": 322.08447265625,
+            "y": 87,
+            "z": -352.08447265625
+          },
+          "dist": 8.8
+        },
+        {
+          "name": "sheep",
+          "id": 9011,
+          "pos": {
+            "x": 339.509765625,
+            "y": 87,
+            "z": -347.261962890625
+          },
+          "dist": 9.3
+        },
+        {
+          "name": "pig",
+          "id": 9007,
+          "pos": {
+            "x": 337.8637402355671,
+            "y": 87,
+            "z": -356.029541015625
+          },
+          "dist": 9.8
+        }
+      ],
+      "acting": false,
+      "action": "",
+      "counters": {
+        "swing": 0,
+        "attack": 0,
+        "dig": 0
+      }
+    },
+    "after": {
+      "progress": null,
+      "targets": [],
+      "cursor": null,
+      "jumps": 2,
+      "controls": {
+        "forward": false,
+        "back": false,
+        "left": false,
+        "right": false,
+        "jump": false,
+        "sprint": false
+      },
+      "pos": {
+        "x": 1000.5,
+        "y": 87,
+        "z": 1000.5
+      },
+      "yaw": 270,
+      "pitch": 0,
+      "health": 20,
+      "inventory": {},
+      "entities": [],
+      "acting": false,
+      "action": "",
+      "counters": {
+        "swing": 0,
+        "attack": 0,
+        "dig": 0
+      }
+    }
+  }
+]

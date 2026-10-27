@@ -1,0 +1,92 @@
+[
+  {
+    "id": "C451",
+    "group": "edge",
+    "intent": "compound",
+    "text": "나무 캐고 돼지 잡아",
+    "expect": {
+      "kind": "exploratory",
+      "needs_review": true
+    },
+    "fixture": "flat",
+    "yaw": 0,
+    "subgroup": "compound",
+    "timeout_s": 20,
+    "source": "authored synthetic, not sampled visitor traffic"
+  },
+  {
+    "id": "C452",
+    "group": "edge",
+    "intent": "compound",
+    "text": "앞으로 두 칸 가고 오른쪽 봐",
+    "expect": {
+      "kind": "exploratory",
+      "needs_review": true
+    },
+    "fixture": "flat",
+    "yaw": 0,
+    "subgroup": "compound",
+    "timeout_s": 20,
+    "source": "authored synthetic, not sampled visitor traffic"
+  },
+  {
+    "id": "C453",
+    "group": "edge",
+    "intent": "compound",
+    "text": "점프하고 뒤로 돌아",
+    "expect": {
+      "kind": "exploratory",
+      "needs_review": true
+    },
+    "fixture": "flat",
+    "yaw": 0,
+    "subgroup": "compound",
+    "timeout_s": 20,
+    "source": "authored synthetic, not sampled visitor traffic"
+  },
+  {
+    "id": "C454",
+    "group": "edge",
+    "intent": "compound",
+    "text": "소를 찾은 다음 옆에 서 있어",
+    "expect": {
+      "kind": "exploratory",
+      "needs_review": true
+    },
+    "fixture": "flat",
+    "yaw": 0,
+    "subgroup": "compound",
+    "timeout_s": 20,
+    "source": "authored synthetic, not sampled visitor traffic"
+  },
+  {
+    "id": "C456",
+    "group": "edge",
+    "intent": "compound",
+    "text": "왼쪽으로 갔다가 원래 자리로 돌아와",
+    "expect": {
+      "kind": "exploratory",
+      "needs_review": true
+    },
+    "fixture": "flat",
+    "yaw": 0,
+    "subgroup": "compound",
+    "timeout_s": 20,
+    "source": "authored synthetic, not sampled visitor traffic"
+  },
+  {
+    "id": "C457",
+    "group": "edge",
+    "intent": "compound",
+    "text": "하늘 봤다가 땅 봐",
+    "expect": {
+      "kind": "exploratory",
+      "needs_review": true
+    },
+    "fixture": "flat",
+    "yaw": 0,
+    "subgroup": "compound",
+    "timeout_s": 20,
+    "source": "authored synthetic, not sampled visitor traffic"
+  }
+]

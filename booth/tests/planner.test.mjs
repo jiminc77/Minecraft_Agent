@@ -1,0 +1,10 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {resolveIntent} from '../gateway/planner.js';
+const intent={interpretation:'왼쪽 3칸 이동',multiple_actions:false,ambiguous:false,action_type:'move',direction:'left',amount:3,target_reference:'none',target_name:'',target_key:'',question:''};
+const observation={targets:[{key:'entity:1',kind:'entity',name:'pig',dist:2}],cursor:null};
+test('100 remains 100 and is rejected rather than clamped by decoding',()=>assert.equal(resolveIntent({...intent,amount:100},observation).kind,'unavailable'));
+test('unresolved pronoun cannot select even an existing pig',()=>assert.equal(resolveIntent({...intent,action_type:'attack',target_reference:'cursor',target_key:'entity:1'},observation).kind,'clarify'));
+test('compound requests do not run only the first action',()=>assert.equal(resolveIntent({...intent,multiple_actions:true},observation).kind,'clarify'));
+test('explicit named type cannot resolve to different animal',()=>assert.equal(resolveIntent({...intent,action_type:'attack',target_reference:'named',target_name:'cow',target_key:'entity:1'},observation).kind,'unavailable'));
+test('clear quantities and directions are preserved',()=>assert.deepEqual(resolveIntent(intent,observation).action,{type:'move',direction:'left',amount:3}));
+test('ambiguous verb never executes',()=>assert.equal(resolveIntent({...intent,ambiguous:true},observation).kind,'clarify'));
+test('a real cursor may resolve unnamed reference',()=>assert.equal(resolveIntent({...intent,action_type:'attack',target_reference:'cursor',target_key:''},{...observation,cursor:'entity:1'}).action.target,'entity:1'));

@@ -1,0 +1,13 @@
+{
+  "mode": "language-only frozen observations; events not executed",
+  "n": 500,
+  "grades": {
+    "correct_intent": 387,
+    "nonaction_instead_of_task": 42,
+    "wrong_action": 6,
+    "appropriate_nonaction": 12,
+    "system_event_not_run": 18,
+    "exploratory_action": 11,
+    "exploratory_nonaction": 24
+  }
+}

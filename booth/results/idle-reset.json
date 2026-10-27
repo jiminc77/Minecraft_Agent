@@ -1,0 +1,42 @@
+{
+  "ok": true,
+  "start": {
+    "phase": "thinking",
+    "korean": "안녕",
+    "english": "",
+    "message": "이전 행동을 멈추고 요청을 확인하고 있어요.",
+    "active_since": 1791010408.698,
+    "run_seconds": 120,
+    "mode": "mindcraft",
+    "translation_model": "Qwen3-30B + verified actions",
+    "llm_ready": true,
+    "chat": [
+      {
+        "id": "fd0b79e9-f4b9-49b5-a356-402fe757f3a9",
+        "role": "user",
+        "text": "안녕"
+      }
+    ],
+    "agent_in_game": true,
+    "viewer_in_game": true,
+    "viewer_checked_at": 1791010407954,
+    "frame_age_ms": 9
+  },
+  "end": {
+    "phase": "ready",
+    "korean": "",
+    "english": "",
+    "message": "명령을 입력하세요.",
+    "active_since": null,
+    "run_seconds": 120,
+    "mode": "mindcraft",
+    "translation_model": "Qwen3-30B + verified actions",
+    "llm_ready": true,
+    "chat": [],
+    "agent_in_game": true,
+    "viewer_in_game": true,
+    "viewer_checked_at": 1791010527956,
+    "frame_age_ms": 32
+  },
+  "elapsedSeconds": 123.18300008773804
+}

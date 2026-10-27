@@ -1,0 +1,5 @@
+{"name":"one whole tree preserves a neighboring tree","ok":false,"error":"AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'clarify'\n- 'done'","ms":2364}
+{"name":"carve three high earth wall and ascend","ok":true,"details":{"message":"흙 3개를 깎고 3/3단 올라갔어요. 계단 길을 완성했어요.","pos":{"x":330.5,"y":90,"z":-345.45}},"ms":8326}
+{"name":"unsafe earth geometry remains unchanged","ok":true,"details":{"message":"계단 발판이 이어지지 않는 지형이라 멈췄어요."},"ms":3701}
+{"name":"stop prevents remaining sequence actions","ok":true,"details":{"message":"행동을 멈췄어요."},"ms":4981}
+{"name":"blocked first step never executes second","ok":false,"error":"AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'done'\n- 'unavailable'","ms":7228}
