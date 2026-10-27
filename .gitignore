@@ -24,3 +24,4 @@ __pycache__/
 /booth/mindcraft/bots/
 /booth/mindcraft/keys.json
 /booth/results/*/.orig/
+!/RUNBOOK.md

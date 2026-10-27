@@ -15,7 +15,7 @@
 | `booth/tests/` | 단위·해석·실게임 검사 |
 | `booth/results/` | 검사 결과 원자료 |
 
-문서: [booth/README.md](booth/README.md) (기능과 운영), [booth/STABILIZATION.md](booth/STABILIZATION.md) (안정화 결과), [booth/MIGRATION-spark.md](booth/MIGRATION-spark.md) (spark 이전과 검증), [booth/CHANGELOG.md](booth/CHANGELOG.md).
+운영과 장애 대처: [RUNBOOK.md](RUNBOOK.md). 문서: [booth/README.md](booth/README.md) (기능과 운영), [booth/STABILIZATION.md](booth/STABILIZATION.md) (안정화 결과), [booth/MIGRATION-spark.md](booth/MIGRATION-spark.md) (spark 이전과 검증), [booth/CHANGELOG.md](booth/CHANGELOG.md).
 
 ## 저장소에 없는 것
 
