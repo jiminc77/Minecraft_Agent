@@ -50,7 +50,15 @@
 
 실패 4건은 모두 수동 키 조작(`keys` 메시지)을 시험하는 사례입니다. 운영본 CHANGELOG에 적힌 대로 수동 조작은 이미 제거되었고 게이트웨이(simx와 해시 동일)는 `keys` 메시지를 무시하므로, 이 사례들은 현재 기능에 해당하지 않습니다. 수동 조작 외 사례는 모두 통과했습니다. 브라우저(노트북 터널 경유)에서 `돼지 한 마리 잡아 줘` 실행과 3인칭 화면을 확인했습니다.
 
-대조 검사 24개는 다시 실행하지 않았습니다. 서비스 설치 후 호스트 재부팅 시험도 아직 하지 않았습니다.
+대조 검사 24개는 다시 실행하지 않았습니다.
+
+### 호스트 재부팅 (2026-10-27 10:31 UTC)
+
+서비스 설치 후 재부팅했고, 부팅 약 3.5분 뒤 health가 `llm_ready`, `agent_in_game`, `viewer_in_game` 모두 true가 되었습니다. 그 과정에서 Xvfb가 부팅 직후 한 번 segfault로 종료되었고, Mindcraft가 Paper보다 먼저 떠 접속에 실패했습니다. 두 경우 모두 `Restart=always`와 watchdog으로 자동 복구되었습니다.
+
+## simx 정리 (2026-10-27)
+
+코드 관리는 https://github.com/jiminc77/Minecraft_Agent 로 옮겼습니다. simx에서는 `~/Codex`의 부스 관련 디렉터리 8개(mindcraft-stability/trial/eval/research/staging, openha-trial, steve-booth, experiments), user 유닛, Docker 컨테이너 7개, 부스 전용 HF 모델 캐시 5개를 삭제했습니다. `itzg/minecraft-server` 이미지와 다른 프로젝트의 모델 캐시는 남겼습니다. 따라서 simx의 경로를 언급하는 문서(STABILIZATION.md 등)는 당시 기록으로만 읽어야 합니다.
 
 ## 이전 당시 발견한 호스트 문제
 
