@@ -2,6 +2,8 @@
 
 모든 서버 명령은 `ssh AILAB-spark-remote`로 접속한 뒤 실행합니다. 서비스는 모두 **user systemd 유닛**이므로 sudo가 필요 없습니다.
 
+LLM(`booth-vllm-30b`)은 운결 데모도 함께 씁니다. 운결과 함께 운영하는 행사장 구성은 [ONSITE.md](ONSITE.md)를 봅니다.
+
 | 유닛 | 역할 | health 항목 |
 |---|---|---|
 | `booth-mc` | Minecraft 서버 (Paper, 25571) | — |
@@ -68,6 +70,13 @@ bash ~/Workspace/Minecraft_Agent/booth/ops/start.sh    # 시작
 bash ~/Workspace/Minecraft_Agent/booth/ops/restart.sh
 ```
 
+`restart.sh`와 `stop.sh`는 LLM도 껐다 켜므로, 그동안 운결 사주도 멈춥니다. 운결이 함께 돌고 있다면 `--keep-llm`을 붙여 LLM은 그대로 두고 나머지만 껐다 켭니다. 이때는 30초~2분이면 됩니다.
+
+```bash
+bash ~/Workspace/Minecraft_Agent/booth/ops/restart.sh --keep-llm
+bash ~/Workspace/Minecraft_Agent/booth/ops/stop.sh --keep-llm
+```
+
 LLM까지 기다리기 싫으면 문제가 있는 구성 요소만 재시작합니다. 이때는 수십 초면 됩니다.
 
 ```bash
@@ -86,7 +95,7 @@ systemctl --user restart booth-stability-mindcraft
 | 화면이 멈춤·검음 / `viewer_in_game:false` | `frame_age_ms` 값 | `systemctl --user restart booth-stability-xvfb booth-stability-client`를 실행합니다. 클라이언트가 붙기까지 30초 정도 걸립니다. |
 | 봇이 이상하게 계속 움직임 | UI 상태 | **행동 중지** → **월드 초기화** 순서로 누르고, 그래도 계속되면 mindcraft를 재시작합니다. |
 | 명령에 엉뚱하게 반응 | `booth/gateway/conversation.jsonl` 마지막 줄 | 모델이 해석한 계획이 기록되어 있습니다. 재현 문장을 남겨 두고 나중에 수정합니다. |
-| 전체가 이상함 | — | `restart.sh`로 전체 재시작합니다. 마지막 수단은 서버 재부팅(`sudo reboot`)이며, 약 4분 뒤 자동으로 복구됩니다. |
+| 전체가 이상함 | — | `restart.sh --keep-llm`으로 재시작하고, 그래도 안 되면 `restart.sh`로 LLM까지 재시작합니다. 마지막 수단은 서버 재부팅(`sudo reboot`)이며, 약 4분 뒤 자동으로 복구됩니다. |
 
 watchdog은 1분 안팎의 장애를 자동으로 복구합니다. 복구된 뒤 이전 명령을 다시 실행하지는 않습니다.
 
