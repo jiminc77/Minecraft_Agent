@@ -13,7 +13,7 @@ checks = [
     ('llm', h.get('llm_ready'), 'booth-vllm-30b (시작 직후 3~5분은 false가 정상)'),
     ('agent', h.get('agent_in_game'), 'booth-stability-mindcraft'),
     ('viewer', h.get('viewer_in_game'), 'booth-stability-client'),
-    ('frame', (h.get('frame_age_ms') or 10**9) < 2000, f"frame_age_ms={h.get('frame_age_ms')}"),
+    ('frame', h.get('frame_age_ms') is not None and h['frame_age_ms'] < 2000, f"frame_age_ms={h.get('frame_age_ms')}"),
 ]
 for name, ok, note in checks:
     print(f"{'OK  ' if ok else 'FAIL'} {name:<14}{note}")
