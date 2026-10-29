@@ -1,5 +1,6 @@
 #!/bin/bash
 # Open the booth page full screen on the monitor attached to spark. Alt+F4 closes it.
+# Firefox is detached, so closing the terminal that ran this script keeps the page open.
 # Waits for the gateway so Firefox does not land on an error page during boot.
 ROOT=/home/user/Workspace/Minecraft_Agent
 PROFILE=$ROOT/kiosk-profile
@@ -19,4 +20,7 @@ user_pref("browser.translations.automaticallyPopup", false);
 user_pref("signon.rememberSignons", false);
 user_pref("app.update.auto", false);
 PREFS
-exec firefox --kiosk --no-remote --profile "$PROFILE" http://127.0.0.1:8772
+# A killed Firefox otherwise shows an "Open previous tabs?" bar over the page.
+rm -rf "$PROFILE/sessionstore.jsonlz4" "$PROFILE/sessionstore-backups"
+setsid -f firefox --kiosk --no-remote --profile "$PROFILE" http://127.0.0.1:8772 >/dev/null 2>&1
+echo "부스 화면을 띄웠습니다. 이 터미널은 닫아도 됩니다."
