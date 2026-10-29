@@ -2,7 +2,7 @@
 
 모든 서버 명령은 `ssh AILAB-spark-remote`로 접속한 뒤 실행합니다. 서비스는 모두 **user systemd 유닛**이므로 sudo가 필요 없습니다.
 
-LLM(`booth-vllm-30b`)은 운결 데모도 함께 씁니다. 운결과 함께 운영하는 행사장 구성은 [ONSITE.md](ONSITE.md)를 봅니다.
+운영 스크립트는 같은 spark에서 도는 운결 데모(`ungyeol-api`, `ungyeol-vlm`)도 함께 다룹니다. 두 데모는 LLM(`booth-vllm-30b`)을 공유합니다. 행사장 운영 절차는 [ONSITE.md](ONSITE.md)를 봅니다.
 
 | 유닛 | 역할 | health 항목 |
 |---|---|---|
@@ -54,28 +54,16 @@ journalctl --user -u booth-vllm-30b -f
 ## 3. 시작·종료·재시작
 
 ```bash
-bash ~/Workspace/Minecraft_Agent/booth/ops/stop.sh     # 종료
-bash ~/Workspace/Minecraft_Agent/booth/ops/start.sh    # 시작
+bash ~/Workspace/Minecraft_Agent/booth/ops/stop.sh                 # 두 데모 모두 종료
+bash ~/Workspace/Minecraft_Agent/booth/ops/start.sh                # 두 데모 모두 시작 (약 5분)
+bash ~/Workspace/Minecraft_Agent/booth/ops/restart.sh              # 두 데모 모두 재시작 (약 5분)
+bash ~/Workspace/Minecraft_Agent/booth/ops/restart.sh minecraft    # 마인크래프트만, LLM 유지 (약 1분)
+bash ~/Workspace/Minecraft_Agent/booth/ops/restart.sh ungyeol      # 운결만, LLM 유지 (약 1분)
 ```
 
-- **종료:** watchdog을 먼저 멈춘 뒤 모든 구성 요소를 끕니다. 월드는 저장된 뒤 꺼집니다. 끝나면 유닛 목록이 모두 `inactive`로 나옵니다. GPU 메모리도 반환됩니다.
-- **시작:** 약 4분 뒤 `status.sh`가 모두 `OK`가 됩니다(시험 결과 220초).
-- **재부팅과의 관계:** `stop.sh`로 꺼 두어도 서버를 재부팅하면 부스가 자동으로 다시 켜집니다. 재부팅 후에도 꺼 두려면 종료 후 `systemctl --user disable booth-stability-watchdog.timer booth-mc booth-vllm-30b booth-stability-xvfb booth-stability-client booth-stability-mindcraft booth-stability-gateway`를 실행합니다. 같은 목록으로 `enable`하면 자동 시작이 다시 켜집니다.
-
-### 재시작
-
-전체를 껐다 켭니다. 약 4분 뒤 모두 `OK`가 됩니다(시험 결과 220초). 그동안은 명령을 받을 수 없습니다.
-
-```bash
-bash ~/Workspace/Minecraft_Agent/booth/ops/restart.sh
-```
-
-`restart.sh`와 `stop.sh`는 LLM도 껐다 켜므로, 그동안 운결 사주도 멈춥니다. 운결이 함께 돌고 있다면 `--keep-llm`을 붙여 LLM은 그대로 두고 나머지만 껐다 켭니다. 이때는 30초~2분이면 됩니다.
-
-```bash
-bash ~/Workspace/Minecraft_Agent/booth/ops/restart.sh --keep-llm
-bash ~/Workspace/Minecraft_Agent/booth/ops/stop.sh --keep-llm
-```
+- **종료:** watchdog을 먼저 멈춘 뒤 모든 구성 요소를 끕니다. 월드는 저장된 뒤 꺼지고, GPU 메모리도 반환됩니다.
+- **시간:** 2026-10-30 시험에서 전체 시작 250초, 전체 재시작 260초, 마인크래프트만 55초, 운결만 45초 만에 `status.sh`가 모두 `OK`가 되었습니다.
+- **재부팅과의 관계:** `stop.sh`로 꺼 두어도 서버를 재부팅하면 자동으로 다시 켜집니다. 재부팅 후에도 꺼 두려면 종료 후 `systemctl --user disable booth-stability-watchdog.timer booth-mc booth-vllm-30b booth-stability-xvfb booth-stability-client booth-stability-mindcraft booth-stability-gateway ungyeol-api ungyeol-vlm`을 실행합니다. 같은 목록으로 `enable`하면 자동 시작이 다시 켜집니다.
 
 LLM까지 기다리기 싫으면 문제가 있는 구성 요소만 재시작합니다. 이때는 수십 초면 됩니다.
 
@@ -95,7 +83,7 @@ systemctl --user restart booth-stability-mindcraft
 | 화면이 멈춤·검음 / `viewer_in_game:false` | `frame_age_ms` 값 | `systemctl --user restart booth-stability-xvfb booth-stability-client`를 실행합니다. 클라이언트가 붙기까지 30초 정도 걸립니다. |
 | 봇이 이상하게 계속 움직임 | UI 상태 | **행동 중지** → **월드 초기화** 순서로 누르고, 그래도 계속되면 mindcraft를 재시작합니다. |
 | 명령에 엉뚱하게 반응 | `booth/gateway/conversation.jsonl` 마지막 줄 | 모델이 해석한 계획이 기록되어 있습니다. 재현 문장을 남겨 두고 나중에 수정합니다. |
-| 전체가 이상함 | — | `restart.sh --keep-llm`으로 재시작하고, 그래도 안 되면 `restart.sh`로 LLM까지 재시작합니다. 마지막 수단은 서버 재부팅(`sudo reboot`)이며, 약 4분 뒤 자동으로 복구됩니다. |
+| 전체가 이상함 | — | `restart.sh minecraft`로 재시작하고, 그래도 안 되면 `restart.sh`로 LLM까지 재시작합니다. 마지막 수단은 서버 재부팅(`sudo reboot`)이며, 약 4분 뒤 자동으로 복구됩니다. |
 
 watchdog은 1분 안팎의 장애를 자동으로 복구합니다. 복구된 뒤 이전 명령을 다시 실행하지는 않습니다.
 
